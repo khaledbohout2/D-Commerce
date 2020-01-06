@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Medium.ttf">
+            <string>Montserrat-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeVC" customModule="Abaya" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="9yS-XA-Lvd" id="usk-yN-yfO"/>
+                <outlet property="lblBrowseShops" destination="iOy-jE-Tl7" id="KBA-WY-n55"/>
+                <outlet property="pageControl" destination="oAv-rQ-Zqp" id="iW5-O9-RXt"/>
+                <outlet property="scroll" destination="OGl-gP-3hQ" id="KrA-k7-52l"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OGl-gP-3hQ">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zZF-LL-bmB">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        </view>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="9yS-XA-Lvd">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="420"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="420" id="zBC-1E-4Rz"/>
+                            </constraints>
+                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="g1m-Px-Ahh">
+                                <size key="itemSize" width="50" height="50"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="ngt-gu-Bi6"/>
+                                <outlet property="delegate" destination="-1" id="iRj-mX-mja"/>
+                            </connections>
+                        </collectionView>
+                        <pageControl hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="oAv-rQ-Zqp">
+                            <rect key="frame" x="4" y="365" width="115" height="37"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="37" id="vNw-Tc-R6m"/>
+                                <constraint firstAttribute="width" constant="115" id="z56-7l-2uS"/>
+                            </constraints>
+                            <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </pageControl>
+                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Browse Shops" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iOy-jE-Tl7">
+                            <rect key="frame" x="15" y="428" width="143.5" height="18"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="18" id="yAf-Fs-tM9"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat Medium" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="iOy-jE-Tl7" firstAttribute="top" secondItem="9yS-XA-Lvd" secondAttribute="bottom" constant="8" id="1w8-hB-XFu"/>
+                        <constraint firstItem="zZF-LL-bmB" firstAttribute="leading" secondItem="OGl-gP-3hQ" secondAttribute="leading" id="3QI-hL-c0r"/>
+                        <constraint firstItem="zZF-LL-bmB" firstAttribute="centerX" secondItem="OGl-gP-3hQ" secondAttribute="centerX" id="998-fw-HeY"/>
+                        <constraint firstAttribute="bottom" secondItem="zZF-LL-bmB" secondAttribute="bottom" id="AsM-A4-Vel"/>
+                        <constraint firstItem="iOy-jE-Tl7" firstAttribute="leading" secondItem="OGl-gP-3hQ" secondAttribute="leading" constant="15" id="BIh-w9-TjB"/>
+                        <constraint firstItem="9yS-XA-Lvd" firstAttribute="leading" secondItem="OGl-gP-3hQ" secondAttribute="leading" id="Dbr-EW-M3U"/>
+                        <constraint firstAttribute="trailing" secondItem="9yS-XA-Lvd" secondAttribute="trailing" id="HJ2-y4-l34"/>
+                        <constraint firstItem="9yS-XA-Lvd" firstAttribute="top" secondItem="OGl-gP-3hQ" secondAttribute="top" id="JFV-Qe-Tlo"/>
+                        <constraint firstAttribute="trailing" secondItem="zZF-LL-bmB" secondAttribute="trailing" id="aQ8-OJ-fHd"/>
+                        <constraint firstItem="zZF-LL-bmB" firstAttribute="centerY" secondItem="OGl-gP-3hQ" secondAttribute="centerY" id="cme-dH-rNZ"/>
+                        <constraint firstItem="zZF-LL-bmB" firstAttribute="top" secondItem="OGl-gP-3hQ" secondAttribute="top" id="ieu-ZT-Gsw"/>
+                        <constraint firstItem="iOy-jE-Tl7" firstAttribute="top" secondItem="oAv-rQ-Zqp" secondAttribute="bottom" constant="26" id="tda-eF-uhx"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="ENo-lq-lWR"/>
+                    </connections>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="OGl-gP-3hQ" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="bBV-E1-CqF"/>
+                <constraint firstItem="OGl-gP-3hQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="htf-OR-U6T"/>
+                <constraint firstItem="OGl-gP-3hQ" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="jbX-Zc-7SN"/>
+                <constraint firstItem="OGl-gP-3hQ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="tv2-Ln-yXd"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="-109.59999999999999" y="51.724137931034484"/>
+        </view>
+    </objects>
+</document>

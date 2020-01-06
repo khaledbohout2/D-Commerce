@@ -1,0 +1,27 @@
+
+/* Class = "UIButton"; normalTitle = "Track Order"; ObjectID = "5LA-mf-ci3"; */
+"5LA-mf-ci3.normalTitle" = "متابعة الطلب";
+
+/* Class = "UILabel"; text = "KD 120,000"; ObjectID = "HNW-op-teG"; */
+"HNW-op-teG.text" = "KD 120,000";
+
+/* Class = "UILabel"; text = "ORDER NUMBER"; ObjectID = "M4K-Rm-ttl"; */
+"M4K-Rm-ttl.text" = "رقم الطلب";
+
+/* Class = "UILabel"; text = "2 Items"; ObjectID = "MWd-my-srG"; */
+"MWd-my-srG.text" = "2 Items";
+
+/* Class = "UIButton"; normalTitle = "Cancel Order"; ObjectID = "aA1-xQ-rTX"; */
+"aA1-xQ-rTX.normalTitle" = "إلغاء الطلب";
+
+/* Class = "UILabel"; text = "12th July, 2018"; ObjectID = "clB-cT-ceh"; */
+"clB-cT-ceh.text" = "12th July, 2018";
+
+/* Class = "UILabel"; text = "ORDER DATE"; ObjectID = "hYr-NQ-X6k"; */
+"hYr-NQ-X6k.text" = "تاريخ الطلب";
+
+/* Class = "UILabel"; text = "Delivered"; ObjectID = "oLf-Nr-ZgT"; */
+"oLf-Nr-ZgT.text" = "Delivered";
+
+/* Class = "UILabel"; text = "123456789089"; ObjectID = "q5f-R7-AVr"; */
+"q5f-R7-AVr.text" = "123456789089";

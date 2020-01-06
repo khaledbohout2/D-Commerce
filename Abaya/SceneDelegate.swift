@@ -18,7 +18,52 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
-    }
+        
+                let sesstioncheck = UserDefaults.standard.string(forKey: "session")
+                if (sesstioncheck == "session")
+                {
+                
+                    let dic = UserDefaults.standard.object(forKey: "dictionaryKey") as? [AnyHashable: Any]
+                    loginAccessToken = dic?["token"] as! NSString
+
+
+                    let vc = HomeVC(nibName: "productDetail", bundle: nil)
+                      let aObjNavi = UINavigationController(rootViewController: vc);                        self.window?.addSubview(aObjNavi.view)
+                         self.window?.rootViewController = aObjNavi
+                    
+
+        //            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        //            let vc = storyboard.instantiateViewController(withIdentifier: "OrderConfirmVC")
+        //            let aObjNavi = UINavigationController(rootViewController: vc);                        self.window?.addSubview(aObjNavi.view)
+        //            self.window?.rootViewController = aObjNavi
+                    
+                }
+                else{
+            
+                }
+        
+//                let sesstioncheck = UserDefaults.standard.string(forKey: "session")
+//                if (sesstioncheck == "session")
+//                {
+//
+//                    var dic = UserDefaults.standard.object(forKey: "dictionaryKey") as? [AnyHashable: Any]
+//                    loginAccessToken = dic?["token"] as! NSString
+//
+//
+//                    let vc = productDetail(nibName: "productDetail", bundle: nil)
+//                      let aObjNavi = UINavigationController(rootViewController: vc);                        self.window?.addSubview(aObjNavi.view)
+//                         self.window?.rootViewController = aObjNavi
+//
+//
+//        //            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        //            let vc = storyboard.instantiateViewController(withIdentifier: "OrderConfirmVC")
+//        //            let aObjNavi = UINavigationController(rootViewController: vc);                        self.window?.addSubview(aObjNavi.view)
+//        //            self.window?.rootViewController = aObjNavi
+//
+//                }
+//                else{
+//}
+                   }
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
@@ -47,6 +92,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
+//
+//    func setupLanguage() {
+//        let lang = LanguageManager.getLanguage()
+//        L102Localizer.switchTheLanguage(lan: lang, fromrestPage: true)
+//        L102Localizer.DoTheMagic()
+//    }
 
 
 }
