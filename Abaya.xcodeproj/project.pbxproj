@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		062BCFEF23C7B9A6009E456E /* CartVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062BCFEE23C7B9A6009E456E /* CartVC2.swift */; };
 		21FE0874C82F54F2D67A3199 /* Pods_Abaya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32AD53777988EA8AFA2B04C1 /* Pods_Abaya.framework */; };
 		6C259BED2377E190005DA719 /* PaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C259BEC2377E190005DA719 /* PaymentVC.swift */; };
 		6C9413A22377E4FD00E105A6 /* OrderConfirmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C9413A12377E4FD00E105A6 /* OrderConfirmVC.swift */; };
@@ -114,6 +115,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		062BCFEE23C7B9A6009E456E /* CartVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartVC2.swift; sourceTree = "<group>"; };
 		14414879001ED430466A5D13 /* Pods-Abaya.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abaya.release.xcconfig"; path = "Target Support Files/Pods-Abaya/Pods-Abaya.release.xcconfig"; sourceTree = "<group>"; };
 		32AD53777988EA8AFA2B04C1 /* Pods_Abaya.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Abaya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C259BEC2377E190005DA719 /* PaymentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentVC.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 				6C9413A12377E4FD00E105A6 /* OrderConfirmVC.swift */,
 				7CAF3F9C238815E800D3C8E0 /* GatwayVC.swift */,
 				7C1A149C2376EADA00DAD821 /* CartVC.swift */,
+				062BCFEE23C7B9A6009E456E /* CartVC2.swift */,
 			);
 			path = Payment;
 			sourceTree = "<group>";
@@ -745,6 +748,7 @@
 				7CDBE0332376F16C008EFF25 /* CartCell.swift in Sources */,
 				7C2AFB33239A95C900D55212 /* OrderItemCell.swift in Sources */,
 				7C0DF3C52379F9FE00C94BF8 /* WishListModelClass.swift in Sources */,
+				062BCFEF23C7B9A6009E456E /* CartVC2.swift in Sources */,
 				7C15060E23677B800077FAAD /* ViewExtension.swift in Sources */,
 				7CE206C92384842B008F8028 /* CardsCell.swift in Sources */,
 				7C3DD1622374A6CA00ABA955 /* collectionView.swift in Sources */,

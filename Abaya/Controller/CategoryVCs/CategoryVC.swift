@@ -18,7 +18,8 @@ class CategoryVC: UIViewController {
     
     @IBOutlet weak var scroll: UIScrollView!
     
-    var imgUrl = String()
+    var dicDetail = NSDictionary()
+    var arrCategory = NSArray()
     var pageMenu : CAPSPageMenu?
     var hud = JGProgressHUD(style: .extraLight)
   //  let lastcat = arrCategory[IndexPath.row]
@@ -26,31 +27,46 @@ class CategoryVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.addPageMenu(count: arrCategory.count)
-        
-        hud.textLabel.text = NSLocalizedString("loading", comment: "") 
-        hud.show(in: self.view)
-        
-        let fileUrl = URL(string: imgUrl)
-        bannerImageView.image = UIImage(url: fileUrl)
-        
-        hud.dismiss()
-
+        loadProducts()
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        
+    }
+    
+    func loadProducts() {
+        
+        hud.textLabel.text = NSLocalizedString("loading", comment: "")
+        
+        hud.show(in: self.view)
+        
+        let arrCat1 = dicDetail .value(forKey: "children") as! NSArray
 
+        arrCategory = arrCat1
+        
+        self.title = (dicDetail.value(forKey: NSLocalizedString("category_name", comment: "")) as! String)
+        
+        let imgStrUrl = .imagebaseURL + "category/" + (dicDetail.value(forKey: "category_image") as! String)
+        
+        self.addPageMenu(count: arrCategory.count)
+        
+        let fileUrl = URL(string: imgStrUrl)
+        
+        bannerImageView.image = UIImage(url: fileUrl)
+        
+        hud.dismiss()
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         hud.dismiss()
     }
-
-
 
 }
 
 extension CategoryVC {
     
-   
     func addPageMenu(count: Int) {
         var controllerArray : [UIViewController] = []
        // print(CategoryList)
@@ -68,8 +84,6 @@ extension CategoryVC {
             
                controller.title = dic.value(forKey: NSLocalizedString("category_name", comment: "")) as? String
                controller.lastCat = dic.value(forKey: "children") as! NSArray
-            
-           // controller.arrSubCategoryList_2 = dic.value(forKey: "children") as! NSArray
             
         }
         

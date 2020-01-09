@@ -15,6 +15,7 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     
     @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
     @IBOutlet weak var scroll: UIScrollView!
+    @IBOutlet weak var contentView: UIView!
     @IBOutlet var lblBrowseShops: UILabel!
     @IBOutlet var scrollMain: UIScrollView!
     @IBOutlet var pageControl: UIPageControl!
@@ -31,6 +32,8 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.frame.size.height = self.view.frame.size.height + 1000
         
         //print("dicUserProfile \(dicUserProfile)")
         //print(loginAccessToken)
@@ -54,6 +57,7 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
             }
     @objc func btnbackaction()
     {
@@ -285,7 +289,7 @@ extension HomeVC {
        
         pageMenu?.view.backgroundColor = UIColor.clear
         self.addChild(pageMenu!)
-        scroll.addSubview(pageMenu!.view)
+        contentView.addSubview(pageMenu!.view)
         //pageMenu!.didMove(toParentViewController: self)
         pageControl.isHidden = false
         lblBrowseShops.isHidden = false

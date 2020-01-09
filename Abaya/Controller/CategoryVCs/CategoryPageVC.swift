@@ -36,8 +36,11 @@ class CategoryPageVC: UIViewController, UICollectionViewDelegate, UICollectionVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.frame =  CGRect(0, 0, self.view.frame.size.width, self.view.frame.size.height+300)
+        
         
         self.btnShowAll.isHidden = true
+        
         self.lblNewProducts.isHidden = true
         
         self.setupviewforcollection()
@@ -86,7 +89,7 @@ class CategoryPageVC: UIViewController, UICollectionViewDelegate, UICollectionVi
             
             segmentController.selectedSegmentIndex = 0
             
-            segmentController.frame = CGRect(x: 15, y: 10, width: (self.view.frame.width) - 30, height: 20)
+            segmentController.frame = CGRect(x: 15, y: 10, width: 345, height: 20)
             
             segmentController.addTarget(self, action: #selector(loadCollectionViewArray), for: .valueChanged)
             
@@ -112,10 +115,10 @@ class CategoryPageVC: UIViewController, UICollectionViewDelegate, UICollectionVi
         let strUrl = "http://theblocksapp.com/api/getAllNewProducts/\(categpryID)"
         
         getProducts(url: strUrl)
+            
         }
         
         //print(strUrl)
-        
     }
 
     
@@ -171,19 +174,20 @@ class CategoryPageVC: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     func setupviewforcollection () {
         
-        viewForCollection.frame =  CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.width/2)
+        let bounds: CGRect = UIScreen.main.bounds
+        let w:Int  = Int(bounds.size.width)
+        let h:Int  = Int(bounds.size.height)
+        
+        viewForCollection.frame =  CGRect(x: 0, y: 0, width: w, height: w/2)
         
         viewForCollection.backgroundColor = UIColor.white
-        lblNewProducts = UILabel(frame: CGRect(x: 15, y: 40, width: 230, height: 20))
+        lblNewProducts = UILabel(frame: CGRect(x: 15, y: 40, width: 150, height: 20))
         lblNewProducts.textAlignment = .center //For center alignment
         lblNewProducts.text = NSLocalizedString("New on Blocks", comment: "")
         lblNewProducts.textColor = .black
         
         lblNewProducts.font = UIFont(name: "Montserrat-SemiBold", size: 16)
-        
-       
-      
-        
+
         //To display multiple lines in label
         lblNewProducts.numberOfLines = 1
         lblNewProducts.lineBreakMode = .byWordWrapping
@@ -191,7 +195,7 @@ class CategoryPageVC: UIViewController, UICollectionViewDelegate, UICollectionVi
         lblNewProducts.sizeToFit()//If required
         viewForCollection.addSubview(lblNewProducts)
         
-                btnShowAll = UIButton(frame: CGRect(x: self.view.frame.width - 110, y: 40, width: 230, height: 21))
+        btnShowAll = UIButton(frame: CGRect(x: (w - 110), y: 40, width: 95, height: 21))
 
                 
         //        btnShowAll.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
@@ -202,7 +206,7 @@ class CategoryPageVC: UIViewController, UICollectionViewDelegate, UICollectionVi
           
           btnShowAll.titleLabel?.font = UIFont(name: "Montserrat-SemiBold", size: 16)
           btnShowAll.addTarget(self, action: #selector(btnShowAllTapped), for: .touchUpInside)
-          btnShowAll.sizeToFit()
+         // btnShowAll.sizeToFit()
 
           
           viewForCollection.addSubview(btnShowAll)
@@ -218,7 +222,7 @@ class CategoryPageVC: UIViewController, UICollectionViewDelegate, UICollectionVi
         layout.minimumLineSpacing = 10
         
         
-        collectionView.frame = CGRect(x: 10,y: lblNewProducts.frame.origin.y+lblNewProducts.frame.size.height+30,width: viewForCollection.frame.size.width-22,height: viewForCollection.frame.size.height-20)
+        collectionView.frame = CGRect(x: 10,y: lblNewProducts.frame.origin.y+lblNewProducts.frame.size.height+30,width: viewForCollection.frame.width-22,height: viewForCollection.frame.height-20)
                                           
         collectionView.collectionViewLayout = layout
        

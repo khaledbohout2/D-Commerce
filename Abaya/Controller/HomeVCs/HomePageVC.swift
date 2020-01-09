@@ -24,7 +24,7 @@ class HomePageVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     var catId = String()
     var lblNewBlocks  = UILabel()
     var btnShowAll = UIButton()
-    var username:String = ""
+    var username: String = ""
     var arrSubCategoryList = NSArray()
     var arrSubCategoryList_2 = NSArray()
     var arrNewBlocks = NSArray()
@@ -220,10 +220,19 @@ class HomePageVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
 
               
                  self?.tblDetail.reloadData()
+//
+//                DispatchQueue.main.async {
+//
+//                    var frame = self?.view.frame
+//                    frame!.size.height = self!.tblDetail.contentSize.height
+//                    self!.view.frame = frame!
+//
+//                }
                 
                  self?.hud.dismiss()
             }
             else
+                
             {
                 self?.hud.dismiss()
                   Alert.Show(title:NSLocalizedString("something wrong", comment: ""), mesage: NSLocalizedString("Please try again.", comment: ""), viewcontroller:self!)
@@ -345,7 +354,7 @@ class HomePageVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         
         
         
-            let cell = tableView.dequeueReusableCell(withIdentifier: "storeCell", for: indexPath as IndexPath) as! storeCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "storeCell", for: indexPath as IndexPath) as! storeCell
         
         
         var dic = NSDictionary()
@@ -426,40 +435,15 @@ class HomePageVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
 
+        let dicDetail = arrSubCategoryList[indexPath.row] as! NSDictionary
         
-        hud.textLabel.text = NSLocalizedString("loading", comment: "")
-        hud.show(in: self.view)
-        
-        var dicDetail = NSDictionary()
-        
-        dicDetail = arrSubCategoryList[indexPath.row] as! NSDictionary
-        
-        //print("khaled: dicDetail \(dicDetail)")
-        
-        var arrCat1 = NSArray()
-        
-        arrCat1 = dicDetail .value(forKey: "children") as! NSArray
-        
-        //print("khaled: arrcat1 \(arrCat1)")
-    
-       // arrcat2 = (dicDetail.value(forKey: "children") as! String)
-        arrCategory = arrCat1
-        strNavTitle = (dicDetail.value(forKey: NSLocalizedString("category_name", comment: "")) as! String)
-        //let imgUrl =  (dicDetail.value(forKey: "category_name") as! String)
-        let imgStrUrl = .imagebaseURL + "category/" + (dicDetail.value(forKey: "category_image") as! String)
-        
-       // print("khaled: \(strNavTitle)")
-        
-         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
         let categoryVC = storyboard.instantiateViewController(withIdentifier: "CategoryVC") as! CategoryVC
         
-        categoryVC.imgUrl = imgStrUrl
-        
-        categoryVC.title = strNavTitle
-        hud.dismiss()
+        categoryVC.dicDetail = dicDetail
+
         self.navigationController?.pushViewController(categoryVC, animated: true)
 
        }

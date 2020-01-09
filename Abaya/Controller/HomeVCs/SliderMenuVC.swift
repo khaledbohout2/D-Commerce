@@ -46,6 +46,7 @@ class SliderMenuVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
  // MARK: - Tableview Delegate And Data Source
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
         return 30.0
     }
 
