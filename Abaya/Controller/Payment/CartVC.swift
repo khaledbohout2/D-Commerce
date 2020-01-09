@@ -16,13 +16,13 @@ class CartVC: UIViewController {
     
     @IBOutlet weak var tblCart: UITableView!
     
-    @IBOutlet weak var scrollView: UIScrollView!
+   // @IBOutlet weak var scrollView: UIScrollView!
     
-    @IBOutlet weak var contantView: UIView!
+   // @IBOutlet weak var contantView: UIView!
     
-    @IBOutlet weak var tableHeight: NSLayoutConstraint!
+   // @IBOutlet weak var tableHeight: NSLayoutConstraint!
     
-    @IBOutlet weak var contantViewHeight: NSLayoutConstraint!
+    //@IBOutlet weak var contantViewHeight: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,10 +50,12 @@ class CartVC: UIViewController {
         override func viewDidLayoutSubviews()
         {
             
-            contantView.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.tblCart.frame.size.height)
-
-            scrollView.contentSize = CGSize(width: self.contantView.frame.size.width, height: self.contantView.frame.size.height)
-            self.contantViewHeight?.constant = self.contantView.frame.size.height
+//            contantView.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.tblCart.frame.size.height)
+//
+//            scrollView.contentSize = CGSize(width: self.contantView.frame.size.width, height: self.contantView.frame.size.height)
+//            self.contantViewHeight?.constant = self.contantView.frame.size.height
+            
+            
         //    contantView.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.tblCart.frame.size.height)
            // contentViewHeight.constant = self.tblCart.frame.size.height
             
@@ -93,10 +95,10 @@ class CartVC: UIViewController {
                // print(self?.arrCart as Any)
                 self?.tblCart.reloadData()
                 self?.tblCart.isHidden = false
-                DispatchQueue.main.async {
-                    self!.tableHeight?.constant = self!.tblCart.contentSize.height
-                    self!.contantViewHeight?.constant = self!.tblCart.contentSize.height
-                }
+//                DispatchQueue.main.async {
+//                    self!.tableHeight?.constant = self!.tblCart.contentSize.height
+//                    self!.contantViewHeight?.constant = self!.tblCart.contentSize.height
+//                }
                     
                  hud.dismiss()
             
@@ -158,6 +160,8 @@ extension CartVC: UITableViewDataSource, UITableViewDelegate
 {
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        
+        if section == 1{
                 let footerView = UIView(frame: CGRect(x: 0, y: 500, width: tableView.frame.size.width, height: tblCart.contentSize.height+500))
         footerView.backgroundColor = UIColor.white
         
@@ -432,21 +436,55 @@ extension CartVC: UITableViewDataSource, UITableViewDelegate
         
 
         return footerView
+        } else {
+            
+            return UIView()
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        
+        if section == 1 {
+            
         return 450
+            
+        } else {
+            
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
-        return 120
+        
+        var height: CGFloat?
+        
+        if indexPath.section == 0 {
+            
+            height = 120
+            
+        } else {
+            
+            height = 0
+        }
+        
+        return height!
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if section == 0 {
+            
         return arrCart.count
+            
+        } else {
+            
+            return 1
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if indexPath.section == 0 {
         
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CartCell", for: indexPath as IndexPath) as! CartCell
@@ -481,6 +519,16 @@ extension CartVC: UITableViewDataSource, UITableViewDelegate
         
         
         return cell
+            
+        } else {
+            
+            return UITableViewCell()
+        }
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        
+        return 2
     }
     
     
@@ -602,10 +650,10 @@ extension CartVC: UITableViewDataSource, UITableViewDelegate
                // print(self?.arrCart as Any)
                 self?.tblCart.reloadData()
                 self?.tblCart.isHidden = false
-                DispatchQueue.main.async {
-                    self!.tableHeight?.constant = self!.tblCart.contentSize.height
-                    self!.contantViewHeight?.constant = self!.tblCart.contentSize.height
-                }
+//                DispatchQueue.main.async {
+//                    self!.tableHeight?.constant = self!.tblCart.contentSize.height
+//                    self!.contantViewHeight?.constant = self!.tblCart.contentSize.height
+//                }
                     
                  hud.dismiss()
             
