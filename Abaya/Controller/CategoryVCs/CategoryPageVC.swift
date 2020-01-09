@@ -11,6 +11,7 @@ import SDWebImage
 
 class CategoryPageVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout ,UIScrollViewDelegate {
 
+    @IBOutlet weak var scroll: UIScrollView!
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -51,6 +52,7 @@ class CategoryPageVC: UIViewController, UICollectionViewDelegate, UICollectionVi
         
     }
     
+    
     func setupSegmant() {
         
        // print("khaled array count is \(lastCat.count)")
@@ -89,7 +91,11 @@ class CategoryPageVC: UIViewController, UICollectionViewDelegate, UICollectionVi
             
             segmentController.selectedSegmentIndex = 0
             
-            segmentController.frame = CGRect(x: 15, y: 10, width: 345, height: 20)
+            let bounds: CGRect = UIScreen.main.bounds
+            let w:Int  = Int(bounds.size.width)
+           // let h:Int  = Int(bounds.size.height)
+            
+            segmentController.frame = CGRect(x: 15, y: 10, width: w - 30, height: 20)
             
             segmentController.addTarget(self, action: #selector(loadCollectionViewArray), for: .valueChanged)
             
@@ -176,12 +182,12 @@ class CategoryPageVC: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         let bounds: CGRect = UIScreen.main.bounds
         let w:Int  = Int(bounds.size.width)
-        let h:Int  = Int(bounds.size.height)
+       // let h:Int  = Int(bounds.size.height)
         
         viewForCollection.frame =  CGRect(x: 0, y: 0, width: w, height: w/2)
         
         viewForCollection.backgroundColor = UIColor.white
-        lblNewProducts = UILabel(frame: CGRect(x: 15, y: 40, width: 150, height: 20))
+        lblNewProducts = UILabel(frame: CGRect(x: 15, y: 35, width: 150, height: 20))
         lblNewProducts.textAlignment = .center //For center alignment
         lblNewProducts.text = NSLocalizedString("New on Blocks", comment: "")
         lblNewProducts.textColor = .black
@@ -195,7 +201,7 @@ class CategoryPageVC: UIViewController, UICollectionViewDelegate, UICollectionVi
         lblNewProducts.sizeToFit()//If required
         viewForCollection.addSubview(lblNewProducts)
         
-        btnShowAll = UIButton(frame: CGRect(x: (w - 110), y: 40, width: 95, height: 21))
+        btnShowAll = UIButton(frame: CGRect(x: (w - 110), y: 35, width: 95, height: 21))
 
                 
         //        btnShowAll.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
@@ -222,7 +228,7 @@ class CategoryPageVC: UIViewController, UICollectionViewDelegate, UICollectionVi
         layout.minimumLineSpacing = 10
         
         
-        collectionView.frame = CGRect(x: 10,y: lblNewProducts.frame.origin.y+lblNewProducts.frame.size.height+30,width: viewForCollection.frame.width-22,height: viewForCollection.frame.height-20)
+        collectionView.frame = CGRect(x: 10,y: lblNewProducts.frame.origin.y+lblNewProducts.frame.size.height+8,width: viewForCollection.frame.width-22,height: viewForCollection.frame.height-20)
                                           
         collectionView.collectionViewLayout = layout
        

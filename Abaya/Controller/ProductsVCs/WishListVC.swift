@@ -56,7 +56,7 @@ class WishListVC: UIViewController {
         func GetWishList()
         {
             DicParameters = [:]
-                             hud.textLabel.text = NSLocalizedString("Loading", comment: "")
+            hud.textLabel.text = NSLocalizedString("Loading", comment: "")
             hud.show(in: self.view)
             ApiBaseClass.apiCallingWithGetMethode(url:ApiBaseClass.getWishlist(), completion: { [weak self] response in
                 let errorCheck = response["success"] as! Bool
@@ -156,7 +156,8 @@ class WishListVC: UIViewController {
             ApiBaseClass.apiCallingMethode(url: ApiBaseClass.addtocartapi(), parameter: par, completion: { (response) in
                 
                 self.deleteFromWishList()
-                Alert.Show(title: NSLocalizedString("Item Added To Wishlist", comment: "") , mesage: "", viewcontroller: self)
+                
+                Alert.ShowAction(title: NSLocalizedString("Item Added To Cart", comment: "") , mesage: "", viewcontroller: self)
 
                 
             }) { (error) in

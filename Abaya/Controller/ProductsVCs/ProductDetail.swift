@@ -62,7 +62,7 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
         self.widthLbl.text = NSLocalizedString("width", comment: "")
         self.widthValueLbl.text = NSLocalizedString("double width", comment: "")
 
-          self.view.frame =  CGRect(0, 0, self.view.frame.size.width, self.view.frame.size.height+1500)
+          self.view.frame =  CGRect(0, 0, self.view.frame.size.width, self.view.frame.size.height+800)
 
         imagesCollectionView.dataSource = self
 
@@ -97,6 +97,7 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
        // self.GetNewBlock()
         GetProductDetail()
         
+        
         setupNavButtons()
         
      
@@ -120,9 +121,10 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
     }
     
     override func viewDidLayoutSubviews()
+        
     {
         
-        scroll.contentSize = CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height+600)
+        scroll.contentSize = CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height+800)
 
 //        self.view.frame = (frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height+600))
         
@@ -157,6 +159,48 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
 //        let VC = self.storyboard!.instantiateViewController(withIdentifier: "CartVC") as! CartVC
 //        self.navigationController?.pushViewController(VC, animated: true)
 //    }
+    
+    func GetWishList()
+    {
+
+        ApiBaseClass.apiCallingWithGetMethode(url:ApiBaseClass.getWishlist(), completion: { [weak self] response in
+            let errorCheck = response["success"] as! Bool
+            
+            if errorCheck
+            {
+                
+                var dic = NSDictionary()
+                dic = response as NSDictionary
+                let arrWishlist = dic["data"] as! NSArray
+                
+                print(arrWishlist)
+                
+                for i in arrWishlist {
+                    
+
+                    
+                    let id = String((i as! NSDictionary) .value(forKey: "product_id") as! Int )
+                    print(id)
+                    print(strProductId)
+                    if id == strProductId {
+                        self?.favButton.setImage(UIImage(named: "wishlist_heart_filled"), for: .normal)
+                    }
+                }
+              //  print(self?.arrWishlist)
+                //self?.wishCollcationView.reloadData()
+                
+            }
+            else
+            {
+                self!.hud.dismiss()
+                     Alert.Show(title:NSLocalizedString("something wrong", comment: ""), mesage: NSLocalizedString("Please try again.", comment: ""), viewcontroller:self!)
+                      
+                  }
+                  }, failure: { [weak self] failResponse in
+                    self!.hud.dismiss()
+                      Alert.Show(title: NSLocalizedString("network error", comment: ""), mesage:NSLocalizedString("Please try again.", comment: "") , viewcontroller:self!)
+        })
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
@@ -265,7 +309,15 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
     
     @IBAction func favButtonTapped(_ sender: Any) {
         
+        if favButton.image(for: .normal) == UIImage(named: "wishlist_heart_filled") {
+            
+            deleteFromWishList()
+            
+        } else {
+        
         addToWishList()
+            
+        }
         
     }
     
@@ -346,6 +398,8 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
             self?.lblMaterial.text = dic.object(forKey: "material") as? String
            // self?.widthValueLbl.text = "\((dic.object(forKey: "width") as! Int) * 2 )"
             strProductId = String(dic .value(forKey: "id") as! Int)
+            
+            self!.GetWishList()
             print(strProductId)
             self!.GetRelatedProducts()
             
@@ -468,6 +522,31 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
                         Alert.Show(title: NSLocalizedString("network error", comment: "") , mesage: NSLocalizedString("Please try again.", comment: "") , viewcontroller:self!)
                 })
             }
+    
+    func deleteFromWishList() {
+        
+          DicParameters = [:]
+          hud.textLabel.text = NSLocalizedString("Loading", comment: "")
+          hud.show(in: self.view)
+          ApiBaseClass.apiCallingWithDeleteMethode(url:ApiBaseClass.deletefromWishList(), completion: { [weak self] response in
+              
+              
+              print("khaled: \(response)")
+            
+            self?.favButton.setImage(UIImage(named: "wishlist_icon_gray copy"), for: .normal)
+
+            self!.hud.dismiss()
+              
+                  //self!.GetWishList()
+
+                //  self!.wishCollcationView.reloadData()
+              
+
+              }, failure: { [weak self] failResponse in
+                self!.hud.dismiss()
+                  Alert.Show(title:"", mesage:.no_internet, viewcontroller:self!)
+          })
+    }
     
     @IBAction func incresecount(_ sender: Any) {
         
