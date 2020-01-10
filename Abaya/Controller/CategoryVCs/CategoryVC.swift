@@ -28,6 +28,8 @@ class CategoryVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.interactivePopGestureRecognizer!.delegate = nil
+        
         loadProducts()
         // Do any additional setup after loading the view.
     }
@@ -103,3 +105,4 @@ extension CategoryVC {
 
     }
 }
+

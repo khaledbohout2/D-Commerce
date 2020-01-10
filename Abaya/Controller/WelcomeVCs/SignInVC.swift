@@ -14,15 +14,29 @@ class SignInVC: UIViewController {
     
     var hud = JGProgressHUD(style: .extraLight)
 
+    @IBOutlet weak var continueAsGuestButton: UIButton!
+    
+    @IBOutlet weak var orButton: UILabel!
     @IBOutlet weak var emailTxtField: SkyFloatingLabelTextField!
     @IBOutlet weak var passwordTxtField: SkyFloatingLabelTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if isAppAlreadyLaunchedOnce() {
+            
+            continueAsGuestButton.isHidden = true
+            continueAsGuestButton.isUserInteractionEnabled = false
+            orButton.isHidden = true
+            orButton.isUserInteractionEnabled = false
+            
+        }
         // Do any additional setup after loading the view.
         
         let sesstioncheck = UserDefaults.standard.string(forKey: "session")
+        
         if (sesstioncheck == "session")
+            
         {
             if let dic = UserDefaults.standard.object(forKey: "dictionaryKey") as? [AnyHashable: Any]
             {
@@ -128,6 +142,18 @@ class SignInVC: UIViewController {
            }
 
         
+    }
+    
+    func isAppAlreadyLaunchedOnce()->Bool{
+        let defaults = UserDefaults.standard
+        if let _ = defaults.string(forKey: "isAppAlreadyLaunchedOnce"){
+            print("App already launched")
+            return true
+        } else {
+            defaults.set(true, forKey: "isAppAlreadyLaunchedOnce")
+            print("App launched first time")
+            return false
+        }
     }
     
     @IBAction func forgotOassButton(_ sender: Any) {

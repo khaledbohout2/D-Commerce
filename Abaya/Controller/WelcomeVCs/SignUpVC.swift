@@ -46,15 +46,14 @@ class SignUpVC: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+        
     }
     
     override func viewDidLayoutSubviews()
+        
     {
-        
-        
-        scroll.contentSize = CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height+100)
 
-
+        scroll.contentSize = CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height+200)
     }
     
 

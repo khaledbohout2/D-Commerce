@@ -262,6 +262,11 @@ extension HomeVC {
                 self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    @objc func dismiss(fromGesture gesture: UISwipeGestureRecognizer) {
+        //Your dismiss code
+        //Here you should implement your checks for the swipe gesture
+    }
+    
 }
 
 extension HomeVC {
