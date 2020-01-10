@@ -20,6 +20,29 @@ class func Show(title:String,mesage:String,viewcontroller:UIViewController)  {
         
     }
     
+    class func showSignUpAlert(viewcontroller:UIViewController)  {
+        
+        let alert = UIAlertController.init(title: "Sign Up", message: NSLocalizedString("Sign Up First", comment: ""), preferredStyle: .alert)
+        
+        let goToSignUpAction = UIAlertAction(title: NSLocalizedString("Sign Up", comment: ""), style: UIAlertAction.Style.default) {
+             UIAlertAction in
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+             
+             let SignUpVC = storyboard.instantiateViewController(withIdentifier: "SignUpVC") as! SignUpVC
+             
+            viewcontroller.navigationController!.pushViewController(SignUpVC, animated: true)
+         }
+                let defaultaction = UIAlertAction.init(title: NSLocalizedString("Cancel", comment: ""), style: .default, handler: nil)
+        
+        alert.addAction(goToSignUpAction)
+        alert.addAction(defaultaction)
+        
+        viewcontroller.present(alert, animated: true, completion: nil)
+        
+    }
+    
+    
+    
     class func dropShadowWithCornor(color: UIColor, opacity: Float , offSet: CGSize, shadowRadius: Float, view:UIView)
     {
         view.layer.shadowColor = color.cgColor

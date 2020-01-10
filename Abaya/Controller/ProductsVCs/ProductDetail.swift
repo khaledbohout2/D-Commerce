@@ -111,7 +111,18 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
 
     @IBAction func AddToBagTapped(_ sender: Any) {
         
-        self.addToCart()
+        
+        let signed = getUserDetails()
+        
+        if signed {
+            
+            self.addToCart()
+            
+        } else {
+            
+            Alert.showSignUpAlert(viewcontroller: self)
+        }
+        
         
         
         
@@ -162,6 +173,9 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
     
     func GetWishList()
     {
+        let signed = getUserDetails()
+        
+        if signed {
 
         ApiBaseClass.apiCallingWithGetMethode(url:ApiBaseClass.getWishlist(), completion: { [weak self] response in
             let errorCheck = response["success"] as! Bool
@@ -200,6 +214,9 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
                     self!.hud.dismiss()
                       Alert.Show(title: NSLocalizedString("network error", comment: ""), mesage:NSLocalizedString("Please try again.", comment: "") , viewcontroller:self!)
         })
+        } else {
+            
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -299,7 +316,12 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        self.pageControl.currentPage = indexPath.section
+        
+        
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        pageControl.currentPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
     }
     
     override func viewDidAppear(_ animated: Bool)
@@ -309,6 +331,10 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
     
     @IBAction func favButtonTapped(_ sender: Any) {
         
+        let signed = getUserDetails()
+        
+        if signed {
+        
         if favButton.image(for: .normal) == UIImage(named: "wishlist_heart_filled") {
             
             deleteFromWishList()
@@ -317,6 +343,9 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
         
         addToWishList()
             
+        }
+        } else {
+            Alert.showSignUpAlert(viewcontroller: self)
         }
         
     }

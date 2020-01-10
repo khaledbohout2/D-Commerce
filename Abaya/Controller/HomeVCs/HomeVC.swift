@@ -72,6 +72,11 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
 
     }
     
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        pageControl.currentPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
+    }
+
+    
   
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
@@ -107,7 +112,7 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         
     }
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        self.pageControl.currentPage = indexPath.section
+        
     }
 
     override func viewDidAppear(_ animated: Bool)
@@ -219,22 +224,34 @@ extension HomeVC {
     
     @objc func menuAction()
     {
+        
+        let signed = getUserDetails()
+        
+        if signed {
 
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "SliderMenuVC")
         let navController = UINavigationController(rootViewController: controller)
         self.navigationController?.present(navController, animated: true, completion: nil)
+        } else {
+            Alert.showSignUpAlert(viewcontroller: self)
+        }
         
     }
     
-    @objc func openCart()
-    {
-//        let VC = self.storyboard!.instantiateViewController(withIdentifier: "CartVC") as! CartVC
-//        self.navigationController?.pushViewController(VC, animated: true)
+    @objc func openCart() {
+        
+        let signed = getUserDetails()
+        
+        if signed {
+
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         let obj = storyboard.instantiateViewController(withIdentifier: "CartVC") as! CartVC
         self.navigationController?.pushViewController(obj, animated: true)
+        } else {
+            Alert.showSignUpAlert(viewcontroller: self)
+        }
     }
     
     @objc func searchAction()

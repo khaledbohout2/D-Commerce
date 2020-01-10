@@ -104,6 +104,8 @@ class SearchResultsVC: UIViewController, UICollectionViewDelegate, UICollectionV
         
         cell.btnAddToBag.tag = indexPath.row
         cell.btnAddToBag.addTarget(self, action: #selector(buttonAddToBagAction), for: .touchUpInside)
+        cell.btnWish.tag = indexPath.row
+        cell.btnWish.addTarget(self, action: #selector(buttonAddToWishListAction), for: .touchUpInside)
 
 
         return cell
@@ -136,7 +138,45 @@ class SearchResultsVC: UIViewController, UICollectionViewDelegate, UICollectionV
         self.navigationController?.pushViewController(productCV, animated: true)
     }
     
+    @objc func buttonAddToWishListAction(sender: UIButton) {
+        
+        let signed = getUserDetails()
+        
+        if signed {
+        
+        let buttonPosition:CGPoint = sender.convert(CGPoint.zero, to:self.collectionView)
+        let indexPath = self.collectionView.indexPathForItem(at: buttonPosition)
+        var dicuserDetail = NSDictionary()
+        dicuserDetail = self.productArr[(indexPath?.row)!] as! NSDictionary
+         print(dicuserDetail)
+        strProductId = String(dicuserDetail .value(forKey: "product_id") as! Int)
+        
+        if sender.image(for: .normal) == UIImage(named: "wishlist_icon_gray copy") {
+        
+        addToWishList()
+        
+        sender.setImage(UIImage(named: "wishlist_heart_filled"), for: .normal)
+            
+        } else {
+            
+            deleteFromWishList()
+            
+            sender.setImage(UIImage(named: "wishlist_icon_gray copy"), for: .normal)
+        }
+        } else {
+            
+            Alert.showSignUpAlert(viewcontroller: self)
+        }
+        
+        
+    }
+    
         @objc func buttonAddToBagAction(sender: UIButton){
+            
+            
+            let signed = getUserDetails()
+            
+            if signed {
             
             
             let buttonPosition:CGPoint = sender.convert(CGPoint.zero, to:self.collectionView)
@@ -149,11 +189,64 @@ class SearchResultsVC: UIViewController, UICollectionViewDelegate, UICollectionV
             print(strProductId)
             
             GetProductDetail()
+                
+            } else {
+                Alert.showSignUpAlert(viewcontroller: self)
+                
+            }
     //        strQty = String(format: "%@",dicuserDetail.value(forKey: "minimum_quantity") as! CVarArg) as NSString
     //        strSkuId = String(format: "%@",dicuserDetail.value(forKey: "product_code") as! CVarArg) as NSString
            
             
         }
+    
+    func addToWishList() {
+        
+                DicParameters = ["product_id": String(strProductId) ]
+                hud.textLabel.text = "Loading"
+                hud.show(in: self.view)
+
+        ApiBaseClass.apiCallingMethode(url:ApiBaseClass.addToWishList(), parameter: DicParameters, completion: { [weak self] response in
+                    
+            let errorCheck = response["success"] as! Bool
+            var dic = NSDictionary()
+            dic = response as NSDictionary
+            print(dic)
+            if errorCheck
+            {
+                hud.dismiss()
+       //         let message = dic .value(forKey: "message") as! String
+                
+                self!.view.makeToast(NSLocalizedString("Item Added To Wishlist", comment: ""), duration: 2.0, position: .center)
+                
+               
+
+                    
+            }
+
+                    }, failure: { [weak self] failResponse in
+                        hud.dismiss()
+                        Alert.Show(title: NSLocalizedString("network error", comment: "") , mesage: NSLocalizedString("Please try again.", comment: "") , viewcontroller:self!)
+                })
+            }
+    
+    func deleteFromWishList() {
+        
+          DicParameters = [:]
+          hud.textLabel.text = NSLocalizedString("Loading", comment: "")
+          hud.show(in: self.view)
+          ApiBaseClass.apiCallingWithDeleteMethode(url:ApiBaseClass.deletefromWishList(), completion: { response in
+              
+              
+              print("khaled: \(response)")
+
+           hud.dismiss()
+
+              }, failure: { [weak self] failResponse in
+                hud.dismiss()
+                  Alert.Show(title:"", mesage:.no_internet, viewcontroller:self!)
+          })
+    }
     
     func GetProductDetail()
     {

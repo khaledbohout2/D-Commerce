@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		062BCFEF23C7B9A6009E456E /* CartVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062BCFEE23C7B9A6009E456E /* CartVC2.swift */; };
+		06F7DBD123C8B1DD00E1D8FF /* HelperMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F7DBD023C8B1DD00E1D8FF /* HelperMethods.swift */; };
 		21FE0874C82F54F2D67A3199 /* Pods_Abaya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32AD53777988EA8AFA2B04C1 /* Pods_Abaya.framework */; };
 		6C259BED2377E190005DA719 /* PaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C259BEC2377E190005DA719 /* PaymentVC.swift */; };
 		6C9413A22377E4FD00E105A6 /* OrderConfirmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C9413A12377E4FD00E105A6 /* OrderConfirmVC.swift */; };
@@ -116,6 +117,7 @@
 
 /* Begin PBXFileReference section */
 		062BCFEE23C7B9A6009E456E /* CartVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartVC2.swift; sourceTree = "<group>"; };
+		06F7DBD023C8B1DD00E1D8FF /* HelperMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperMethods.swift; sourceTree = "<group>"; };
 		14414879001ED430466A5D13 /* Pods-Abaya.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abaya.release.xcconfig"; path = "Target Support Files/Pods-Abaya/Pods-Abaya.release.xcconfig"; sourceTree = "<group>"; };
 		32AD53777988EA8AFA2B04C1 /* Pods_Abaya.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Abaya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C259BEC2377E190005DA719 /* PaymentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentVC.swift; sourceTree = "<group>"; };
@@ -458,6 +460,7 @@
 				7C97AD2B2364A75300A61677 /* StretchHeaderOptions.swift */,
 				7C97AD332364A75300A61677 /* DataValidationClass.swift */,
 				7C0248412370C90D00623383 /* Abaya-Bridging-Header.h */,
+				06F7DBD023C8B1DD00E1D8FF /* HelperMethods.swift */,
 			);
 			path = HelperClasses;
 			sourceTree = "<group>";
@@ -740,6 +743,7 @@
 				7C97AD212364585500A61677 /* Network.swift in Sources */,
 				6C98A140237938D5000ADD28 /* SliderMenuVC.swift in Sources */,
 				7C502E8B2363962100A1357A /* SignUpVC.swift in Sources */,
+				06F7DBD123C8B1DD00E1D8FF /* HelperMethods.swift in Sources */,
 				7C0CADCF238BBAC80002BF11 /* SearchVC.swift in Sources */,
 				7CE06D2323ADA1D600ABDF2C /* UIImageExtension.swift in Sources */,
 				7C28D1E52385C34F009364F2 /* AddCardVC.swift in Sources */,

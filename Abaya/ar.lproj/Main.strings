@@ -171,7 +171,7 @@
 "I9y-sT-KL4.text" = "تم التحويل بنجاح";
 
 /* Class = "UIButton"; normalTitle = "Add to bag"; ObjectID = "IHG-AJ-Dbe"; */
-"IHG-AJ-Dbe.normalTitle" = "إضافة إلي حقيبة المشتروات";
+"IHG-AJ-Dbe.normalTitle" = "إضافة إلي الحقيبة";
 
 /* Class = "UILabel"; text = "SIGN UP"; ObjectID = "Ilf-g5-jDa"; */
 "Ilf-g5-jDa.text" = "إنشاء حساب";

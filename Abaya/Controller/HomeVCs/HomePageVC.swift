@@ -12,7 +12,7 @@ import JGProgressHUD
 import SDWebImage
 
 
-class HomePageVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout ,UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate {
+class HomePageVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout ,UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate {
     
     var obj = HelpDictionaryModelClass()
     var objNewBlocks = newStorOneBlocksModelClass()
@@ -43,6 +43,7 @@ class HomePageVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationController?.delegate = self
         self.lblNewBlocks.isHidden = true
         
         tblDetail.estimatedRowHeight = 44.0
@@ -435,6 +436,9 @@ class HomePageVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        hud.textLabel.text = NSLocalizedString("Loading", comment: "")
+        hud.show(in: self.view)
 
         let dicDetail = arrSubCategoryList[indexPath.row] as! NSDictionary
         
@@ -443,10 +447,27 @@ class HomePageVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         let categoryVC = storyboard.instantiateViewController(withIdentifier: "CategoryVC") as! CategoryVC
         
         categoryVC.dicDetail = dicDetail
+        
+        hud.dismiss()
 
         self.navigationController?.pushViewController(categoryVC, animated: true)
 
        }
+    
+        func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+
+
+        if (navigationController.viewControllers.count > 1)
+        {
+            self.navigationController?.interactivePopGestureRecognizer?.delegate = self
+            navigationController.interactivePopGestureRecognizer?.isEnabled = true;
+        }
+        else
+        {
+             self.navigationController?.interactivePopGestureRecognizer?.delegate = nil
+            navigationController.interactivePopGestureRecognizer?.isEnabled = false;
+        }
+    }
     
     //MARK: - check that
         internal func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {

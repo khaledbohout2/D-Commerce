@@ -8,6 +8,7 @@
 
 import UIKit
 import JGProgressHUD
+import SDWebImage
 
 
 class CategoryVC: UIViewController {
@@ -30,11 +31,7 @@ class CategoryVC: UIViewController {
         loadProducts()
         // Do any additional setup after loading the view.
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        
-        
-    }
+
     
     func loadProducts() {
         
@@ -54,12 +51,11 @@ class CategoryVC: UIViewController {
         
         let fileUrl = URL(string: imgStrUrl)
         
-        bannerImageView.image = UIImage(url: fileUrl)
+        bannerImageView.sd_setImage(with: fileUrl! as URL, placeholderImage: UIImage(named: "store_cover_two"),options: SDWebImageOptions(rawValue: 0), completed: { (image, error, cacheType, imageURL) in
+        })
         
-        hud.dismiss()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
+      //  bannerImageView.image = UIImage(url: fileUrl)
+        
         hud.dismiss()
     }
 

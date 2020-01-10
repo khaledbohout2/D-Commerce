@@ -149,6 +149,9 @@ class SignInVC: UIViewController {
     }
     
     @IBAction func loginWithFacebookButton(_ sender: Any) {
+        
+        let homeVC = HomeVC(nibName: "productDetail", bundle: nil)
+        self.navigationController?.pushViewController(homeVC, animated: true)
     }
 
 }
