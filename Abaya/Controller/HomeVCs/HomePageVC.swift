@@ -429,7 +429,7 @@ class HomePageVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
        
-        return self.view.frame.size.width/1.5
+        return self.view.frame.size.width/2
         
        // return 50
       

@@ -75,7 +75,7 @@ class PaymentVC: UIViewController {
         
         
         
-        lblInfo.text =  NSLocalizedString("Total amount of the order invoice will be due on delivery of your order.", comment: "")
+        lblInfo.text =  NSLocalizedString("You will be redirected to KNET payment gateway to complete your purchase securely.", comment: "")
         
         imgCricleCash.image = #imageLiteral(resourceName: "tick_mark")
         imgCricleCredit.image = #imageLiteral(resourceName: "ic_radio_button_unchecked")

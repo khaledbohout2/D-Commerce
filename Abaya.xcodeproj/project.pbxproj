@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		062BCFEF23C7B9A6009E456E /* CartVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062BCFEE23C7B9A6009E456E /* CartVC2.swift */; };
+		0675095523C9EE390098EF0A /* NavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0675095423C9EE390098EF0A /* NavigationControllerExtension.swift */; };
+		0675095723CA480F0098EF0A /* circleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0675095623CA480F0098EF0A /* circleView.swift */; };
 		06F7DBD123C8B1DD00E1D8FF /* HelperMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F7DBD023C8B1DD00E1D8FF /* HelperMethods.swift */; };
 		21FE0874C82F54F2D67A3199 /* Pods_Abaya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32AD53777988EA8AFA2B04C1 /* Pods_Abaya.framework */; };
 		6C259BED2377E190005DA719 /* PaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C259BEC2377E190005DA719 /* PaymentVC.swift */; };
@@ -117,6 +119,8 @@
 
 /* Begin PBXFileReference section */
 		062BCFEE23C7B9A6009E456E /* CartVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartVC2.swift; sourceTree = "<group>"; };
+		0675095423C9EE390098EF0A /* NavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerExtension.swift; sourceTree = "<group>"; };
+		0675095623CA480F0098EF0A /* circleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = circleView.swift; sourceTree = "<group>"; };
 		06F7DBD023C8B1DD00E1D8FF /* HelperMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperMethods.swift; sourceTree = "<group>"; };
 		14414879001ED430466A5D13 /* Pods-Abaya.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abaya.release.xcconfig"; path = "Target Support Files/Pods-Abaya/Pods-Abaya.release.xcconfig"; sourceTree = "<group>"; };
 		32AD53777988EA8AFA2B04C1 /* Pods_Abaya.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Abaya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -442,6 +446,8 @@
 				7C7D574B2368E349003A6CF9 /* ColorsExtension.swift */,
 				7C15060D23677B800077FAAD /* ViewExtension.swift */,
 				7CE06D2223ADA1D600ABDF2C /* UIImageExtension.swift */,
+				0675095423C9EE390098EF0A /* NavigationControllerExtension.swift */,
+				0675095623CA480F0098EF0A /* circleView.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -727,6 +733,7 @@
 				7C0DF3C22379F94000C94BF8 /* WishListVC.swift in Sources */,
 				7C7D573D2368D81F003A6CF9 /* LanguageVC.swift in Sources */,
 				7C0248192370AFF300623383 /* subCatCell.swift in Sources */,
+				0675095523C9EE390098EF0A /* NavigationControllerExtension.swift in Sources */,
 				6CDA27BD237407B20029E79F /* CategoryVC.swift in Sources */,
 				7C3AB7902362F59900348050 /* SceneDelegate.swift in Sources */,
 				7C0DF3CD2379FB4200C94BF8 /* CountryStateVC.swift in Sources */,
@@ -739,6 +746,7 @@
 				7C02480B2370A8FE00623383 /* newStorOneBlocksModelClass.swift in Sources */,
 				7CE0C9A2236A373B0000AFE7 /* HeadStoreCollectionViewCell.swift in Sources */,
 				6C9413A22377E4FD00E105A6 /* OrderConfirmVC.swift in Sources */,
+				0675095723CA480F0098EF0A /* circleView.swift in Sources */,
 				7C62513D2373693900DEB51E /* SliderCell.swift in Sources */,
 				7C97AD212364585500A61677 /* Network.swift in Sources */,
 				6C98A140237938D5000ADD28 /* SliderMenuVC.swift in Sources */,

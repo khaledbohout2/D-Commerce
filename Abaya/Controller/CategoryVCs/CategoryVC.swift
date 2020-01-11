@@ -28,7 +28,8 @@ class CategoryVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.interactivePopGestureRecognizer!.delegate = nil
+        setupNavButtons()
+        
         
         loadProducts()
         // Do any additional setup after loading the view.
@@ -104,5 +105,56 @@ extension CategoryVC {
         
 
     }
+}
+
+extension CategoryVC {
+    
+    func setupNavButtons() {
+        
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.view.backgroundColor = UIColor.lightGray
+        self.navigationController?.navigationBar.tintColor = UIColor.black
+        self.title = (dicDetail.value(forKey: NSLocalizedString("category_name", comment: "")) as! String)
+        let menuButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "backIcon"), style: .plain, target: self, action: #selector(menuAction))
+        
+        navigationItem.leftBarButtonItem = menuButtonItem
+        
+        let favButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "shoppingBagIcon"), style: .plain, target: self, action:#selector(openCart))
+        let searchButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "searchIcon"), style: .plain, target: self, action: #selector(searchAction))
+        self.navigationController?.navigationBar.tintColor = UIColor.black;
+
+        navigationItem.rightBarButtonItems = [searchButtonItem, favButtonItem]
+
+        navigationController?.navigationBar.setNeedsLayout()
+        
+    }
+    
+    @objc func backAction(sender: UIBarButtonItem) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func menuAction()
+    {
+        
+      navigationController?.popViewController(animated: true)
+
+    }
+    
+    @objc func openCart()
+    {
+        let VC = self.storyboard!.instantiateViewController(withIdentifier: "CartVC") as! CartVC
+        self.navigationController?.pushViewController(VC, animated: true)
+    }
+    
+    @objc func searchAction()
+    {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "SearchVC") as! SearchVC
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
 

@@ -31,6 +31,87 @@ class ProductListVC: UIViewController {
         super.didReceiveMemoryWarning()
       
     }
+    
+          func getPageNumber() {
+           
+    
+               
+               DicParameters = [:]
+               hud.textLabel.text = NSLocalizedString("Loading", comment: "")
+               hud.show(in: self.view)
+               ApiBaseClass.apiCallingWithGetMethode(url:ApiBaseClass.getProductList(), completion: { [weak self] response in
+                   let errorCheck = response["success"] as! Bool
+                   
+                   if errorCheck
+                   {
+                       
+                   var dic = NSDictionary()
+                   dic = response as NSDictionary
+           
+                       
+                   var dictemp = NSDictionary()
+                   dictemp = dic["data"] as! NSDictionary
+                   self!.pagenum = dictemp .value(forKey: "last_page") as! Int
+                       self?.GetProductsList()
+                       
+                   }
+                   else
+                   {
+                       hud.dismiss()
+                         Alert.Show(title:NSLocalizedString("something wrong", comment: ""), mesage: NSLocalizedString("Please try again.", comment: ""), viewcontroller:self!)
+                           
+                       }
+                       }, failure: { [weak self] failResponse in
+                           hud.dismiss()
+                           Alert.Show(title: NSLocalizedString("network error", comment: ""), mesage:NSLocalizedString("Please try again.", comment: "") , viewcontroller:self!)
+               })
+           
+           
+           }
+           
+           func GetProductsList()
+           {
+               for n in 1...pagenum {
+                  let page = n
+                   
+                   DicParameters = ["page": String(page)]
+                   hud.textLabel.text = NSLocalizedString("Loading", comment: "")
+                   hud.show(in: self.view)
+                   ApiBaseClass.apiCallingWithGetMethode(url:ApiBaseClass.getProductList(), completion: { [weak self] response in
+                       let errorCheck = response["success"] as! Bool
+                       
+                       if errorCheck
+                       {
+                           
+                           var dic = NSDictionary()
+                           dic = response as NSDictionary
+                         //  print(dic)
+                           
+                           var dictemp = NSDictionary()
+                           dictemp = dic["data"] as! NSDictionary
+                           let arr = dictemp["data"] as! [NSDictionary]
+                           self?.productsListArr.append(contentsOf: arr)
+                          // self?.productsListArr = dictemp["data"] as! NSArray
+                          // print(self?.arrWishlist as Any)
+                           self?.ProductsCollectionView.reloadData()
+                           hud.dismiss()
+                           
+                       }
+                       else
+                       {
+                           hud.dismiss()
+                             Alert.Show(title:NSLocalizedString("something wrong", comment: ""), mesage: NSLocalizedString("Please try again.", comment: ""), viewcontroller:self!)
+                               
+                           }
+                           }, failure: { [weak self] failResponse in
+                               hud.dismiss()
+                               Alert.Show(title: NSLocalizedString("network error", comment: ""), mesage:NSLocalizedString("Please try again.", comment: "") , viewcontroller:self!)
+                   })
+               }
+                   
+
+           }
+
 }
     // MARK:- Navigation
     extension ProductListVC {
@@ -43,108 +124,48 @@ class ProductListVC: UIViewController {
             self.navigationController?.navigationBar.isTranslucent = false
             self.navigationController?.view.backgroundColor = UIColor.lightGray
             self.navigationController?.navigationBar.tintColor = UIColor.black
-            self.title = strNavTitle as String
-            
-            let backButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "backIcon"), style: .plain, target: self, action: #selector(backAction))
-            navigationItem.leftBarButtonItem = backButtonItem
-            navigationController?.navigationBar.setNeedsLayout()
-             self.title = NSLocalizedString("New Products On Blocks", comment: "")
+            self.title = NSLocalizedString("New On Blocks", comment: "")
             getPageNumber()
-           // GetProductsList()
+            
+            let menuButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "backIcon"), style: .plain, target: self, action: #selector(menuAction))
+            
+            navigationItem.leftBarButtonItem = menuButtonItem
+            
+            let favButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "shoppingBagIcon"), style: .plain, target: self, action:#selector(openCart))
+            let searchButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "searchIcon"), style: .plain, target: self, action: #selector(searchAction))
+            self.navigationController?.navigationBar.tintColor = UIColor.black;
+
+            navigationItem.rightBarButtonItems = [searchButtonItem, favButtonItem]
+
+            navigationController?.navigationBar.setNeedsLayout()
+            
         }
         
         @objc func backAction(sender: UIBarButtonItem) {
             navigationController?.popViewController(animated: true)
         }
         
-//          var dic = NSDictionary()
-//          dic = response as NSDictionary
-//
-//
-//          var dictemp = NSDictionary()
-//          dictemp = dic["data"] as! NSDictionary
-//          self!.pagenum = dictemp .value(forKey: "last_page") as! Int
-        
-       func getPageNumber() {
-        
- 
-            
-            DicParameters = [:]
-            hud.textLabel.text = NSLocalizedString("Loading", comment: "")
-            hud.show(in: self.view)
-            ApiBaseClass.apiCallingWithGetMethode(url:ApiBaseClass.getProductList(), completion: { [weak self] response in
-                let errorCheck = response["success"] as! Bool
-                
-                if errorCheck
-                {
-                    
-                var dic = NSDictionary()
-                dic = response as NSDictionary
-        
-                    
-                var dictemp = NSDictionary()
-                dictemp = dic["data"] as! NSDictionary
-                self!.pagenum = dictemp .value(forKey: "last_page") as! Int
-                    self?.GetProductsList()
-                    
-                }
-                else
-                {
-                    hud.dismiss()
-                      Alert.Show(title:NSLocalizedString("something wrong", comment: ""), mesage: NSLocalizedString("Please try again.", comment: ""), viewcontroller:self!)
-                        
-                    }
-                    }, failure: { [weak self] failResponse in
-                        hud.dismiss()
-                        Alert.Show(title: NSLocalizedString("network error", comment: ""), mesage:NSLocalizedString("Please try again.", comment: "") , viewcontroller:self!)
-            })
-        
-        
-        }
-        
-        func GetProductsList()
+        @objc func menuAction()
         {
-            for n in 1...pagenum {
-               let page = n
-                
-                DicParameters = ["page": String(page)]
-                hud.textLabel.text = NSLocalizedString("Loading", comment: "")
-                hud.show(in: self.view)
-                ApiBaseClass.apiCallingWithGetMethode(url:ApiBaseClass.getProductList(), completion: { [weak self] response in
-                    let errorCheck = response["success"] as! Bool
-                    
-                    if errorCheck
-                    {
-                        
-                        var dic = NSDictionary()
-                        dic = response as NSDictionary
-                      //  print(dic)
-                        
-                        var dictemp = NSDictionary()
-                        dictemp = dic["data"] as! NSDictionary
-                        let arr = dictemp["data"] as! [NSDictionary]
-                        self?.productsListArr.append(contentsOf: arr)
-                       // self?.productsListArr = dictemp["data"] as! NSArray
-                       // print(self?.arrWishlist as Any)
-                        self?.ProductsCollectionView.reloadData()
-                        hud.dismiss()
-                        
-                    }
-                    else
-                    {
-                        hud.dismiss()
-                          Alert.Show(title:NSLocalizedString("something wrong", comment: ""), mesage: NSLocalizedString("Please try again.", comment: ""), viewcontroller:self!)
-                            
-                        }
-                        }, failure: { [weak self] failResponse in
-                            hud.dismiss()
-                            Alert.Show(title: NSLocalizedString("network error", comment: ""), mesage:NSLocalizedString("Please try again.", comment: "") , viewcontroller:self!)
-                })
-            }
-                
+            
+          navigationController?.popViewController(animated: true)
 
         }
-}
+        
+        @objc func openCart()
+        {
+            let VC = self.storyboard!.instantiateViewController(withIdentifier: "CartVC") as! CartVC
+            self.navigationController?.pushViewController(VC, animated: true)
+        }
+        
+        @objc func searchAction()
+        {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "SearchVC") as! SearchVC
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
+    }
 
 extension ProductListVC:UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     

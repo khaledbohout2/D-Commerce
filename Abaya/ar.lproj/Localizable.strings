@@ -44,7 +44,7 @@
 "Order Saved" = "تم حفظ الطلب";
 "Payment failed" = "فشل الدفع";
 "please enter right credit card" = "من فضلك أدخل بيانات صحيحة";
-"New Products On Blocks" = "أحدث المنتجات";
+"New On Blocks" = "أحدث المنتجات";
 "Item Added" = "تم اضافة المنتج";
 "Item Added To Cart Successfully" = "تم اضافة المنتج سلة المشتروات";
 "Product Detail" = "تفاصيل المنتج";
@@ -94,7 +94,7 @@
 "nValidMobilNumber" = "رقم الهاتف يجيب ألا يقل عن ١٠ أرقام ولا يزيد عن ١٢ رقم";
 "Vat Percentage" = "نسبة الضرائب";
 "Vat Value" = "قيمة الضرائب";
-"Please try again." = "من فضلك حاول مرة أخري";
+"Please try again." = ".من فضلك حاول مرة أخري";
 "No Orders!" = "لا توجد !";
 "you have not done any oders" = "لم تقم بأي طلبات حتي الآن";
 "enter between 8 and 20 characters" = "كلمة السر يجب ان تتراوح بين ٨ ل ١٢ احرف";
