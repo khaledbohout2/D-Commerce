@@ -34,12 +34,6 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         super.viewDidLoad()
         
         self.view.frame.size.height = self.view.frame.size.height + 1000
-        
-        //print("dicUserProfile \(dicUserProfile)")
-        //print(loginAccessToken)
-        
-          //  guard let productDetail = Bundle.main.loadNibNamed("productDetail", owner: self, options: nil)?.first as? productDetail else { return}
-       // self.view.addSubview(productDetail)
 
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -67,7 +61,7 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     {
         
         
-        scroll.contentSize = CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height+300)
+        scroll.contentSize = CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height+355)
 
 
     }
@@ -107,8 +101,7 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     {
-//        let objVC = self.storyboard!.instantiateViewController(withIdentifier: "ShopDetailsViewController") as! ShopDetailsViewController
-//        self.navigationController?.pushViewController(objVC, animated: true)
+
         
     }
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
@@ -163,11 +156,8 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
             if errorCheck
             {
                 
-//                var dicData = NSDictionary()
-//                dicData = (dic["data"] as! NSDictionary)
-                 self?.arrSlider = (dic["data"] as! NSArray)
 
-               // self?.arrSlider = dic["data"] as! NSArray
+                 self?.arrSlider = (dic["data"] as! NSArray)
                 
                 self?.collectionView.reloadData()
                 self?.pageControl.numberOfPages = (self?.arrSlider.count)!

@@ -39,12 +39,15 @@ class EditAddressVC: UIViewController ,UIScrollViewDelegate {
     var strLastName = NSString()
     var strEmail = NSString()
     var strMobile = NSString()
+    var arrCountry = NSArray()
+    var arrStates = NSArray()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         print(addressDic)
-        getTXtData()
+        
+        GetCountryList()
         
         
         tftCountry.isUserInteractionEnabled = false
@@ -53,11 +56,13 @@ class EditAddressVC: UIViewController ,UIScrollViewDelegate {
         strStateID = ""
 
         setupNavButtons()
+        
     }
     
      override func viewWillAppear(_ animated: Bool)
      {
     
+
          if !strCountryID .isEqual(to: "") {
              tftCountry.text = strCountryName as String
          }
@@ -65,7 +70,6 @@ class EditAddressVC: UIViewController ,UIScrollViewDelegate {
          if !strStateID .isEqual(to: "") {
              tftState.text = strStateName as String
          }
-         
      }
     
     func getTXtData() {
@@ -73,13 +77,13 @@ class EditAddressVC: UIViewController ,UIScrollViewDelegate {
         tftAddress1.text = addressDic .value(forKey: "address1") as? String
         tftCity.text = addressDic .value(forKey: "city") as? String
         tftFirstName.text = addressDic .value(forKey: "first_name") as? String
-        tftCountry.text = addressDic .value(forKey: "country_id") as? String
         tftPhone.text = addressDic .value(forKey: "mobile") as? String
         tftLastName.text = addressDic .value(forKey: "last_name") as? String
         tftAddress2.text = addressDic .value(forKey: "address2") as? String
         tftPostCode.text = addressDic .value(forKey: "postcode") as? String
-        tftState.text = addressDic .value(forKey: "state_id") as? String
-        
+        tftCountry.text = strCountryName as String
+        tftState.text = strStateName as String
+ 
     }
     
     @IBAction func viewTapped(_ sender: Any) {
@@ -259,7 +263,102 @@ extension EditAddressVC {
         })
     }
 
+        func GetCountryList()
+        {
+            
+            
+            DicParameters = [:]
+            hud.textLabel.text = "Loading"
+            hud.show(in: self.view)
+            ApiBaseClass.apiCallingWithGetMethode(url:ApiBaseClass.getCountryList(), completion: { [weak self] response in
+                print(response)
+                let errorCheck = response["success"] as! Bool
+                
+                if errorCheck
+                {
+                    //                    self?.obj.responseFromJson(dic:response)
+                    
+                    var dic = NSDictionary()
+                    dic = response as NSDictionary
+                    self?.arrCountry = dic["data"] as! NSArray
+                    
+                    let countryId = addressDic .value(forKey: "country_id") as? Int
+                    
+                    for country in self!.arrCountry {
+                        
+                        if (country as! NSDictionary).value(forKey: "id") as? Int == countryId {
+                            
+                            strCountryID = String(format: "%@", (country as! NSDictionary).value(forKey: "id") as! CVarArg) as NSString
+                            
+                            strCountryName = String(format: "%@", (country as! NSDictionary).value(forKey: "country") as! CVarArg) as NSString
+                            
+                            self?.GetStateList()
+                        }
+                    }
+                  //  countries = dic["data"] as! NSArray
+                    
+                    hud.dismiss()
+                    
+                }
+                else
+                {
+                    hud.dismiss()
+                      Alert.Show(title:NSLocalizedString("something wrong", comment: ""), mesage: NSLocalizedString("Please try again.", comment: ""), viewcontroller:self!)
+                        
+                    }
+                    }, failure: { [weak self] failResponse in
+                        hud.dismiss()
+                        Alert.Show(title: NSLocalizedString("network error", comment: ""), mesage:NSLocalizedString("Please try again.", comment: "") , viewcontroller:self!)
+            })
+        }
 
+
+
+    func GetStateList()
+    {
+      //  DicParameters = ["/":strCountryID] as [String : String]
+        hud.textLabel.text = "Loading"
+        hud.show(in: self.view)
+        ApiBaseClass.apiCallingWithGetMethode(url:ApiBaseClass.getStateList(), completion: { [weak self] response in
+            print(response)
+            let errorCheck = response["success"] as! Bool
+            
+            if errorCheck
+            {
+                //                    self?.obj.responseFromJson(dic:response)
+                
+                var dic = NSDictionary()
+                dic = response as NSDictionary
+                self?.arrStates = dic["data"] as! NSArray
+                
+                let stateId = addressDic .value(forKey: "state_id") as? Int
+               
+                for state in self!.arrStates {
+                    
+                    if (state as! NSDictionary).value(forKey: "id") as? Int == stateId {
+                        
+                        strStateName = String(format: "%@", (state as! NSDictionary).value(forKey: "state") as! CVarArg) as NSString
+                        
+                        self!.getTXtData()
+                        
+
+                    }
+                }
+                
+                hud.dismiss()
+                
+
+            }
+            else
+            {
+                hud.dismiss()
+                Alert.Show(title:"something wrong", mesage:"Please try again.", viewcontroller:self!)
+            }
+            }, failure: { [weak self] failResponse in
+                hud.dismiss()
+                Alert.Show(title:"network error", mesage:"Please try again.", viewcontroller:self!)
+        })
+    }
     
 
 }

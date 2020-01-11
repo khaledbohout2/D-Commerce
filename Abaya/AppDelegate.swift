@@ -19,7 +19,6 @@ var changpasswordParam = HTTPHeaders()
 var loginAccessToken = NSString()
 var Authorization = HTTPHeaders()
 var DicParameters = [String : String]()
-//var strShopProductId = NSString()
 var strProductId = String()
 var strDeleteId = String()
 var dicLoginUserData = NSDictionary()
@@ -28,7 +27,6 @@ var strNavTitle = String()
 var dicNewsDetail = NSDictionary()
 var dicUserProfile = NSDictionary()
 var strDeviceid = String()
-//var strShopProductId = NSString()
 var hud = JGProgressHUD(style: .extraLight)
 var strAddToCartProductId = NSString()
 var strQty = NSString()
@@ -44,43 +42,19 @@ var minPrice = String()
 var maxPrice = String()
 var priductId = String()
 var categpryID = String()
-//var addressID = String()
+
 
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, MOLHResetable {
 
-
-
+    
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        
-//                let sesstioncheck = UserDefaults.standard.string(forKey: "session")
-//                if (sesstioncheck == "session")
-//                {
-//
-//                    var dic = UserDefaults.standard.object(forKey: "dictionaryKey") as? [AnyHashable: Any]
-//                    loginAccessToken = dic?["token"] as! NSString
-//
-//
-//                    let vc = productDetail(nibName: "productDetail", bundle: nil)
-//                      let aObjNavi = UINavigationController(rootViewController: vc);                 self.window?.addSubview(aObjNavi.view)
-//                         self.window?.rootViewController = aObjNavi
-//
-//
-//        //            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        //            let vc = storyboard.instantiateViewController(withIdentifier: "OrderConfirmVC")
-//        //            let aObjNavi = UINavigationController(rootViewController: vc);                        self.window?.addSubview(aObjNavi.view)
-//        //            self.window?.rootViewController = aObjNavi
-//
-//                }
-//                else{
-//
-//                }
-        //MOLHLanguage.setDefaultLanguage("ar")
+
         IQKeyboardManager.shared.enable = true
         MOLH.shared.activate(true)
-       // MOLH.shared.specialKeyWords = ["Cancel","Done"]
+       
         
         return true
     }
@@ -94,16 +68,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MOLHResetable {
     }
 
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+
     }
     
-//    func setupLanguage() {
-//        let lang = LanguageManager.getLanguage()
-//        L102Localizer.switchTheLanguage(lan: lang, fromrestPage: true)
-//        L102Localizer.DoTheMagic()
-//    }
+
 
     
     func reset() {
@@ -152,10 +120,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MOLHResetable {
        }
     
         func goToApp() {
-
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//
-//            let navigation = storyboard.instantiateViewController(withIdentifier: "navigation")
             
             let homeVC = HomeVC(nibName: "productDetail", bundle: nil)
             

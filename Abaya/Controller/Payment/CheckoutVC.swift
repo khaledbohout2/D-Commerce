@@ -133,6 +133,8 @@ extension CheckoutVC: UITableViewDataSource, UITableViewDelegate
         
         cell.btnDelete.tag = indexPath.row
         cell.btnDelete.addTarget(self, action: #selector(buttonDelete), for: .touchUpInside)
+        cell.btnEdit.tag = indexPath.row
+        cell.btnEdit.addTarget(self, action: #selector(buttonEdit), for: .touchUpInside)
         
         cell.btnCheckMark.tag = indexPath.row
         cell.btnCheckMark.addTarget(self, action: #selector(buttonCheckMark), for: .touchUpInside)
@@ -237,6 +239,21 @@ extension CheckoutVC: UITableViewDataSource, UITableViewDelegate
         selectedIndex = indexPath!.row;
 
         tblAddresses.reloadData()
+        
+    }
+    
+    @objc func buttonEdit(sender: UIButton) {
+        
+        let buttonPosition:CGPoint = sender.convert(CGPoint.zero, to:self.tblAddresses)
+        let indexPath = self.tblAddresses.indexPathForRow(at: buttonPosition)
+        var dicuserDetail = NSDictionary()
+        dicuserDetail = self.arrAddresses[(indexPath?.row)!] as! NSDictionary
+        addressDic = dicuserDetail
+        
+        
+          let storyboard = UIStoryboard(name: "Main", bundle: nil)
+          let vc = storyboard.instantiateViewController(withIdentifier: "EditAddressVC") as! EditAddressVC
+        self.navigationController?.pushViewController(vc, animated: true)
         
     }
     

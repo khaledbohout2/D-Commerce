@@ -87,12 +87,10 @@ class AdressesVC: UIViewController {
     
     func DeleteUserAddress()
     {
-        //DicParameters = ["id":strDeleteId] as [String : String]
+        
         hud.textLabel.text = NSLocalizedString("Loading", comment: "")
         hud.show(in: self.view)
-       // print(strDeleteId)
-       // let url = "http://theblocksapp.com/api/deleteUserAddress/\(strDeleteId)"
-      //  print(url)
+
         ApiBaseClass.apiCallingWithDeleteMethode(url:ApiBaseClass.deleteUserAddresses(), completion: { [weak self] response in
             
             hud.dismiss()
@@ -211,6 +209,7 @@ extension AdressesVC: UITableViewDataSource, UITableViewDelegate
     }
     
     @objc func buttonDelete(sender: UIButton) {
+        
         let buttonPosition:CGPoint = sender.convert(CGPoint.zero, to:self.tblAddresses)
         let indexPath = self.tblAddresses.indexPathForRow(at: buttonPosition)
         var dicuserDetail = NSDictionary()

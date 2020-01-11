@@ -61,11 +61,6 @@ class AddAddressVC: UIViewController,UIScrollViewDelegate {
         
     }
 
-    override func viewDidAppear(_ animated: Bool)
-    {
-
-        
-    }
     
     @IBAction func btnCountryClicked(_ sender: Any) {
         
