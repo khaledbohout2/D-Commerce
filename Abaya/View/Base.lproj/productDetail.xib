@@ -34,10 +34,10 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             <subviews>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="9yS-XA-Lvd">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="320"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="320" id="zBC-1E-4Rz"/>
+                                        <constraint firstAttribute="height" constant="375" id="zBC-1E-4Rz"/>
                                     </constraints>
                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="g1m-Px-Ahh">
                                         <size key="itemSize" width="50" height="50"/>
@@ -51,7 +51,7 @@
                                     </connections>
                                 </collectionView>
                                 <pageControl hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="oAv-rQ-Zqp">
-                                    <rect key="frame" x="20" y="265" width="80" height="37"/>
+                                    <rect key="frame" x="20" y="320" width="80" height="37"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="37" id="vNw-Tc-R6m"/>
                                         <constraint firstAttribute="width" constant="80" id="z56-7l-2uS"/>
@@ -60,7 +60,7 @@
                                     <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </pageControl>
                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Browse Shops" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iOy-jE-Tl7">
-                                    <rect key="frame" x="10" y="328" width="150" height="18"/>
+                                    <rect key="frame" x="10" y="383" width="150" height="18"/>
                                     <constraints>
                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="3vS-nz-u78"/>
                                         <constraint firstAttribute="height" constant="18" id="eVa-kr-mch"/>
