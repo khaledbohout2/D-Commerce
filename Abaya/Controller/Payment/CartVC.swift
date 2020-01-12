@@ -95,10 +95,6 @@ class CartVC: UIViewController {
                // print(self?.arrCart as Any)
                 self?.tblCart.reloadData()
                 self?.tblCart.isHidden = false
-//                DispatchQueue.main.async {
-//                    self!.tableHeight?.constant = self!.tblCart.contentSize.height
-//                    self!.contantViewHeight?.constant = self!.tblCart.contentSize.height
-//                }
                     
                  hud.dismiss()
             

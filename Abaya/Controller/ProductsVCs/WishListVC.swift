@@ -284,8 +284,7 @@ extension WishListVC:UICollectionViewDelegate,UICollectionViewDataSource,UIColle
         print(strProductId)
         
         GetProductDetail()
-//        strQty = String(format: "%@",dicuserDetail.value(forKey: "minimum_quantity") as! CVarArg) as NSString
-//        strSkuId = String(format: "%@",dicuserDetail.value(forKey: "product_code") as! CVarArg) as NSString
+
  
     }
     
@@ -305,10 +304,7 @@ extension WishListVC:UICollectionViewDelegate,UICollectionViewDataSource,UIColle
             
             Alert.Show(title: NSLocalizedString("Item Deleted", comment: ""), mesage: NSLocalizedString("Item Deleted From WishList", comment: ""), viewcontroller: self)
             
-           // GetProductDetail()
-    //        strQty = String(format: "%@",dicuserDetail.value(forKey: "minimum_quantity") as! CVarArg) as NSString
-    //        strSkuId = String(format: "%@",dicuserDetail.value(forKey: "product_code") as! CVarArg) as NSString
-     
+
         }
 
  

@@ -10,11 +10,11 @@
         <array key="Montserrat-Medium.ttf">
             <string>Montserrat-Medium</string>
         </array>
+        <array key="Montserrat-Regular.ttf">
+            <string>Montserrat-Regular</string>
+        </array>
         <array key="Montserrat-SemiBold.ttf">
             <string>Montserrat-SemiBold</string>
-        </array>
-        <array key="montserrat.ttf">
-            <string>Montserrat-Regular</string>
         </array>
     </customFonts>
     <scenes>
@@ -4209,10 +4209,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R6Y-Sk-JFJ">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Orders" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ned-dy-Bzh">
-                                                        <rect key="frame" x="8" y="8" width="137" height="64"/>
+                                                        <rect key="frame" x="8" y="-2" width="137" height="64"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="137" id="07b-M5-3i0"/>
                                                             <constraint firstAttribute="height" constant="64" id="j0N-h9-7bo"/>
@@ -4222,7 +4222,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="delivery_icon" translatesAutoresizingMaskIntoConstraints="NO" id="RtJ-fe-lhd">
-                                                        <rect key="frame" x="204" y="3" width="163" height="74"/>
+                                                        <rect key="frame" x="204" y="-7" width="163" height="74"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="163" id="f99-tU-CLh"/>
                                                             <constraint firstAttribute="height" constant="74" id="glf-hM-WmT"/>
@@ -4234,7 +4234,7 @@
                                                     <constraint firstItem="Ned-dy-Bzh" firstAttribute="leading" secondItem="R6Y-Sk-JFJ" secondAttribute="leading" constant="8" id="67F-Yb-A98"/>
                                                     <constraint firstAttribute="trailing" secondItem="RtJ-fe-lhd" secondAttribute="trailing" constant="8" id="6xW-gC-KhY"/>
                                                     <constraint firstItem="Ned-dy-Bzh" firstAttribute="centerY" secondItem="R6Y-Sk-JFJ" secondAttribute="centerY" id="CvD-Cp-iDY"/>
-                                                    <constraint firstAttribute="height" constant="80" id="DJm-tL-yn2"/>
+                                                    <constraint firstAttribute="height" constant="60" id="DJm-tL-yn2"/>
                                                     <constraint firstItem="RtJ-fe-lhd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Ned-dy-Bzh" secondAttribute="trailing" constant="8" symbolic="YES" id="tvw-g6-tFy"/>
                                                     <constraint firstItem="RtJ-fe-lhd" firstAttribute="centerY" secondItem="Ned-dy-Bzh" secondAttribute="centerY" id="zsR-6K-SyV"/>
                                                 </constraints>

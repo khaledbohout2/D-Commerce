@@ -30,14 +30,11 @@ class FilterVC: UIViewController {
         highToLowOutlet.isHidden = true
         lowToHighOutlet.isHidden = true
     
-
-        // Do any additional setup after loading the view.
     }
     
     
     @IBAction func closeButtonClicked(_ sender: Any) {
-        
-      //  let a = filterSlider.selectedMinValue
+
         
     }
     
@@ -81,9 +78,7 @@ class FilterVC: UIViewController {
                   
                   let notTickedImg = UIImage(named: "ic_radio_button_unchecked")
                     priceButtonOutlet.setImage(notTickedImg, for: UIControl.State.normal)
-                  
 
-                  
               } else {
                   
                   priceButtonOutlet.isSelected = true
@@ -99,8 +94,7 @@ class FilterVC: UIViewController {
     @IBAction func highToLowButtonClicked(_ sender: Any) {
         
         orderByNew = "asc"
-        
-       // highToLowOutlet.isSelected = true
+
         lowToHighOutlet.isSelected = false
         highToLowOutlet.backgroundColor = UIColor.black
         highToLowOutlet.setTitleColor(UIColor.white, for: .normal)
@@ -114,7 +108,6 @@ class FilterVC: UIViewController {
         
         orderByNew = "desc"
         
-       // lowToHighOutlet.isSelected = true
         highToLowOutlet.isSelected = false
         lowToHighOutlet.backgroundColor = UIColor.black
         lowToHighOutlet.setTitleColor(UIColor.white, for: .normal)
@@ -144,8 +137,6 @@ class FilterVC: UIViewController {
         
     }
 
-
-  // " {{base_url}}/searchProducts?keyword=li&orderByNew=asc&minPrice=0&maxPrice=10000&page=7"
 
 }
 

@@ -123,12 +123,7 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
             Alert.showSignUpAlert(viewcontroller: self)
         }
         
-        
-        
-        
-        
-//                let VC = self.storyboard!.instantiateViewController(withIdentifier: "CartVC") as! CartVC
-//                self.navigationController?.pushViewController(VC, animated: true)
+
     }
     
     override func viewDidLayoutSubviews()
@@ -137,39 +132,10 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
         
         scroll.contentSize = CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height+800)
 
-//        self.view.frame = (frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height+600))
         
     }
             
-//    @IBAction func plusButtonClicked(_ sender: Any) {
-//
-//        print("ckidked")
-//    }
-//    @objc func btnbackaction()
-//    {
-//        self.dismiss(animated: true, completion: nil)
-//    }
-//
-//    @IBAction func addToCartBtnTapped(_ sender: Any) {
-//
-//        print("khaled add to cart pressed")
-//    }
-//
-//    @IBAction func addButtonTapped(_ sender: Any) {
-//    }
-//    @IBAction func btnPlusClicked(_ sender: Any) {
-//    }
-//    @IBAction func addButtonClicked(_ sender: Any) {
-//
-//
-//        print("ckidked")
-//    }
-//
-//    @IBAction func btnAddToBagClicked(_ sender: Any) {
-//
-//        let VC = self.storyboard!.instantiateViewController(withIdentifier: "CartVC") as! CartVC
-//        self.navigationController?.pushViewController(VC, animated: true)
-//    }
+
     
     func GetWishList()
     {
@@ -496,14 +462,8 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
                 
                 
                 self?.relatedArr  = dicData
-                
-                
-              //  self?.GetNewBlock()
 
                 self?.recommendedCollectionView.reloadData()
-
-              
-                // self?.tblDetail.reloadData()
                 
                  self?.hud.dismiss()
             }
@@ -594,10 +554,6 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
 
             self!.hud.dismiss()
               
-                  //self!.GetWishList()
-
-                //  self!.wishCollcationView.reloadData()
-              
 
               }, failure: { [weak self] failResponse in
                 self!.hud.dismiss()
@@ -607,7 +563,6 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
     
     @IBAction func incresecount(_ sender: Any) {
         
-//        var count = Int(lblProductCount.text!)!
         
         count += 1
 
@@ -621,48 +576,6 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
         lblProductCount.text = String(count)
     }
     
-    
-//    func setupviewforcollection () {
-//        
-//        viewForCollection.frame =  CGRect(0, 0, self.view.frame.size.width, self.view.frame.size.height/2)
-//        
-//        viewForCollection.backgroundColor = UIColor.black
-//
-//        
-//        
-//        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-//        
-//        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-//       
-//        layout.scrollDirection = .horizontal
-//        
-//        layout.minimumInteritemSpacing = 10
-//        layout.minimumLineSpacing = 10
-//        recommendedCollectionView.frame = CGRect(x: 0,y: 0,width: viewForCollection.frame.size.width-22,height: viewForCollection.frame.size.height-20)
-//                                          
-//        recommendedCollectionView.collectionViewLayout = layout
-//       
-//        recommendedCollectionView.dataSource = self
-//        recommendedCollectionView.delegate = self
-//        recommendedCollectionView.isPagingEnabled = false
-//        
-//         recommendedCollectionView.register(UINib.init(nibName: "subcat2CollectionCell", bundle: nil), forCellWithReuseIdentifier: "subcat2CollectionCell")
-//         recommendedCollectionView.showsVerticalScrollIndicator = false
-//        
-//        recommendedCollectionView.backgroundColor = UIColor.white
-//        
-//     //   viewForCollection.addSubview(recommendedCollectionView)
-//    
-//        
-//        
-//        pageControl = UIPageControl(frame: CGRect(0,recommendedCollectionView.frame.size.height+20,(self.view.frame.size.width),(self.pageControl.frame.size.height)))
-//       // pageControl.numberOfPages = data.count
-//
-//        pageControl.pageIndicatorTintColor = UIColor.brown
-//        pageControl.currentPageIndicatorTintColor = UIColor.white
-//        viewForCollection.addSubview(pageControl)
-//        
-//    }
 }
 
 // MARK:- Navigation

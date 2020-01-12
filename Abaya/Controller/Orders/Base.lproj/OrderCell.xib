@@ -7,6 +7,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Montserrat-Medium.ttf">
+            <string>Montserrat-Medium</string>
+        </array>
         <array key="Montserrat-SemiBold.ttf">
             <string>Montserrat-SemiBold</string>
         </array>
@@ -21,37 +24,37 @@
                 <rect key="frame" x="0.0" y="0.0" width="376" height="171"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sFH-QE-7rT">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sFH-QE-7rT" customClass="BorderView" customModule="Abaya" customModuleProvider="target">
                         <rect key="frame" x="10" y="10" width="356" height="161"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 Items" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MWd-my-srG">
-                                <rect key="frame" x="161" y="84.5" width="53" height="20"/>
+                                <rect key="frame" x="181" y="84.5" width="53" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="53" id="742-Cf-W8p"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat SemiBold" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat Medium" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KD 120,000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HNW-op-teG">
-                                <rect key="frame" x="236" y="84.5" width="80" height="20"/>
+                                <rect key="frame" x="256" y="84.5" width="80" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="JcP-1O-18p"/>
                                     <constraint firstAttribute="height" constant="20" id="ePP-gR-UVu"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat SemiBold" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat Medium" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tl7-EO-Exn">
-                                <rect key="frame" x="20" y="113" width="316" height="1"/>
+                                <rect key="frame" x="10" y="113" width="336" height="1"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="hHO-Ps-nRK"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ORDER DATE" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYr-NQ-X6k">
-                                <rect key="frame" x="219.5" y="20" width="96.5" height="18"/>
+                                <rect key="frame" x="239.5" y="20" width="96.5" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="96.5" id="j9g-xK-ZOC"/>
                                 </constraints>
@@ -60,29 +63,29 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123456789089" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5f-R7-AVr">
-                                <rect key="frame" x="40" y="46" width="124" height="21"/>
+                                <rect key="frame" x="20" y="46" width="124" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="2Ti-Iv-VAr"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="124" id="Jdr-Uz-ZgE"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat SemiBold" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat Medium" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5LA-mf-ci3">
-                                <rect key="frame" x="206" y="122" width="110" height="24"/>
+                                <rect key="frame" x="219" y="122" width="117" height="30"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="110" id="YxK-uj-PmX"/>
-                                    <constraint firstAttribute="height" constant="24" id="lim-ni-G2G"/>
+                                    <constraint firstAttribute="height" constant="30" id="lim-ni-G2G"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal" title="Track Order" image="addr_icon">
+                                <state key="normal" title="Track Order" image="location white">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ORDER NUMBER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M4K-Rm-ttl">
-                                <rect key="frame" x="40" y="20" width="124" height="18"/>
+                                <rect key="frame" x="20" y="20" width="124" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="3fR-3z-K56"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="124" id="LAY-NV-rDi"/>
@@ -92,7 +95,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delivered" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oLf-Nr-ZgT">
-                                <rect key="frame" x="40" y="84" width="100" height="21"/>
+                                <rect key="frame" x="20" y="84" width="100" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="RUO-zM-zO2"/>
                                     <constraint firstAttribute="height" constant="21" id="WkL-h6-mAt"/>
@@ -113,24 +116,23 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12th July, 2018" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clB-cT-ceh">
-                                <rect key="frame" x="205" y="46" width="101" height="21"/>
+                                <rect key="frame" x="237" y="46" width="99" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="101" id="lhE-Ug-fbz"/>
                                     <constraint firstAttribute="height" constant="21" id="vsC-v9-nYP"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat SemiBold" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat Medium" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NvC-HK-w1R">
-                                <rect key="frame" x="20" y="75" width="316" height="1"/>
+                                <rect key="frame" x="10" y="75" width="336" height="1"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="jrV-yy-Ems"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p1w-5e-82g">
-                                <rect key="frame" x="220" y="89.5" width="10" height="10"/>
+                                <rect key="frame" x="240" y="89.5" width="10" height="10"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="10" id="QDv-qf-54t"/>
@@ -138,7 +140,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aA1-xQ-rTX">
-                                <rect key="frame" x="40" y="122" width="95" height="24"/>
+                                <rect key="frame" x="20" y="122" width="101" height="30"/>
                                 <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat SemiBold" pointSize="14"/>
                                 <state key="normal" title="Cancel Order">
                                     <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -147,20 +149,20 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="tl7-EO-Exn" secondAttribute="trailing" constant="20" id="0VM-A0-gKO"/>
+                            <constraint firstAttribute="trailing" secondItem="tl7-EO-Exn" secondAttribute="trailing" constant="10" id="0VM-A0-gKO"/>
+                            <constraint firstItem="clB-cT-ceh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="q5f-R7-AVr" secondAttribute="trailing" constant="8" symbolic="YES" id="1vC-6n-pK9"/>
                             <constraint firstItem="MWd-my-srG" firstAttribute="bottom" secondItem="HNW-op-teG" secondAttribute="bottom" id="3s7-XN-Qv2"/>
                             <constraint firstItem="MWd-my-srG" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="oLf-Nr-ZgT" secondAttribute="trailing" constant="8" symbolic="YES" id="4M7-bR-cMy"/>
-                            <constraint firstAttribute="trailing" secondItem="HNW-op-teG" secondAttribute="trailing" constant="40" id="4cP-HJ-gJ3"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="clB-cT-ceh" secondAttribute="trailing" symbolic="YES" id="7Mq-QW-5TM"/>
-                            <constraint firstItem="M4K-Rm-ttl" firstAttribute="leading" secondItem="sFH-QE-7rT" secondAttribute="leading" constant="40" id="8aS-DI-HMX"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="clB-cT-ceh" secondAttribute="trailing" constant="20" symbolic="YES" id="7Mq-QW-5TM"/>
+                            <constraint firstItem="M4K-Rm-ttl" firstAttribute="leading" secondItem="sFH-QE-7rT" secondAttribute="leading" constant="20" id="8aS-DI-HMX"/>
                             <constraint firstItem="hYr-NQ-X6k" firstAttribute="bottom" secondItem="M4K-Rm-ttl" secondAttribute="bottom" id="AGo-d6-8pA"/>
-                            <constraint firstAttribute="trailing" secondItem="hYr-NQ-X6k" secondAttribute="trailing" constant="40" id="Apj-9J-IrG"/>
+                            <constraint firstAttribute="trailing" secondItem="hYr-NQ-X6k" secondAttribute="trailing" constant="20" id="Apj-9J-IrG"/>
                             <constraint firstItem="hYr-NQ-X6k" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="M4K-Rm-ttl" secondAttribute="trailing" constant="8" symbolic="YES" id="B6Q-V1-U6X"/>
+                            <constraint firstItem="clB-cT-ceh" firstAttribute="trailing" secondItem="hYr-NQ-X6k" secondAttribute="trailing" id="BxA-Cu-7Rs"/>
+                            <constraint firstItem="HNW-op-teG" firstAttribute="trailing" secondItem="clB-cT-ceh" secondAttribute="trailing" id="Cgy-he-OWt"/>
                             <constraint firstItem="NvC-HK-w1R" firstAttribute="top" secondItem="q5f-R7-AVr" secondAttribute="bottom" constant="8" id="De7-g5-GLy"/>
-                            <constraint firstItem="clB-cT-ceh" firstAttribute="leading" secondItem="q5f-R7-AVr" secondAttribute="trailing" constant="41" id="HDz-l6-UYE"/>
-                            <constraint firstItem="NvC-HK-w1R" firstAttribute="leading" secondItem="sFH-QE-7rT" secondAttribute="leading" constant="20" id="KgF-MT-tpz"/>
+                            <constraint firstItem="NvC-HK-w1R" firstAttribute="leading" secondItem="sFH-QE-7rT" secondAttribute="leading" constant="10" id="KgF-MT-tpz"/>
                             <constraint firstItem="5LA-mf-ci3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="aA1-xQ-rTX" secondAttribute="trailing" constant="8" symbolic="YES" id="KtC-2I-mdU"/>
-                            <constraint firstAttribute="trailing" secondItem="5LA-mf-ci3" secondAttribute="trailing" constant="40" id="LlX-4r-tko"/>
                             <constraint firstItem="oLf-Nr-ZgT" firstAttribute="leading" secondItem="q5f-R7-AVr" secondAttribute="leading" id="Lm7-tR-e4r"/>
                             <constraint firstItem="aA1-xQ-rTX" firstAttribute="width" secondItem="5LA-mf-ci3" secondAttribute="width" multiplier="0.863636" id="OWv-4k-OHG"/>
                             <constraint firstItem="HNW-op-teG" firstAttribute="centerY" secondItem="oLf-Nr-ZgT" secondAttribute="centerY" id="PGG-Ng-1ZQ"/>
@@ -173,16 +175,17 @@
                             <constraint firstItem="MWd-my-srG" firstAttribute="top" secondItem="HNW-op-teG" secondAttribute="top" id="b98-xm-uGn"/>
                             <constraint firstItem="clB-cT-ceh" firstAttribute="top" secondItem="hYr-NQ-X6k" secondAttribute="bottom" constant="8" id="doM-8k-Chb"/>
                             <constraint firstItem="MWd-my-srG" firstAttribute="height" secondItem="HNW-op-teG" secondAttribute="height" id="dpC-14-kfH"/>
-                            <constraint firstAttribute="trailing" secondItem="NvC-HK-w1R" secondAttribute="trailing" constant="20" id="eIf-ME-LXo"/>
+                            <constraint firstAttribute="trailing" secondItem="NvC-HK-w1R" secondAttribute="trailing" constant="10" id="eIf-ME-LXo"/>
                             <constraint firstItem="aA1-xQ-rTX" firstAttribute="leading" secondItem="oLf-Nr-ZgT" secondAttribute="leading" id="f26-AC-U1S"/>
                             <constraint firstItem="5LA-mf-ci3" firstAttribute="top" secondItem="tl7-EO-Exn" secondAttribute="bottom" constant="8" id="hsA-Qh-gTz"/>
                             <constraint firstItem="p1w-5e-82g" firstAttribute="leading" secondItem="MWd-my-srG" secondAttribute="trailing" constant="6" id="j8U-PI-ld7"/>
                             <constraint firstItem="M4K-Rm-ttl" firstAttribute="top" secondItem="sFH-QE-7rT" secondAttribute="top" constant="20" id="jz1-by-4M6"/>
                             <constraint firstItem="aA1-xQ-rTX" firstAttribute="height" secondItem="5LA-mf-ci3" secondAttribute="height" id="m1b-6I-ZR4"/>
                             <constraint firstItem="p1w-5e-82g" firstAttribute="centerY" secondItem="HNW-op-teG" secondAttribute="centerY" id="vbD-Nk-4bR"/>
-                            <constraint firstItem="q5f-R7-AVr" firstAttribute="leading" secondItem="sFH-QE-7rT" secondAttribute="leading" constant="40" id="wUi-Mr-Wxi"/>
+                            <constraint firstItem="q5f-R7-AVr" firstAttribute="leading" secondItem="sFH-QE-7rT" secondAttribute="leading" constant="20" id="wUi-Mr-Wxi"/>
+                            <constraint firstItem="5LA-mf-ci3" firstAttribute="trailing" secondItem="HNW-op-teG" secondAttribute="trailing" id="x7G-hH-n2d"/>
                             <constraint firstItem="aA1-xQ-rTX" firstAttribute="bottom" secondItem="5LA-mf-ci3" secondAttribute="bottom" id="xD4-CC-JqO"/>
-                            <constraint firstItem="tl7-EO-Exn" firstAttribute="leading" secondItem="sFH-QE-7rT" secondAttribute="leading" constant="20" id="yfz-by-2s2"/>
+                            <constraint firstItem="tl7-EO-Exn" firstAttribute="leading" secondItem="sFH-QE-7rT" secondAttribute="leading" constant="10" id="yfz-by-2s2"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -208,6 +211,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="addr_icon" width="24" height="24"/>
+        <image name="location white" width="40" height="38"/>
     </resources>
 </document>

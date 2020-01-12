@@ -96,9 +96,28 @@ class TrackOrderVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         return 128
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return String(itemsCount) + " items"
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let label : UILabel = UILabel()
+        
+        label.textColor = UIColor.black
+         
+        label.text = String(itemsCount) + " items"
+
+        return label
     }
+    
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        
+//        var label : UILabel = UILabel()
+//         
+//             label.text = "Item1"
+//
+//         return label
+//        
+//        return String(itemsCount) + " items"
+//    }
+    
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         

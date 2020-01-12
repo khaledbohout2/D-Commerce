@@ -144,9 +144,7 @@ extension OrdersVC {
         pageMenu?.view.backgroundColor = UIColor.clear
         self.addChild(pageMenu!)
         contentView.addSubview(pageMenu!.view)
-        //pageMenu!.didMove(toParentViewController: self)
-//        pageControl.isHidden = false
-//        lblBrowseShops.isHidden = false
+
     }
 }
 

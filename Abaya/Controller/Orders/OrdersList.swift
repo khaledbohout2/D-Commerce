@@ -93,16 +93,7 @@ class OrdersList: UITableViewController {
        // print(strDeleteId)
        // DeleteUserAddress()
     }
-    
-//    @objc func buttonCancelOrder(sender: UIButton){
-//        let buttonPosition:CGPoint = sender.convert(CGPoint.zero, to:self.tblAddresses)
-//        let indexPath = self.tblAddresses.indexPathForRow(at: buttonPosition)
-//        var dicuserDetail = NSDictionary()
-//        dicuserDetail = self.arrAddresses[(indexPath?.row)!] as! NSDictionary
-//        strDeleteId = String(format: "%@",dicuserDetail.value(forKey: "id") as! CVarArg) as NSString
-//       // print(strDeleteId)
-//       // DeleteUserAddress()
-//    }
+
 
 
 
