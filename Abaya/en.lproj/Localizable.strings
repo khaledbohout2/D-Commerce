@@ -103,10 +103,12 @@
 "Vat Value" = "Vat Value";
 "No Orders!" = "No Orders!";
 "you have not done any oders" = "you have not done any oders";
-"enter between 8 and 20 characters" = "enter between 8 and 20 characters";
+"enter between 8 and 20 characters" = "enter Password between 8 and 20 characters";
 "Error" = "Error";
 "width" = "width";
 "double width" = "double width";
 "Sign Up" = "Sign Up";
 "Sign Up First" = "Sign Up First";
 "Cancel" = "Cancel";
+"Invalid Email" = "Invalid Email";
+
