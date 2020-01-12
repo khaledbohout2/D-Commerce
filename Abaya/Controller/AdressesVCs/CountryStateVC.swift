@@ -33,7 +33,7 @@ class CountryStateVC: UIViewController {
         setupNavButtons()
         
         if isCountry == true {
-            
+
             GetCountryList()
         }
         else
@@ -59,7 +59,16 @@ class CountryStateVC: UIViewController {
                 
                 var dic = NSDictionary()
                 dic = response as NSDictionary
-                self?.arrCountry = dic["data"] as! NSArray
+                let countries = dic["data"] as! NSArray
+                
+                print(countries)
+                
+                for country in countries {
+                    
+                    if (country as! NSDictionary).value(forKey: "id") as! Int == 117 {
+                        self!.arrCountry = [country]
+                    }
+                }
               //  countries = dic["data"] as! NSArray
                 self?.tblCountry.reloadData()
                 hud.dismiss()
@@ -134,10 +143,12 @@ extension CountryStateVC: UITableViewDataSource, UITableViewDelegate
         var dic = NSDictionary()
         
          if isCountry == true {
+            
             dic = arrCountry[indexPath.row] as! NSDictionary
             cell.lblName.text = dic .object(forKey: "country") as?String
                 
             }
+            
          else{
            
             dic = arrCountry[indexPath.row] as! NSDictionary

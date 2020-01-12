@@ -81,42 +81,45 @@ class SignUpVC: UIViewController {
         if (firstNameTextField.text?.isEmpty)! {
             
             let alert = UIAlertController(title: "", message: .enter_username, preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: ""), style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
             
         }
         else if (surNameTextField.text?.isEmpty)! {
             
             let alert = UIAlertController(title: "", message: .enter_lastname, preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: ""), style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
             
-        }
-        else if (emailAdressTextField.text?.isEmpty)! {
+        } else if (emailAdressTextField.text?.isEmpty)! {
             
             let alert = UIAlertController(title: "", message: .enter_email, preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: ""), style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
             
-        }
+        } else if isValidEmail(testStr: emailAdressTextField.text!) {
             
-        else  if (!((emailAdressTextField.text?.isValidEmail())!)) {
+            let alert = UIAlertController(title: "", message: .inValid_email, preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: ""), style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            
+        } else  if (!((emailAdressTextField.text?.isValidEmail())!)) {
             let alert = UIAlertController(title: "", message: .validEmail, preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: ""), style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
             
         else if (mobileNumberTextField.text?.isEmpty)! {
             
-            let alert = UIAlertController(title: "", message: .enter_mobile, preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            let alert = UIAlertController(title: NSLocalizedString("Ok", comment: ""), message: .enter_mobile, preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: ""), style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
             
         }
         else if (passWordTxtField.text?.isEmpty)! {
             
             let alert = UIAlertController(title: "", message: .enter_password, preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: ""), style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
             
         } else if (passWordTxtField.text)!.count < 8 || (passWordTxtField.text)!.count > 12 {
@@ -125,7 +128,7 @@ class SignUpVC: UIViewController {
         else if (confirmPasswordTextField.text?.isEmpty)! {
             
             let alert = UIAlertController(title: "", message: .confirmPassword, preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: ""), style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
             
         }

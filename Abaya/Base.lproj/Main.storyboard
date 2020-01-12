@@ -628,11 +628,11 @@
         <scene sceneID="c8a-c1-dHW">
             <objects>
                 <viewController storyboardIdentifier="forgotVC" title="ForgotVC" id="bXI-8U-Icp" customClass="forgotVC" customModule="Abaya" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="2QW-xE-WB3">
+                    <view key="view" contentMode="scaleToFill" id="2QW-xE-WB3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lqd-7n-4lb">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lqd-7n-4lb">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p59-iu-uhi">
@@ -1267,7 +1267,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JsL-e3-AHy">
-                                <rect key="frame" x="260" y="33" width="30" height="30"/>
+                                <rect key="frame" x="260" y="39" width="30" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="TOg-vU-dxk"/>
@@ -1339,7 +1339,7 @@
                             <constraint firstAttribute="trailing" secondItem="xrq-96-Ht2" secondAttribute="trailing" id="Mw0-mm-1pz"/>
                             <constraint firstItem="t6K-Ij-KvO" firstAttribute="top" secondItem="7LD-l8-Pym" secondAttribute="top" constant="44" id="QM5-8d-nKz"/>
                             <constraint firstItem="7LD-l8-Pym" firstAttribute="trailing" secondItem="Oae-mM-YeR" secondAttribute="trailing" constant="100" id="ROs-hZ-1U3"/>
-                            <constraint firstItem="JsL-e3-AHy" firstAttribute="top" secondItem="Cg1-da-rRf" secondAttribute="bottom" constant="12" id="Rzb-yQ-bkM"/>
+                            <constraint firstItem="JsL-e3-AHy" firstAttribute="top" secondItem="Cg1-da-rRf" secondAttribute="bottom" constant="18" id="Rzb-yQ-bkM"/>
                             <constraint firstItem="Cg1-da-rRf" firstAttribute="top" secondItem="7LD-l8-Pym" secondAttribute="top" constant="20" id="XIk-wY-4qg"/>
                             <constraint firstItem="Oae-mM-YeR" firstAttribute="centerY" secondItem="D0c-hN-Qw4" secondAttribute="centerY" id="YN9-dz-dXz"/>
                             <constraint firstItem="7LD-l8-Pym" firstAttribute="trailing" secondItem="D0c-hN-Qw4" secondAttribute="trailing" constant="20" id="ayQ-Hb-Xgd"/>
@@ -1768,13 +1768,13 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Material" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hnl-5X-bH8">
-                                                <rect key="frame" x="25" y="802" width="48.5" height="21"/>
+                                                <rect key="frame" x="25" y="802" width="49" height="21"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manufactured in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YYR-uj-oT7">
-                                                <rect key="frame" x="25" y="837" width="98.5" height="21"/>
+                                                <rect key="frame" x="25" y="837" width="100.5" height="21"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -1949,7 +1949,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quick shipping and on-time, guaranteed deliveries" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJg-Yd-Sih">
-                                                <rect key="frame" x="83" y="1102" width="274.5" height="14"/>
+                                                <rect key="frame" x="83" y="1102" width="280.5" height="14"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="14" id="Gii-hQ-thc"/>
                                                 </constraints>
@@ -1958,7 +1958,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100% original products, shop with confidence" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymf-Gi-xr0">
-                                                <rect key="frame" x="83" y="1161" width="274.5" height="14"/>
+                                                <rect key="frame" x="83" y="1161" width="280.5" height="14"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="14" id="1gI-R6-Vh1"/>
                                                     <constraint firstAttribute="height" constant="14" id="Zo7-AR-k50"/>
@@ -1968,7 +1968,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14 days return policy, returns are so simple" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yZw-U7-PeJ">
-                                                <rect key="frame" x="83" y="1221.5" width="274.5" height="14"/>
+                                                <rect key="frame" x="83" y="1221.5" width="280.5" height="14"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="14" id="JME-OW-Bou"/>
                                                 </constraints>

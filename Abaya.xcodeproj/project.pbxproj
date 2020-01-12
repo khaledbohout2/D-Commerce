@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		062BCFEF23C7B9A6009E456E /* CartVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062BCFEE23C7B9A6009E456E /* CartVC2.swift */; };
+		06421F5D23CB359A00DDBA43 /* country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06421F5C23CB359A00DDBA43 /* country.swift */; };
 		0675095523C9EE390098EF0A /* NavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0675095423C9EE390098EF0A /* NavigationControllerExtension.swift */; };
 		0675095723CA480F0098EF0A /* circleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0675095623CA480F0098EF0A /* circleView.swift */; };
 		06F7DBD123C8B1DD00E1D8FF /* HelperMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F7DBD023C8B1DD00E1D8FF /* HelperMethods.swift */; };
@@ -119,6 +120,7 @@
 
 /* Begin PBXFileReference section */
 		062BCFEE23C7B9A6009E456E /* CartVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartVC2.swift; sourceTree = "<group>"; };
+		06421F5C23CB359A00DDBA43 /* country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = country.swift; sourceTree = "<group>"; };
 		0675095423C9EE390098EF0A /* NavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerExtension.swift; sourceTree = "<group>"; };
 		0675095623CA480F0098EF0A /* circleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = circleView.swift; sourceTree = "<group>"; };
 		06F7DBD023C8B1DD00E1D8FF /* HelperMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperMethods.swift; sourceTree = "<group>"; };
@@ -415,6 +417,7 @@
 			children = (
 				7C02480A2370A8FE00623383 /* newStorOneBlocksModelClass.swift */,
 				7C0DF3C42379F9FE00C94BF8 /* WishListModelClass.swift */,
+				06421F5C23CB359A00DDBA43 /* country.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -738,6 +741,7 @@
 				7C3AB7902362F59900348050 /* SceneDelegate.swift in Sources */,
 				7C0DF3CD2379FB4200C94BF8 /* CountryStateVC.swift in Sources */,
 				7C1A149D2376EADA00DAD821 /* CartVC.swift in Sources */,
+				06421F5D23CB359A00DDBA43 /* country.swift in Sources */,
 				7C27D789239AEC8800ED7839 /* EditAddressVC.swift in Sources */,
 				7C7DB6F023663724002EF046 /* Requests.swift in Sources */,
 				6CA0DA7C2382B31700032FB7 /* OrdersList.swift in Sources */,

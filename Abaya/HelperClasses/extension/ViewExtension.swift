@@ -84,6 +84,7 @@ extension String {
     static let signout_text = NSLocalizedString("Are sure you want to sign out?", comment: "")
     static let enter_username = NSLocalizedString("Enter first name", comment: "")
     static let enter_email = NSLocalizedString("Enter email", comment: "")
+    static let inValid_email = NSLocalizedString("Invalid Email", comment: "")
     static let enter_mobile = NSLocalizedString("Enter mobile number", comment: "")
     static let oldPassword = NSLocalizedString("Enter old password", comment: "")
     static let newPassword = NSLocalizedString("Enter new password", comment: "")
