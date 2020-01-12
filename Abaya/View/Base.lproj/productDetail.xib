@@ -15,6 +15,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeVC" customModule="Abaya" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="9yS-XA-Lvd" id="usk-yN-yfO"/>
+                <outlet property="collectionViewHeight" destination="zBC-1E-4Rz" id="ifV-YI-YQ2"/>
                 <outlet property="contentView" destination="m0O-ue-Xvg" id="lIY-h5-hDM"/>
                 <outlet property="lblBrowseShops" destination="iOy-jE-Tl7" id="KBA-WY-n55"/>
                 <outlet property="pageControl" destination="oAv-rQ-Zqp" id="iW5-O9-RXt"/>

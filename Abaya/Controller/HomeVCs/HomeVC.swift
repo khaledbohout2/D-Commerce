@@ -17,7 +17,6 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     @IBOutlet weak var scroll: UIScrollView!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet var lblBrowseShops: UILabel!
-    @IBOutlet var scrollMain: UIScrollView!
     @IBOutlet var pageControl: UIPageControl!
     @IBOutlet var collectionView: UICollectionView!
     
@@ -33,7 +32,11 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.frame.size.height = self.view.frame.size.height + 1000
+        collectionViewHeight.constant = self.view.frame.size.width
+        
+          self.view.frame =  CGRect(0, 0, self.view.frame.size.width, self.view.frame.size.height + self.view.frame.size.width)
+        
+    
 
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -42,6 +45,7 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         collectionView.register(UINib.init(nibName: "HomeSliderCell", bundle: nil), forCellWithReuseIdentifier: "HomeSliderCell")
         
         self.GetBannerApi()
+        
         
         setupNavButtons()
 
@@ -61,8 +65,7 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     {
         
         
-        scroll.contentSize = CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height+355)
-
+        scroll.contentSize = CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height+375)
 
     }
     
@@ -106,6 +109,35 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     }
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         
+        pageControl.currentPage = Int(indexPath.row)
+    }
+    
+
+    func startTimer() {
+
+        _ =  Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(self.scrollAutomatically), userInfo: nil, repeats: true)
+    }
+
+
+    @objc func scrollAutomatically(_ timer1: Timer) {
+
+        if let coll  = collectionView {
+            for cell in coll.visibleCells {
+                let indexPath: IndexPath? = coll.indexPath(for: cell)
+                if ((indexPath?.row)! < arrSlider.count - 1){
+                    let indexPath1: IndexPath?
+                    indexPath1 = IndexPath.init(row: (indexPath?.row)! + 1, section: (indexPath?.section)!)
+
+                    coll.scrollToItem(at: indexPath1!, at: .right, animated: true)
+                }
+                else{
+                    let indexPath1: IndexPath?
+                    indexPath1 = IndexPath.init(row: 0, section: (indexPath?.section)!)
+                    coll.scrollToItem(at: indexPath1!, at: .left, animated: true)
+                }
+
+            }
+        }
     }
 
     override func viewDidAppear(_ animated: Bool)
@@ -160,7 +192,9 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
                  self?.arrSlider = (dic["data"] as! NSArray)
                 
                 self?.collectionView.reloadData()
+                self?.collectionViewHeight.constant = self!.view.frame.size.width
                 self?.pageControl.numberOfPages = (self?.arrSlider.count)!
+                self!.startTimer()
                 self?.GetCategoryApi()
                 
             }

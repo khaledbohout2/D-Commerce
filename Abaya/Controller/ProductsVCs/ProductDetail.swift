@@ -317,11 +317,38 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         
-        
+        pageControl.currentPage = Int(indexPath.row)
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         pageControl.currentPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
+    }
+    
+    func startTimer() {
+
+        _ =  Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(self.scrollAutomatically), userInfo: nil, repeats: true)
+    }
+
+
+    @objc func scrollAutomatically(_ timer1: Timer) {
+
+        if let coll  = imagesCollectionView {
+            for cell in coll.visibleCells {
+                let indexPath: IndexPath? = coll.indexPath(for: cell)
+                if ((indexPath?.row)! < arrSlider.count - 1){
+                    let indexPath1: IndexPath?
+                    indexPath1 = IndexPath.init(row: (indexPath?.row)! + 1, section: (indexPath?.section)!)
+
+                    coll.scrollToItem(at: indexPath1!, at: .right, animated: true)
+                }
+                else{
+                    let indexPath1: IndexPath?
+                    indexPath1 = IndexPath.init(row: 0, section: (indexPath?.section)!)
+                    coll.scrollToItem(at: indexPath1!, at: .left, animated: true)
+                }
+
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool)
@@ -417,6 +444,7 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
             self?.arrSlider = dic["products_images"] as! NSArray
             self?.imagesCollectionView.reloadData()
             self?.pageControl.numberOfPages = (self?.arrSlider.count)!
+            self!.startTimer()
             self?.lblProductName.text = dic.object(forKey: "product_name") as? String
             let strPrice = String(format: "%@%@","KD ", dic.value(forKey: "product_current_price") as! CVarArg)
             self?.lblProductPrice.text = strPrice as String

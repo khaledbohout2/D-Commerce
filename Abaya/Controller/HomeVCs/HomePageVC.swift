@@ -82,11 +82,7 @@ class HomePageVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         override func viewDidLayoutSubviews() {
             super.viewDidLayoutSubviews()
             
-//            self.view.frame.size = CGSize(width: self.view.frame.size.width, height:tblDetail.contentSize.height + 300)
 
-    //        DispatchQueue.main.async {
-    //            self.tableHeight?.constant = self.tblCart.contentSize.height
-    //        }
 
         }
 
@@ -221,7 +217,8 @@ class HomePageVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
 
               
                  self?.tblDetail.reloadData()
-//
+
+
 //                DispatchQueue.main.async {
 //
 //                    var frame = self?.view.frame
