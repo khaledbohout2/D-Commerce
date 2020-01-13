@@ -10,11 +10,11 @@
         <array key="Montserrat-Medium.ttf">
             <string>Montserrat-Medium</string>
         </array>
-        <array key="Montserrat-Regular.ttf">
-            <string>Montserrat-Regular</string>
-        </array>
         <array key="Montserrat-SemiBold.ttf">
             <string>Montserrat-SemiBold</string>
+        </array>
+        <array key="montserrat.ttf">
+            <string>Montserrat-Regular</string>
         </array>
     </customFonts>
     <scenes>
@@ -628,11 +628,11 @@
         <scene sceneID="c8a-c1-dHW">
             <objects>
                 <viewController storyboardIdentifier="forgotVC" title="ForgotVC" id="bXI-8U-Icp" customClass="forgotVC" customModule="Abaya" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="2QW-xE-WB3">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="2QW-xE-WB3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lqd-7n-4lb">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lqd-7n-4lb">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p59-iu-uhi">
@@ -820,18 +820,18 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="373.5"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please choose your preferred language" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Fg-Lf-jci">
-                                <rect key="frame" x="15" y="393.5" width="345" height="40"/>
+                                <rect key="frame" x="15" y="393.5" width="345" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="qw9-Re-AfC"/>
+                                    <constraint firstAttribute="height" constant="35" id="qw9-Re-AfC"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="0.57595486110000005" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1lc-dr-rB4" customClass="LanguageButton" customModule="Abaya" customModuleProvider="target">
-                                <rect key="frame" x="14" y="453.5" width="347" height="40"/>
+                                <rect key="frame" x="14" y="448.5" width="347" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="aag-59-BZC"/>
+                                    <constraint firstAttribute="height" constant="35" id="aag-59-BZC"/>
                                 </constraints>
                                 <state key="normal" title="ENGLISH">
                                     <color key="titleColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
@@ -841,9 +841,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m75-5D-ayA" customClass="LanguageButton" customModule="Abaya" customModuleProvider="target">
-                                <rect key="frame" x="14" y="513.5" width="347" height="40"/>
+                                <rect key="frame" x="14" y="503.5" width="347" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="T0c-f6-l0a"/>
+                                    <constraint firstAttribute="height" constant="35" id="T0c-f6-l0a"/>
                                 </constraints>
                                 <state key="normal" title="عربي">
                                     <color key="titleColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
@@ -853,10 +853,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HQB-nr-Het" customClass="MainButton" customModule="Abaya" customModuleProvider="target">
-                                <rect key="frame" x="14" y="607" width="347" height="45"/>
+                                <rect key="frame" x="14" y="607" width="347" height="40"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="Vbz-XX-lbC"/>
+                                    <constraint firstAttribute="height" constant="40" id="Vbz-XX-lbC"/>
                                 </constraints>
                                 <state key="normal" title="Continue">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -866,7 +866,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="9vI-E7-Olv">
-                                <rect key="frame" x="225" y="622" width="15" height="15"/>
+                                <rect key="frame" x="225" y="619.5" width="15" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="15" id="q0h-Vv-2Ah"/>
                                     <constraint firstAttribute="height" constant="15" id="te7-1H-O7g"/>
@@ -879,7 +879,7 @@
                             <constraint firstItem="m75-5D-ayA" firstAttribute="top" secondItem="1lc-dr-rB4" secondAttribute="bottom" constant="20" id="5lx-sz-QaF"/>
                             <constraint firstItem="m75-5D-ayA" firstAttribute="leading" secondItem="1lc-dr-rB4" secondAttribute="leading" id="8yp-Qe-OW2"/>
                             <constraint firstItem="HQB-nr-Het" firstAttribute="leading" secondItem="m75-5D-ayA" secondAttribute="leading" id="Eao-pp-ihy"/>
-                            <constraint firstItem="2mE-Od-SNS" firstAttribute="bottom" secondItem="HQB-nr-Het" secondAttribute="bottom" constant="15" id="Ejd-7v-NI3"/>
+                            <constraint firstItem="2mE-Od-SNS" firstAttribute="bottom" secondItem="HQB-nr-Het" secondAttribute="bottom" constant="20" id="Ejd-7v-NI3"/>
                             <constraint firstAttribute="trailing" secondItem="kDl-Cm-okS" secondAttribute="trailing" id="GIk-cK-F2U"/>
                             <constraint firstItem="2mE-Od-SNS" firstAttribute="trailing" secondItem="9vI-E7-Olv" secondAttribute="trailing" constant="135" id="GiJ-8w-HH8"/>
                             <constraint firstItem="1lc-dr-rB4" firstAttribute="leading" secondItem="tcn-t7-5B9" secondAttribute="leading" constant="14" id="I4w-Hf-TkJ"/>
@@ -1768,13 +1768,13 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Material" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hnl-5X-bH8">
-                                                <rect key="frame" x="25" y="802" width="49" height="21"/>
+                                                <rect key="frame" x="25" y="802" width="48.5" height="21"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manufactured in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YYR-uj-oT7">
-                                                <rect key="frame" x="25" y="837" width="100.5" height="21"/>
+                                                <rect key="frame" x="25" y="837" width="98.5" height="21"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -1949,7 +1949,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quick shipping and on-time, guaranteed deliveries" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJg-Yd-Sih">
-                                                <rect key="frame" x="83" y="1102" width="280.5" height="14"/>
+                                                <rect key="frame" x="83" y="1102" width="274.5" height="14"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="14" id="Gii-hQ-thc"/>
                                                 </constraints>
@@ -1958,7 +1958,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100% original products, shop with confidence" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymf-Gi-xr0">
-                                                <rect key="frame" x="83" y="1161" width="280.5" height="14"/>
+                                                <rect key="frame" x="83" y="1161" width="274.5" height="14"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="14" id="1gI-R6-Vh1"/>
                                                     <constraint firstAttribute="height" constant="14" id="Zo7-AR-k50"/>
@@ -1968,7 +1968,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14 days return policy, returns are so simple" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yZw-U7-PeJ">
-                                                <rect key="frame" x="83" y="1221.5" width="280.5" height="14"/>
+                                                <rect key="frame" x="83" y="1221.5" width="274.5" height="14"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="14" id="JME-OW-Bou"/>
                                                 </constraints>
@@ -4062,7 +4062,7 @@
                                         </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YMr-Lx-TWz" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                        <rect key="frame" x="15" y="214" width="346" height="39"/>
+                                        <rect key="frame" x="15" y="214" width="346" height="34"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -4083,7 +4083,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rfi-pi-ZP4" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                        <rect key="frame" x="15" y="269" width="97" height="39"/>
+                                        <rect key="frame" x="15" y="263.5" width="97" height="34"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -4101,7 +4101,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Jz-sW-YXg" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                        <rect key="frame" x="15" y="324" width="346" height="44"/>
+                                        <rect key="frame" x="15" y="313.5" width="346" height="44"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="rnA-iC-7oh"/>
@@ -4122,7 +4122,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J6q-1b-vcC" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                        <rect key="frame" x="15" y="383" width="346" height="39"/>
+                                        <rect key="frame" x="15" y="372.5" width="346" height="39"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="39.329999999999998" id="zXz-ZQ-SG5"/>

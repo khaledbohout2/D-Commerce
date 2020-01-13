@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,7 +19,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Zw-cC-kNZ">
                         <rect key="frame" x="0.0" y="0.0" width="181" height="331"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="store_cover_three" translatesAutoresizingMaskIntoConstraints="NO" id="hc4-5M-82C">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="store_cover_three" translatesAutoresizingMaskIntoConstraints="NO" id="hc4-5M-82C">
                                 <rect key="frame" x="0.0" y="0.0" width="181" height="191"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="191" id="CWb-FA-sZS"/>
@@ -51,10 +51,12 @@
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mfx-wZ-iDa">
-                                <rect key="frame" x="8" y="289" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mfx-wZ-iDa">
+                                <rect key="frame" x="20" y="289" width="141" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="0C3-mW-2xS"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="+ Add to bag">
                                     <color key="titleColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -88,6 +90,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Mfx-wZ-iDa" secondAttribute="trailing" constant="20" id="00H-G0-Me1"/>
                             <constraint firstItem="EDT-GO-b8S" firstAttribute="leading" secondItem="7Zw-cC-kNZ" secondAttribute="leading" constant="9" id="2ih-2e-yqN"/>
                             <constraint firstAttribute="trailing" secondItem="hc4-5M-82C" secondAttribute="trailing" id="3na-El-0nf"/>
                             <constraint firstItem="hc4-5M-82C" firstAttribute="leading" secondItem="7Zw-cC-kNZ" secondAttribute="leading" id="5mL-k5-45q"/>
@@ -96,9 +99,11 @@
                             <constraint firstAttribute="trailing" secondItem="EDT-GO-b8S" secondAttribute="trailing" constant="7" id="Co7-Sr-iwR"/>
                             <constraint firstItem="hc4-5M-82C" firstAttribute="top" secondItem="7Zw-cC-kNZ" secondAttribute="top" id="DBG-ue-Xxe"/>
                             <constraint firstItem="OkM-ny-tXL" firstAttribute="leading" secondItem="7Zw-cC-kNZ" secondAttribute="leading" constant="8" id="HuM-lf-peE"/>
+                            <constraint firstItem="Mfx-wZ-iDa" firstAttribute="top" secondItem="OkM-ny-tXL" secondAttribute="bottom" constant="8" id="PcC-Kk-e1F"/>
                             <constraint firstItem="gaA-xy-bFD" firstAttribute="top" secondItem="EDT-GO-b8S" secondAttribute="bottom" constant="-5" id="S5H-PK-REw"/>
                             <constraint firstAttribute="trailing" secondItem="gaA-xy-bFD" secondAttribute="trailing" constant="8" id="cZg-Pz-E8c"/>
                             <constraint firstAttribute="trailing" secondItem="OkM-ny-tXL" secondAttribute="trailing" constant="8" id="d0n-CK-nM1"/>
+                            <constraint firstItem="Mfx-wZ-iDa" firstAttribute="leading" secondItem="7Zw-cC-kNZ" secondAttribute="leading" constant="20" id="l8c-di-jvr"/>
                             <constraint firstItem="OkM-ny-tXL" firstAttribute="top" secondItem="gaA-xy-bFD" secondAttribute="bottom" id="zLN-RK-kFp"/>
                         </constraints>
                     </view>
