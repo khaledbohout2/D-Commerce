@@ -475,6 +475,7 @@ class HomePageVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "ProductListVC")
+            categpryID = ""
             self.navigationController?.pushViewController(vc, animated: true)
 
         
