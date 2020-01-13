@@ -10,8 +10,7 @@ import UIKit
 import SkyFloatingLabelTextField
 import Alamofire
 
-class AddAddressVC: UIViewController,UIScrollViewDelegate {
-    
+class AddAddressVC: UIViewController,UIScrollViewDelegate,SetState {
 
     
     @IBOutlet var tftFirstName: UITextField!
@@ -49,15 +48,10 @@ class AddAddressVC: UIViewController,UIScrollViewDelegate {
     
     
     override func viewWillAppear(_ animated: Bool)
+        
     {
    
-        if !strCountryID .isEqual(to: "") {
-            tftCountry.text = strCountryName as String
-        }
-        
-        if !strStateID .isEqual(to: "") {
-            tftState.text = strStateName as String
-        }
+
         
     }
 
@@ -67,20 +61,28 @@ class AddAddressVC: UIViewController,UIScrollViewDelegate {
         isCountry = true
         
         let obj = self.storyboard!.instantiateViewController(withIdentifier: "CountryStateVC") as! CountryStateVC
+        
+        obj.delegate = self
+        
         self.navigationController?.pushViewController(obj, animated: true)
         
     }
     @IBAction func btnStateClicked(_ sender: Any) {
+        
         isCountry = false
+        
         if strCountryID .isEqual(to: "") {
             
             Alert.Show(title:"", mesage: NSLocalizedString("Please select country.", comment: "") , viewcontroller:self)
             
         }
+            
         else{
         
         let obj = self.storyboard!.instantiateViewController(withIdentifier: "CountryStateVC") as! CountryStateVC
+            obj.delegate = self
         self.navigationController?.pushViewController(obj, animated: true)
+            
         }
     }
     
@@ -143,6 +145,17 @@ class AddAddressVC: UIViewController,UIScrollViewDelegate {
     //        self.view.frame = (frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height+600))
             
         }
+    
+    func didSetState() {
+        
+        if !strCountryID .isEqual(to: "") {
+            tftCountry.text = strCountryName as String
+        }
+        
+        if !strStateID .isEqual(to: "") {
+            tftState.text = strStateName as String
+        }
+    }
     
    
 }

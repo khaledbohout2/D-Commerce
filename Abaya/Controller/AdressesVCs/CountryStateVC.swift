@@ -16,10 +16,18 @@ var strStateName = NSString()
 
 import UIKit
 
+protocol SetState {
+    
+    func didSetState ()
+    
+}
+
 class CountryStateVC: UIViewController {
     @IBOutlet weak var tblCountry: UITableView!
     
     var arrCountry = NSArray()
+    
+    var delegate : SetState?
     
     
     override func viewDidLoad() {
@@ -172,6 +180,7 @@ extension CountryStateVC: UITableViewDataSource, UITableViewDelegate
             
             strCountryName = (dic .object(forKey: "country") as? NSString)!
             strCountryID = String(format: "%@", dic.value(forKey: "id") as! CVarArg) as NSString
+            delegate?.didSetState()
             self.navigationController?.popViewController(animated: true)
         }
             
@@ -180,6 +189,7 @@ extension CountryStateVC: UITableViewDataSource, UITableViewDelegate
             
             strStateName = (dic .object(forKey: "state") as? NSString)!
             strStateID = String(format: "%@", dic.value(forKey: "id") as! CVarArg) as NSString
+            delegate?.didSetState()
             self.navigationController?.popViewController(animated: true)
 
             
