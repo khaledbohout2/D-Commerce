@@ -167,7 +167,7 @@
 		7C359C23237777BF0074E0A3 /* AddressesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressesCell.swift; sourceTree = "<group>"; };
 		7C3917C72383429D0051C952 /* TrackOrderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackOrderVC.swift; sourceTree = "<group>"; };
 		7C3A600D23927EAA00E0B9D1 /* FilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterVC.swift; sourceTree = "<group>"; };
-		7C3AB78A2362F59900348050 /* Blocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C3AB78A2362F59900348050 /* Abaya.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Abaya.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C3AB78D2362F59900348050 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C3AB78F2362F59900348050 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7C3AB7912362F59900348050 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -339,7 +339,7 @@
 		7C3AB78B2362F59900348050 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7C3AB78A2362F59900348050 /* Blocks.app */,
+				7C3AB78A2362F59900348050 /* Abaya.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -560,7 +560,7 @@
 			);
 			name = Abaya;
 			productName = Abaya;
-			productReference = 7C3AB78A2362F59900348050 /* Blocks.app */;
+			productReference = 7C3AB78A2362F59900348050 /* Abaya.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -963,7 +963,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = A6M6GUV5MH;
 				INFOPLIST_FILE = Abaya/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -972,7 +972,7 @@
 				);
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kakouli.Blocks.kkl;
-				PRODUCT_NAME = Blocks;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Abaya/HelperClasses/Abaya-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -987,7 +987,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = A6M6GUV5MH;
 				INFOPLIST_FILE = Abaya/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -996,7 +996,7 @@
 				);
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kakouli.Blocks.kkl;
-				PRODUCT_NAME = Blocks;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Abaya/HelperClasses/Abaya-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
