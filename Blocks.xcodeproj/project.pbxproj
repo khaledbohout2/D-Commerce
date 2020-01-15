@@ -167,7 +167,7 @@
 		7C359C23237777BF0074E0A3 /* AddressesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressesCell.swift; sourceTree = "<group>"; };
 		7C3917C72383429D0051C952 /* TrackOrderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackOrderVC.swift; sourceTree = "<group>"; };
 		7C3A600D23927EAA00E0B9D1 /* FilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterVC.swift; sourceTree = "<group>"; };
-		7C3AB78A2362F59900348050 /* Abaya.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Abaya.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C3AB78A2362F59900348050 /* Blocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C3AB78D2362F59900348050 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C3AB78F2362F59900348050 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7C3AB7912362F59900348050 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -339,7 +339,7 @@
 		7C3AB78B2362F59900348050 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7C3AB78A2362F59900348050 /* Abaya.app */,
+				7C3AB78A2362F59900348050 /* Blocks.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -544,9 +544,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7C3AB7892362F59900348050 /* Abaya */ = {
+		7C3AB7892362F59900348050 /* Blocks */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7C3AB79E2362F59A00348050 /* Build configuration list for PBXNativeTarget "Abaya" */;
+			buildConfigurationList = 7C3AB79E2362F59A00348050 /* Build configuration list for PBXNativeTarget "Blocks" */;
 			buildPhases = (
 				E2F83E3EC12768B8176F82F6 /* [CP] Check Pods Manifest.lock */,
 				7C3AB7862362F59900348050 /* Sources */,
@@ -558,9 +558,9 @@
 			);
 			dependencies = (
 			);
-			name = Abaya;
+			name = Blocks;
 			productName = Abaya;
-			productReference = 7C3AB78A2362F59900348050 /* Abaya.app */;
+			productReference = 7C3AB78A2362F59900348050 /* Blocks.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -579,7 +579,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 7C3AB7852362F59900348050 /* Build configuration list for PBXProject "Abaya" */;
+			buildConfigurationList = 7C3AB7852362F59900348050 /* Build configuration list for PBXProject "Blocks" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -593,7 +593,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7C3AB7892362F59900348050 /* Abaya */,
+				7C3AB7892362F59900348050 /* Blocks */,
 			);
 		};
 /* End PBXProject section */
@@ -972,7 +972,7 @@
 				);
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kakouli.Blocks.kkl;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Blocks;
 				SWIFT_OBJC_BRIDGING_HEADER = "Abaya/HelperClasses/Abaya-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -996,7 +996,7 @@
 				);
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kakouli.Blocks.kkl;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Blocks;
 				SWIFT_OBJC_BRIDGING_HEADER = "Abaya/HelperClasses/Abaya-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1006,7 +1006,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7C3AB7852362F59900348050 /* Build configuration list for PBXProject "Abaya" */ = {
+		7C3AB7852362F59900348050 /* Build configuration list for PBXProject "Blocks" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7C3AB79C2362F59A00348050 /* Debug */,
@@ -1015,7 +1015,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7C3AB79E2362F59A00348050 /* Build configuration list for PBXNativeTarget "Abaya" */ = {
+		7C3AB79E2362F59A00348050 /* Build configuration list for PBXNativeTarget "Blocks" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7C3AB79F2362F59A00348050 /* Debug */,

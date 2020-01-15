@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7C3AB7892362F59900348050"
-               BuildableName = "Abaya.app"
-               BlueprintName = "Abaya"
-               ReferencedContainer = "container:Abaya.xcodeproj">
+               BuildableName = "Blocks.app"
+               BlueprintName = "Blocks"
+               ReferencedContainer = "container:Blocks.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7C3AB7892362F59900348050"
-            BuildableName = "Abaya.app"
-            BlueprintName = "Abaya"
-            ReferencedContainer = "container:Abaya.xcodeproj">
+            BuildableName = "Blocks.app"
+            BlueprintName = "Blocks"
+            ReferencedContainer = "container:Blocks.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7C3AB7892362F59900348050"
-            BuildableName = "Abaya.app"
-            BlueprintName = "Abaya"
-            ReferencedContainer = "container:Abaya.xcodeproj">
+            BuildableName = "Blocks.app"
+            BlueprintName = "Blocks"
+            ReferencedContainer = "container:Blocks.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

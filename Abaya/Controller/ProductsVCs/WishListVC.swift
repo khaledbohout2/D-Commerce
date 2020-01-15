@@ -7,6 +7,7 @@
 
 import UIKit
 import SDWebImage
+import Toast_Swift
 
 class WishListVC: UIViewController {
     
@@ -302,7 +303,9 @@ extension WishListVC:UICollectionViewDelegate,UICollectionViewDataSource,UIColle
             
             deleteFromWishList()
             
-            Alert.Show(title: NSLocalizedString("Item Deleted", comment: ""), mesage: NSLocalizedString("Item Deleted From WishList", comment: ""), viewcontroller: self)
+            
+            self.view.makeToast(NSLocalizedString("Item Deleted From WishList", comment: ""))
+
             
 
         }

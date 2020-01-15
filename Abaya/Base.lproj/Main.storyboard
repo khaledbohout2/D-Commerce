@@ -21,7 +21,7 @@
         <!--Splash View Controller-->
         <scene sceneID="QCn-7j-Azc">
             <objects>
-                <viewController storyboardIdentifier="SplashViewController" id="Zkp-gK-ejl" customClass="SplashViewController" customModule="Abaya" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SplashViewController" id="Zkp-gK-ejl" customClass="SplashViewController" customModule="Blocks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8DN-lg-146">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -73,7 +73,7 @@
         <!--Interactive Pop Navigation Controller-->
         <scene sceneID="Cu9-ds-H3s">
             <objects>
-                <navigationController storyboardIdentifier="navigation" automaticallyAdjustsScrollViewInsets="NO" id="KFl-lw-rcc" customClass="InteractivePopNavigationController" customModule="Abaya" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navigation" automaticallyAdjustsScrollViewInsets="NO" id="KFl-lw-rcc" customClass="InteractivePopNavigationController" customModule="Blocks" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vD4-IF-dm9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -91,7 +91,7 @@
         <!--Sign InVC-->
         <scene sceneID="JPz-lN-zC5">
             <objects>
-                <viewController storyboardIdentifier="SignInVC" id="i5y-Kk-8OC" customClass="SignInVC" customModule="Abaya" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignInVC" id="i5y-Kk-8OC" customClass="SignInVC" customModule="Blocks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5c9-FH-Bgx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -295,7 +295,7 @@
         <!--Sign UpVC-->
         <scene sceneID="5K6-UN-ODQ">
             <objects>
-                <viewController storyboardIdentifier="SignUpVC" id="Etn-tp-lYd" customClass="SignUpVC" customModule="Abaya" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpVC" id="Etn-tp-lYd" customClass="SignUpVC" customModule="Blocks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jfo-Cr-5dZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -627,12 +627,12 @@
         <!--ForgotVC-->
         <scene sceneID="c8a-c1-dHW">
             <objects>
-                <viewController storyboardIdentifier="forgotVC" title="ForgotVC" id="bXI-8U-Icp" customClass="forgotVC" customModule="Abaya" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="2QW-xE-WB3">
+                <viewController storyboardIdentifier="forgotVC" title="ForgotVC" id="bXI-8U-Icp" customClass="forgotVC" customModule="Blocks" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2QW-xE-WB3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lqd-7n-4lb">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lqd-7n-4lb">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p59-iu-uhi">
@@ -811,7 +811,7 @@
         <!--LanguageVC-->
         <scene sceneID="HSF-7h-fqQ">
             <objects>
-                <viewController storyboardIdentifier="LanguageViewController" id="aFS-lZ-437" customClass="LanguageVC" customModule="Abaya" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LanguageViewController" id="aFS-lZ-437" customClass="LanguageVC" customModule="Blocks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tcn-t7-5B9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -828,7 +828,7 @@
                                 <color key="textColor" white="0.57595486110000005" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1lc-dr-rB4" customClass="LanguageButton" customModule="Abaya" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1lc-dr-rB4" customClass="LanguageButton" customModule="Blocks" customModuleProvider="target">
                                 <rect key="frame" x="14" y="448.5" width="347" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="aag-59-BZC"/>
@@ -840,7 +840,7 @@
                                     <action selector="languageAction:" destination="aFS-lZ-437" eventType="touchUpInside" id="MfO-mc-Cyt"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m75-5D-ayA" customClass="LanguageButton" customModule="Abaya" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m75-5D-ayA" customClass="LanguageButton" customModule="Blocks" customModuleProvider="target">
                                 <rect key="frame" x="14" y="503.5" width="347" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="T0c-f6-l0a"/>
@@ -852,7 +852,7 @@
                                     <action selector="languageAction:" destination="aFS-lZ-437" eventType="touchUpInside" id="vXF-SK-3gO"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HQB-nr-Het" customClass="MainButton" customModule="Abaya" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HQB-nr-Het" customClass="MainButton" customModule="Blocks" customModuleProvider="target">
                                 <rect key="frame" x="14" y="607" width="347" height="40"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -909,7 +909,7 @@
         <!--Country View Controller-->
         <scene sceneID="Hfq-fl-LAQ">
             <objects>
-                <viewController storyboardIdentifier="CountryViewController" id="hHb-YV-YdG" customClass="CountryViewController" customModule="Abaya" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CountryViewController" id="hHb-YV-YdG" customClass="CountryViewController" customModule="Blocks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2nj-oZ-cDw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -926,7 +926,7 @@
                                 <color key="textColor" white="0.57595486110000005" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yNs-AV-Ri9" customClass="LanguageButton" customModule="Abaya" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yNs-AV-Ri9" customClass="LanguageButton" customModule="Blocks" customModuleProvider="target">
                                 <rect key="frame" x="14" y="464" width="347" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="rKk-Rd-wYu"/>
@@ -935,7 +935,7 @@
                                     <color key="titleColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Can-Hp-xns" customClass="MainButton" customModule="Abaya" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Can-Hp-xns" customClass="MainButton" customModule="Blocks" customModuleProvider="target">
                                 <rect key="frame" x="14" y="587" width="347" height="45"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -988,7 +988,7 @@
         <!--SliderMenuVC-->
         <scene sceneID="C7h-1l-Be8">
             <objects>
-                <viewController storyboardIdentifier="SliderMenuVC" title="SliderMenuVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RWf-pO-6Lu" customClass="SliderMenuVC" customModule="Abaya" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SliderMenuVC" title="SliderMenuVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RWf-pO-6Lu" customClass="SliderMenuVC" customModule="Blocks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ELg-Dk-h5z">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1022,7 +1022,7 @@
         <!--GatwayVC-->
         <scene sceneID="B0d-lr-Vif">
             <objects>
-                <viewController storyboardIdentifier="GatwayVC" id="bxG-oR-WAi" customClass="GatwayVC" customModule="Abaya" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GatwayVC" id="bxG-oR-WAi" customClass="GatwayVC" customModule="Blocks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XCz-J3-W8u">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1037,7 +1037,7 @@
         <!--ProfileViewController-->
         <scene sceneID="ZMd-Ut-Evn">
             <objects>
-                <viewController storyboardIdentifier="ProfileViewController" title="ProfileViewController" id="Qv9-sm-VYG" customClass="ProfileVC" customModule="Abaya" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileViewController" title="ProfileViewController" id="Qv9-sm-VYG" customClass="ProfileVC" customModule="Blocks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PG6-rW-Uyr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1184,7 +1184,7 @@
         <!--WishListViewcontroller-->
         <scene sceneID="p2r-KV-vVg">
             <objects>
-                <viewController storyboardIdentifier="WishListViewcontroller" title="WishListViewcontroller" id="TSs-1n-VuR" customClass="WishListVC" customModule="Abaya" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WishListViewcontroller" title="WishListViewcontroller" id="TSs-1n-VuR" customClass="WishListVC" customModule="Blocks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="y6z-Ni-Ng1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1251,7 +1251,7 @@
         <!--AddressesViewcontroller-->
         <scene sceneID="tTw-qu-caL">
             <objects>
-                <viewController storyboardIdentifier="AddressesViewcontroller" title="AddressesViewcontroller" id="kK1-Dv-gkn" customClass="AdressesVC" customModule="Abaya" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddressesViewcontroller" title="AddressesViewcontroller" id="kK1-Dv-gkn" customClass="AdressesVC" customModule="Blocks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ywd-2I-dLf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1304,7 +1304,7 @@
                                     <constraint firstAttribute="height" constant="1" id="APD-98-3t3"/>
                                 </constraints>
                             </view>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D0c-hN-Qw4" customClass="MainButton" customModule="Abaya" customModuleProvider="target">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D0c-hN-Qw4" customClass="MainButton" customModule="Blocks" customModuleProvider="target">
                                 <rect key="frame" x="20" y="607" width="335" height="45"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -1368,7 +1368,7 @@
         <!--CategoryVC-->
         <scene sceneID="p9a-67-g9G">
             <objects>
-                <viewController storyboardIdentifier="CategoryVC" title="CategoryVC" id="V12-k5-14P" customClass="CategoryVC" customModule="Abaya" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CategoryVC" title="CategoryVC" id="V12-k5-14P" customClass="CategoryVC" customModule="Blocks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="awt-Sz-bF1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1438,7 +1438,7 @@
         <!--ProductDetail-->
         <scene sceneID="uv6-Sh-4Tu">
             <objects>
-                <viewController storyboardIdentifier="productVC" title="ProductDetail" id="BAc-ij-7Md" customClass="ProductDetail" customModule="Abaya" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="productVC" title="ProductDetail" id="BAc-ij-7Md" customClass="ProductDetail" customModule="Blocks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nRZ-FE-m3S">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1768,13 +1768,13 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Material" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hnl-5X-bH8">
-                                                <rect key="frame" x="25" y="802" width="48.5" height="21"/>
+                                                <rect key="frame" x="25" y="802" width="49" height="21"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manufactured in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YYR-uj-oT7">
-                                                <rect key="frame" x="25" y="837" width="98.5" height="21"/>
+                                                <rect key="frame" x="25" y="837" width="100.5" height="21"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -1949,7 +1949,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quick shipping and on-time, guaranteed deliveries" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJg-Yd-Sih">
-                                                <rect key="frame" x="83" y="1102" width="274.5" height="14"/>
+                                                <rect key="frame" x="83" y="1102" width="280.5" height="14"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="14" id="Gii-hQ-thc"/>
                                                 </constraints>
@@ -1958,7 +1958,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100% original products, shop with confidence" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymf-Gi-xr0">
-                                                <rect key="frame" x="83" y="1161" width="274.5" height="14"/>
+                                                <rect key="frame" x="83" y="1161" width="280.5" height="14"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="14" id="1gI-R6-Vh1"/>
                                                     <constraint firstAttribute="height" constant="14" id="Zo7-AR-k50"/>
@@ -1968,7 +1968,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14 days return policy, returns are so simple" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yZw-U7-PeJ">
-                                                <rect key="frame" x="83" y="1221.5" width="274.5" height="14"/>
+                                                <rect key="frame" x="83" y="1221.5" width="280.5" height="14"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="14" id="JME-OW-Bou"/>
                                                 </constraints>
@@ -2326,7 +2326,7 @@
         <!--FilterVC-->
         <scene sceneID="s00-46-4G6">
             <objects>
-                <viewController id="Me9-Pa-V0G" customClass="FilterVC" customModule="Abaya" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Me9-Pa-V0G" customClass="FilterVC" customModule="Blocks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ojb-DA-azG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2596,7 +2596,7 @@
         <!--CartVC-->
         <scene sceneID="p08-iG-McS">
             <objects>
-                <viewController storyboardIdentifier="CartVC" title="CartVC" id="mAJ-NS-oYB" customClass="CartVC" customModule="Abaya" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CartVC" title="CartVC" id="mAJ-NS-oYB" customClass="CartVC" customModule="Blocks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="efV-CT-u3G">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2635,7 +2635,7 @@
         <!--AddAddressVC-->
         <scene sceneID="HdA-8O-ikU">
             <objects>
-                <viewController storyboardIdentifier="AddAddressVC" title="AddAddressVC" id="Tzl-k5-a9L" customClass="AddAddressVC" customModule="Abaya" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddAddressVC" title="AddAddressVC" id="Tzl-k5-a9L" customClass="AddAddressVC" customModule="Blocks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="97m-3m-6Lm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2943,7 +2943,7 @@
         <!--CheckoutVC-->
         <scene sceneID="axA-cv-lG3">
             <objects>
-                <viewController storyboardIdentifier="CheckoutVC" title="CheckoutVC" id="26V-P3-NNJ" customClass="CheckoutVC" customModule="Abaya" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CheckoutVC" title="CheckoutVC" id="26V-P3-NNJ" customClass="CheckoutVC" customModule="Blocks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yXZ-bz-gfK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3084,7 +3084,7 @@
                                                 </connections>
                                             </tableView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zdQ-Xo-tmY">
-                                                <rect key="frame" x="130" y="552" width="115" height="30"/>
+                                                <rect key="frame" x="128.5" y="552" width="118" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="wfa-nh-KdJ"/>
                                                 </constraints>
@@ -3096,7 +3096,7 @@
                                                     <action selector="addNewAddressTapped:" destination="26V-P3-NNJ" eventType="touchUpInside" id="8US-Bx-gQg"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WbS-HO-e6i" customClass="MainButton" customModule="Abaya" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WbS-HO-e6i" customClass="MainButton" customModule="Blocks" customModuleProvider="target">
                                                 <rect key="frame" x="10" y="597" width="355" height="45"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -3206,7 +3206,7 @@
         <!--OrderConfirmVC-->
         <scene sceneID="LuT-VJ-4Vd">
             <objects>
-                <viewController storyboardIdentifier="OrderConfirmVC" title="OrderConfirmVC" id="3Bi-LT-A4B" customClass="OrderConfirmVC" customModule="Abaya" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OrderConfirmVC" title="OrderConfirmVC" id="3Bi-LT-A4B" customClass="OrderConfirmVC" customModule="Blocks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1Z8-HA-scF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3504,7 +3504,7 @@
                                                     <constraint firstItem="e32-eT-GlM" firstAttribute="leading" secondItem="0eb-IA-pOJ" secondAttribute="leading" constant="6" id="w9T-Wv-2tL"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q9h-Ue-wCw" customClass="MainButton" customModule="Abaya" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q9h-Ue-wCw" customClass="MainButton" customModule="Blocks" customModuleProvider="target">
                                                 <rect key="frame" x="15" y="597" width="345" height="45"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -3591,7 +3591,7 @@
         <!--PaymentVC-->
         <scene sceneID="Ze2-pu-odV">
             <objects>
-                <viewController storyboardIdentifier="PaymentVC" title="PaymentVC" id="Csp-mK-hc2" customClass="PaymentVC" customModule="Abaya" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PaymentVC" title="PaymentVC" id="Csp-mK-hc2" customClass="PaymentVC" customModule="Blocks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="D8t-G0-Fmi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3858,7 +3858,7 @@
                                                     <action selector="btnCashOnDeliveryClicked:" destination="Csp-mK-hc2" eventType="touchUpInside" id="s2w-IO-mvA"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RsR-ln-cbm" customClass="MainButton" customModule="Abaya" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RsR-ln-cbm" customClass="MainButton" customModule="Blocks" customModuleProvider="target">
                                                 <rect key="frame" x="15" y="597" width="345" height="45"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -4022,7 +4022,7 @@
         <!--EditProfileVC-->
         <scene sceneID="6HY-xd-xp0">
             <objects>
-                <viewController storyboardIdentifier="EditProfileVC" title="EditProfileVC" id="6Jr-xC-VZ3" customClass="EditProfileVC" customModule="Abaya" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditProfileVC" title="EditProfileVC" id="6Jr-xC-VZ3" customClass="EditProfileVC" customModule="Blocks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sNK-fI-qz4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4062,7 +4062,7 @@
                                         </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YMr-Lx-TWz" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                        <rect key="frame" x="15" y="214" width="346" height="39"/>
+                                        <rect key="frame" x="15" y="214" width="346" height="34"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -4083,7 +4083,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rfi-pi-ZP4" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                        <rect key="frame" x="15" y="268.5" width="346" height="39"/>
+                                        <rect key="frame" x="15" y="263.5" width="346" height="34"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -4101,7 +4101,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Jz-sW-YXg" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                        <rect key="frame" x="15" y="323.5" width="346" height="44"/>
+                                        <rect key="frame" x="15" y="313.5" width="346" height="44"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="rnA-iC-7oh"/>
@@ -4122,7 +4122,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J6q-1b-vcC" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                        <rect key="frame" x="15" y="382.5" width="346" height="39"/>
+                                        <rect key="frame" x="15" y="372.5" width="346" height="39"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="39.329999999999998" id="zXz-ZQ-SG5"/>
@@ -4197,7 +4197,7 @@
         <!--OrdersVC-->
         <scene sceneID="HKG-wS-eNH">
             <objects>
-                <viewController storyboardIdentifier="OrdersVC" id="o6l-uh-Cqs" customClass="OrdersVC" customModule="Abaya" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OrdersVC" id="o6l-uh-Cqs" customClass="OrdersVC" customModule="Blocks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="r3l-u2-bHk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4281,7 +4281,7 @@
         <!--CountryStateVC-->
         <scene sceneID="wuT-uO-DXh">
             <objects>
-                <viewController storyboardIdentifier="CountryStateVC" title="CountryStateVC" id="xHQ-Tz-fyi" customClass="CountryStateVC" customModule="Abaya" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CountryStateVC" title="CountryStateVC" id="xHQ-Tz-fyi" customClass="CountryStateVC" customModule="Blocks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HTa-WQ-TN1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4316,7 +4316,7 @@
         <!--Edit Address-->
         <scene sceneID="aRI-8l-3Jh">
             <objects>
-                <viewController storyboardIdentifier="EditAddressVC" title="Edit Address" id="Xod-Gg-cg1" customClass="EditAddressVC" customModule="Abaya" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditAddressVC" title="Edit Address" id="Xod-Gg-cg1" customClass="EditAddressVC" customModule="Blocks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="v43-Oo-lSm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4623,7 +4623,7 @@
         <!--CartVC2-->
         <scene sceneID="abU-u0-DPL">
             <objects>
-                <viewController id="K3z-Id-XpF" customClass="CartVC2" customModule="Abaya" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="K3z-Id-XpF" customClass="CartVC2" customModule="Blocks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dNu-1O-zU0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4680,7 +4680,7 @@
         <!--ProductListVC-->
         <scene sceneID="mFf-GK-A7D">
             <objects>
-                <viewController storyboardIdentifier="ProductListVC" title="ProductListVC" id="oCd-VL-KtC" customClass="ProductListVC" customModule="Abaya" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProductListVC" title="ProductListVC" id="oCd-VL-KtC" customClass="ProductListVC" customModule="Blocks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dH6-3I-4Nv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4737,7 +4737,7 @@
         <!--SearchVC-->
         <scene sceneID="Qxh-bW-yYe">
             <objects>
-                <viewController storyboardIdentifier="SearchVC" id="trb-65-cUx" customClass="SearchVC" customModule="Abaya" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchVC" id="trb-65-cUx" customClass="SearchVC" customModule="Blocks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hzu-mE-X03">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4854,7 +4854,7 @@
         <!--Search ResultsVC-->
         <scene sceneID="1gb-XV-FtC">
             <objects>
-                <viewController storyboardIdentifier="SearchResultsVC" id="bCE-yg-cj2" customClass="SearchResultsVC" customModule="Abaya" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchResultsVC" id="bCE-yg-cj2" customClass="SearchResultsVC" customModule="Blocks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BeD-7I-Iu9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4939,7 +4939,7 @@
         <!--Track Order-->
         <scene sceneID="gez-f9-u7M">
             <objects>
-                <viewController storyboardIdentifier="TrackOrderVC" title="Track Order" id="XMU-bg-cbr" customClass="TrackOrderVC" customModule="Abaya" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TrackOrderVC" title="Track Order" id="XMU-bg-cbr" customClass="TrackOrderVC" customModule="Blocks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xl4-vF-m4a">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -5064,13 +5064,13 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ayB-3d-UU2" customClass="FancyView" customModule="Abaya" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ayB-3d-UU2" customClass="FancyView" customModule="Blocks" customModuleProvider="target">
                                                         <rect key="frame" x="8" y="8" width="35" height="35"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hVp-Sa-7vC" customClass="FancyView" customModule="Abaya" customModuleProvider="target">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hVp-Sa-7vC" customClass="FancyView" customModule="Blocks" customModuleProvider="target">
                                                                 <rect key="frame" x="5" y="5" width="25" height="25"/>
                                                                 <subviews>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="joD-U4-sNg" customClass="FancyView" customModule="Abaya" customModuleProvider="target">
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="joD-U4-sNg" customClass="FancyView" customModule="Blocks" customModuleProvider="target">
                                                                         <rect key="frame" x="7.5" y="7.5" width="10" height="10"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
@@ -5111,13 +5111,13 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lBH-I4-lzh" customClass="FancyView" customModule="Abaya" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lBH-I4-lzh" customClass="FancyView" customModule="Blocks" customModuleProvider="target">
                                                         <rect key="frame" x="8" y="103" width="35" height="35"/>
                                                         <subviews>
-                                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ifn-Ef-nWd" customClass="FancyView" customModule="Abaya" customModuleProvider="target">
+                                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ifn-Ef-nWd" customClass="FancyView" customModule="Blocks" customModuleProvider="target">
                                                                 <rect key="frame" x="5" y="5" width="25" height="25"/>
                                                                 <subviews>
-                                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vPH-di-qjX" customClass="FancyView" customModule="Abaya" customModuleProvider="target">
+                                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vPH-di-qjX" customClass="FancyView" customModule="Blocks" customModuleProvider="target">
                                                                         <rect key="frame" x="7.5" y="7.5" width="10" height="10"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
@@ -5148,13 +5148,13 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yHm-bm-nwF" customClass="FancyView" customModule="Abaya" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yHm-bm-nwF" customClass="FancyView" customModule="Blocks" customModuleProvider="target">
                                                         <rect key="frame" x="8" y="198" width="35" height="35"/>
                                                         <subviews>
-                                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qO6-Ty-yDy" customClass="FancyView" customModule="Abaya" customModuleProvider="target">
+                                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qO6-Ty-yDy" customClass="FancyView" customModule="Blocks" customModuleProvider="target">
                                                                 <rect key="frame" x="5" y="5" width="25" height="25"/>
                                                                 <subviews>
-                                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KBW-uQ-enk" customClass="FancyView" customModule="Abaya" customModuleProvider="target">
+                                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KBW-uQ-enk" customClass="FancyView" customModule="Blocks" customModuleProvider="target">
                                                                         <rect key="frame" x="7.5" y="7.5" width="10" height="10"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
@@ -5185,13 +5185,13 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kmy-hs-354" customClass="FancyView" customModule="Abaya" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kmy-hs-354" customClass="FancyView" customModule="Blocks" customModuleProvider="target">
                                                         <rect key="frame" x="8" y="293" width="35" height="35"/>
                                                         <subviews>
-                                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sz0-LQ-Rgv" customClass="FancyView" customModule="Abaya" customModuleProvider="target">
+                                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sz0-LQ-Rgv" customClass="FancyView" customModule="Blocks" customModuleProvider="target">
                                                                 <rect key="frame" x="5" y="5" width="25" height="25"/>
                                                                 <subviews>
-                                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VCh-bN-vnO" customClass="FancyView" customModule="Abaya" customModuleProvider="target">
+                                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VCh-bN-vnO" customClass="FancyView" customModule="Blocks" customModuleProvider="target">
                                                                         <rect key="frame" x="7.5" y="7.5" width="10" height="10"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
