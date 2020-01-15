@@ -387,7 +387,7 @@
 "cMB-bQ-Is0.placeholder" = "عنوان ٢";
 
 /* Class = "UITextField"; placeholder = "County"; ObjectID = "crm-Gn-ZTu"; */
-"crm-Gn-ZTu.placeholder" = "الدلوة";
+"crm-Gn-ZTu.placeholder" = "الدولة";
 
 /* Class = "UITextField"; placeholder = "FIRST NAME"; ObjectID = "dJ8-cV-YC4"; */
 "dJ8-cV-YC4.placeholder" = "الإسم الأول";
@@ -531,7 +531,7 @@
 "qJh-WG-C1X.placeholder" = "الإسم الأخير";
 
 /* Class = "UIButton"; normalTitle = "Login with Facebook"; ObjectID = "qYX-L5-74K"; */
-"qYX-L5-74K.normalTitle" = "الدخول عن طريق الفيسبوك";
+"qYX-L5-74K.normalTitle" = "الإستمرار كزائر";
 
 /* Class = "UILabel"; text = "Super 130"; ObjectID = "qed-Qh-qMi"; */
 "qed-Qh-qMi.text" = "Super 130";
