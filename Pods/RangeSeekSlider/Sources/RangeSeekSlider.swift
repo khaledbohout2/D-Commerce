@@ -88,7 +88,7 @@ import UIKit
     /// You can update this default here by updating properties of NumberFormatter. For example, you could supply a currency style, or a prefix or suffix.
     open var numberFormatter: NumberFormatter = {
         let formatter: NumberFormatter = NumberFormatter()
-        formatter.numberStyle = .currency
+        formatter.numberStyle = .decimal
         formatter.maximumFractionDigits = 0
         return formatter
     }()
@@ -188,7 +188,7 @@ import UIKit
     @IBInspectable open var selectedHandleDiameterMultiplier: CGFloat = 1.7
 
     /// Set the slider line height (default 1.0)
-    @IBInspectable open var lineHeight: CGFloat = 5.0 {
+    @IBInspectable open var lineHeight: CGFloat = 1.0 {
         didSet {
             updateLineHeight()
         }
