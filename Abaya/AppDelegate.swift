@@ -54,8 +54,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MOLHResetable {
 
         IQKeyboardManager.shared.enable = true
         MOLH.shared.activate(true)
-       
-        
+        let defaults = UserDefaults.standard
+        if let _ = defaults.string(forKey: "isAppAlreadyLaunchedOnce"){
+            defaults.removeObject(forKey: "isAppAlreadyLaunchedOnce")
+        }
+
         return true
     }
 
