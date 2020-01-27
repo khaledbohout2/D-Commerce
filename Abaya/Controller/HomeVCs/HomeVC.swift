@@ -21,7 +21,6 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     @IBOutlet var collectionView: UICollectionView!
     
     var arrSlider = NSArray()
-    var arrNewArr = NSArray()
     
      private let topInset : CGFloat = 240
     private var isFading = false
@@ -29,6 +28,7 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     var hud = JGProgressHUD(style: .extraLight)
      var pageMenu : CAPSPageMenu?
     
+    // MARK:- App Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -57,6 +57,7 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     override func viewWillAppear(_ animated: Bool) {
         
             }
+    
     @objc func btnbackaction()
     {
         self.dismiss(animated: true, completion: nil)
@@ -140,10 +141,7 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         }
     }
 
-    override func viewDidAppear(_ animated: Bool)
-    {
-        
-    }
+    
     
 
     

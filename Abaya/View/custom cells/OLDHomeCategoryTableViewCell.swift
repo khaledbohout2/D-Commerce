@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeCategoryTableViewCell: UITableViewCell {
+class OLDHomeCategoryTableViewCell: UITableViewCell {
 
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var areaLabel: UILabel!

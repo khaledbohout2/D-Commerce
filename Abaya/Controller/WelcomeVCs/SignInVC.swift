@@ -178,6 +178,8 @@ class SignInVC: UIViewController {
         
         let homeVC = HomeVC(nibName: "productDetail", bundle: nil)
         self.navigationController?.pushViewController(homeVC, animated: true)
+//        let homeVC = NewHomeViewController(nibName: "NewHomeViewController", bundle: nil)
+//        self.navigationController?.pushViewController(homeVC, animated: true)
     }
 
 }
