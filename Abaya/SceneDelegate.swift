@@ -27,7 +27,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                     loginAccessToken = dic?["token"] as! NSString
 
 
-                    let vc = HomeVC(nibName: "productDetail", bundle: nil)
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    
+                    let vc = storyboard.instantiateViewController(withIdentifier: "NewHomeVC") as! HomeVC
+
                       let aObjNavi = UINavigationController(rootViewController: vc);                        self.window?.addSubview(aObjNavi.view)
                          self.window?.rootViewController = aObjNavi
                     

@@ -1,91 +1,174 @@
 //
-//  HomeVC.swift
-//  Abaya
+//  NewHomeVC.swift
+//  Blocks
 //
-//  Created by khaled Bohout on 11/03/19.
-//  Copyright © 2019 Khaled Bohout. All rights reserved.
+//  Created by Khaled Bohout on 1/27/20.
+//  Copyright © 2020 Khaled Bohout. All rights reserved.
 //
 
 import UIKit
-import Alamofire
-import JGProgressHUD
 import SDWebImage
 
-class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout ,UIScrollViewDelegate {
+class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+
     
-    @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
-    @IBOutlet weak var scroll: UIScrollView!
-    @IBOutlet weak var contentView: UIView!
-    @IBOutlet var lblBrowseShops: UILabel!
-    @IBOutlet var pageControl: UIPageControl!
-    @IBOutlet var collectionView: UICollectionView!
+    
+    @IBOutlet weak var categoriesTableView: UITableView!
+    
+    @IBOutlet weak var bannersCollectionView: UICollectionView!
+
+    @IBOutlet weak var pageControl: UIPageControl!
+    
+    
+   // @IBOutlet weak var collectionViewHieght: NSLayoutConstraint!
     
     var arrSlider = NSArray()
     
-     private let topInset : CGFloat = 240
-    private var isFading = false
+    var arrSubCategoryList = NSArray()
     
-    var hud = JGProgressHUD(style: .extraLight)
-     var pageMenu : CAPSPageMenu?
+    var arrStoreList = NSArray()
+
     
-    // MARK:- App Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionViewHeight.constant = self.view.frame.size.width
+       // collectionViewHieght.constant = self.view.frame.size.width
         
-          self.view.frame =  CGRect(0, 0, self.view.frame.size.width, self.view.frame.size.height + self.view.frame.size.width)
+        categoriesTableView.delegate = self
+        categoriesTableView.dataSource = self
         
-    
-
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        collectionView.isPagingEnabled = true
+        bannersCollectionView.delegate = self
+        bannersCollectionView.dataSource = self
+        bannersCollectionView.isPagingEnabled = true
         
-        collectionView.register(UINib.init(nibName: "HomeSliderCell", bundle: nil), forCellWithReuseIdentifier: "HomeSliderCell")
+        bannersCollectionView.register(UINib.init(nibName: "HomeSliderCell", bundle: nil), forCellWithReuseIdentifier: "HomeSliderCell")
         
-        self.GetBannerApi()
+        categoriesTableView.register(UINib(nibName: "storeCell", bundle: nil), forCellReuseIdentifier: "storeCell")
         
+        GetCategoryApi()
         
         setupNavButtons()
+        // Do any additional setup after loading the view.
+    }
+    
 
-        
-//        GetCategoryApi()
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        
-            }
-    
-    @objc func btnbackaction()
-    {
-        self.dismiss(animated: true, completion: nil)
-    }
-    override func viewDidLayoutSubviews()
-    {
-        
-        
-        scroll.contentSize = CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height+375)
+       func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+           
+           
+           
+           
+           let cell = tableView.dequeueReusableCell(withIdentifier: "storeCell", for: indexPath as IndexPath) as! storeCell
+           
+           
+           var dic = NSDictionary()
+           
+           dic = CategoryList[indexPath.row] as! NSDictionary
+           
+           
+           print(dic)
+           
+           cell.store_name.text = (dic.value(forKey: NSLocalizedString("category_name", comment: "")) as? String)!
+           
+           cell.store_coutry.text = "Slogan"
 
-    }
-    
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        pageControl.currentPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
-    }
+           
+           cell.store_coutry.textColor = UIColor.white
+           
+           cell.store_name.textColor = UIColor.white
+           
+           let strurl = .imagebaseURL + "category/" + (dic.value(forKey: "category_image") as! String)
+           
+           let fileUrl = URL(string: strurl)
 
+           cell.store_imageimage.sd_setImage(with: fileUrl! as URL, placeholderImage: UIImage(named: ""),options: SDWebImageOptions(rawValue: 0), completed: { (image, error, cacheType, imageURL) in
+           })
+
+           cell.selectionStyle = .none
     
-  
+               return cell
+
+       }
+
+       
+       func numberOfSections(in tableView: UITableView) -> Int {
+           
+           return 1
+       }
+       
+       func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+
+           
+           return CategoryList.count
+           
+
+           
+       }
+       
+       
+       
+       private func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+           return 100
+       }
+       
+       func scrollViewDidScroll(_ scrollView: UIScrollView) {
+           //Change the current page
+           let witdh = scrollView.frame.width - (scrollView.contentInset.left*2)
+           let index = scrollView.contentOffset.x / witdh
+           let roundedIndex = round(index)
+           pageControl.currentPage = Int(roundedIndex)
+           //
+       }
+       func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+       {
+          
+        return self.view.frame.size.width/2
+           
+          // return 50
+         
+       }
+       
+       func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+           
+           var dic = NSDictionary()
+           dic = CategoryList[indexPath.row] as! NSDictionary
+                
+           
+           let storyboard = UIStoryboard(name: "Main", bundle: nil)
+           
+           let categoryVC = storyboard.instantiateViewController(withIdentifier: "CategoryVC") as! CategoryVC
+           
+         //  categoryVC.dicDetail = dicDetail
+        
+        categoryVC.categoryDic = dic
+           
+          
+
+           self.navigationController?.pushViewController(categoryVC, animated: true)
+
+          }
+
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return arrSlider.count
     }
+    
+    
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (self.collectionView.frame.width), height: (self.collectionView.frame.height
+        
+        return CGSize(width: (self.bannersCollectionView.frame.width), height: (self.bannersCollectionView.frame.height
         ))
     }
+    
+    
+    
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeSliderCell", for: indexPath) as! HomeSliderCell
@@ -108,12 +191,13 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
 
         
     }
+    
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         
         pageControl.currentPage = Int(indexPath.row)
     }
-    
 
+    
     func startTimer() {
 
         _ =  Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(self.scrollAutomatically), userInfo: nil, repeats: true)
@@ -122,7 +206,7 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
 
     @objc func scrollAutomatically(_ timer1: Timer) {
 
-        if let coll  = collectionView {
+        if let coll  = bannersCollectionView {
             for cell in coll.visibleCells {
                 let indexPath: IndexPath? = coll.indexPath(for: cell)
                 if ((indexPath?.row)! < arrSlider.count - 1){
@@ -140,10 +224,6 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
             }
         }
     }
-
-    
-    
-
     
     func GetCategoryApi()
     {
@@ -159,23 +239,26 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
                 var dic = NSDictionary()
                 dic = response as NSDictionary
                 CategoryList = dic["data"] as! NSArray
+                print(CategoryList)
+                self?.categoriesTableView.reloadData()
+                self?.GetBannerApi()
                 
-                self?.hud.dismiss()
-                self?.addPageMenu(count: (CategoryList.count))
+                hud.dismiss()
+                //self?.addPageMenu(count: (CategoryList.count))
             }
             else
             {
-                self?.hud.dismiss()
+                hud.dismiss()
                 Alert.Show(title:NSLocalizedString("something wrong", comment: ""), mesage: NSLocalizedString("Please try again.", comment: ""), viewcontroller:self!)
                 
             }
             }, failure: { [weak self] failResponse in
-                self?.hud.dismiss()
+                hud.dismiss()
                 Alert.Show(title: NSLocalizedString("network error", comment: ""), mesage:NSLocalizedString("Please try again.", comment: "") , viewcontroller:self!)
         })
     }
     
-    //slider
+
     func GetBannerApi()
     {
         
@@ -189,11 +272,11 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
 
                  self?.arrSlider = (dic["data"] as! NSArray)
                 
-                self?.collectionView.reloadData()
-                self?.collectionViewHeight.constant = self!.view.frame.size.width
+                self?.bannersCollectionView.reloadData()
+              //  self!.collectionViewHieght.constant = self!.view.frame.size.width
+               // self?.bannersCollectionView.constant = self!.view.frame.size.width
                 self?.pageControl.numberOfPages = (self?.arrSlider.count)!
                 self!.startTimer()
-                self?.GetCategoryApi()
                 
             }
             else
@@ -203,10 +286,77 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
                                     
                                 }
                                 }, failure: { [weak self] failResponse in
-                                    self?.hud.dismiss()
+                                    hud.dismiss()
                                     Alert.Show(title: NSLocalizedString("network error", comment: ""), mesage:NSLocalizedString("Please try again.", comment: "") , viewcontroller:self!)
         })
     }
+    
+        func GetStoreList()
+        {
+
+            hud.textLabel.text = NSLocalizedString("Loading", comment: "")
+            
+            hud.show(in: self.view)
+            
+            var resultString = String()
+            
+            let ApiUrl = "http://theblocksapp.com/api/getAllNewProducts/"
+            
+            let limit = "?limit=5"
+          
+            resultString = "\(ApiUrl)\(limit)"
+          
+           
+            ApiBaseClass.apiCallingWithGetMethode(url:resultString, completion: { [weak self] response in
+                
+                let errorCheck = response["success"] as! Bool
+                
+                var dic = NSDictionary()
+                
+                dic = response as NSDictionary
+                
+                if errorCheck
+                {
+                    var dicData = NSDictionary()
+                    
+                    dicData = dic["data"]  as! NSDictionary
+                    
+             //       print(dicData)
+                    
+                    
+                    self?.arrStoreList  = dicData.value(forKey: "data") as!NSArray
+                    
+                    
+                //    self?.GetNewBlock()
+
+                //    self?.collectionView.reloadData()
+
+                  
+                     self?.categoriesTableView.reloadData()
+
+
+    //                DispatchQueue.main.async {
+    //
+    //                    var frame = self?.view.frame
+    //                    frame!.size.height = self!.tblDetail.contentSize.height
+    //                    self!.view.frame = frame!
+    //
+    //                }
+                    
+                     hud.dismiss()
+                }
+                else
+                    
+                {
+                    hud.dismiss()
+                      Alert.Show(title:NSLocalizedString("something wrong", comment: ""), mesage: NSLocalizedString("Please try again.", comment: ""), viewcontroller:self!)
+                        
+                    }
+                    }, failure: { [weak self] failResponse in
+                        hud.dismiss()
+                        Alert.Show(title: NSLocalizedString("network error", comment: ""), mesage:NSLocalizedString("Please try again.", comment: "") , viewcontroller:self!)
+            })
+        }
 }
 
 
@@ -218,7 +368,7 @@ extension HomeVC {
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = false 
+        self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.view.backgroundColor = UIColor.lightGray
         self.navigationController?.navigationBar.tintColor = UIColor.black
 
@@ -289,53 +439,4 @@ extension HomeVC {
         //Here you should implement your checks for the swipe gesture
     }
     
-}
-
-extension HomeVC {
-    
-   
-    func addPageMenu(count: Int) {
-        var controllerArray : [UIViewController] = []
-       // print(CategoryList)
-       
-        var dic = NSDictionary()
-        
-        for  i in CategoryList {
-            
-             var controller = HomePageVC()
-             controller  = HomePageVC(nibName: "SubCategory1", bundle: nil)
-            
-               controllerArray.append(controller)
-            
-               dic = i as! NSDictionary
-            
-               controller.title = dic.value(forKey: NSLocalizedString("category_name", comment: "")) as? String
-               controller.arrSubCategoryList = dic.value(forKey: "children") as! NSArray
-            
-           // controller.arrSubCategoryList_2 = dic.value(forKey: "children") as! NSArray
-            
-            
-            
-        }
-        
-        let parameters = [CAPSPageMenuOptionScrollMenuBackgroundColor: UIColor.clear,
-                          CAPSPageMenuOptionViewBackgroundColor: UIColor.white,
-                          CAPSPageMenuOptionSelectionIndicatorColor: UIColor.black,
-                          CAPSPageMenuOptionBottomMenuHairlineColor: UIColor.clear,
-                          CAPSPageMenuOptionSelectedMenuItemLabelColor: UIColor.black,
-                          CAPSPageMenuOptionUnselectedMenuItemLabelColor: UIColor.lightGray,
-                          CAPSPageMenuOptionMenuItemSeparatorWidth:self.view.frame.width/2.2,
-                          CAPSPageMenuOptionMenuItemFont: UIFont(name: "HelveticaNeue", size: 15.0)!, CAPSPageMenuOptionMenuHeight: 50.0, CAPSPageMenuOptionMenuItemWidth: self.view.frame.width/4.5, CAPSPageMenuOptionCenterMenuItems: true] as [String : Any]
-        
-        // Initialize scroll menu
-       
-            pageMenu = CAPSPageMenu(viewControllers: controllerArray, frame: CGRect(x: self.view.frame.origin.x, y: lblBrowseShops.frame.origin.y+lblBrowseShops.frame.size.height+5, width: self.view.frame.width, height: self.view.frame.height - collectionView.frame.size.height), options: parameters)
-       
-        pageMenu?.view.backgroundColor = UIColor.clear
-        self.addChild(pageMenu!)
-        contentView.addSubview(pageMenu!.view)
-        //pageMenu!.didMove(toParentViewController: self)
-        pageControl.isHidden = false
-        lblBrowseShops.isHidden = false
-    }
 }

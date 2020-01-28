@@ -36,7 +36,9 @@ class SplashViewController: UIViewController {
                         loginAccessToken = dic?["token"] as! NSString
 
 
-                        let homeVC = HomeVC(nibName: "productDetail", bundle: nil)
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        
+                        let homeVC = storyboard.instantiateViewController(withIdentifier: "NewHomeVC") as! HomeVC
                         self.navigationController?.pushViewController(homeVC, animated: true)
             //            let storyboard = UIStoryboard(name: "Main", bundle: nil)
             //            let vc = storyboard.instantiateViewController(withIdentifier: "OrderConfirmVC")

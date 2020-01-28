@@ -556,7 +556,9 @@ extension CartVC: UITableViewDataSource, UITableViewDelegate
     }
     @objc func brnContinueAction (sender: UIButton) {
         
-        let homeVC = HomeVC(nibName: "productDetail", bundle: nil)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let homeVC = storyboard.instantiateViewController(withIdentifier: "NewHomeVC") as! HomeVC
         self.navigationController?.pushViewController(homeVC, animated: true)
     }
     

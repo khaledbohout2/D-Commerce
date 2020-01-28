@@ -124,7 +124,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MOLHResetable {
     
         func goToApp() {
             
-            let homeVC = HomeVC(nibName: "productDetail", bundle: nil)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            let homeVC = storyboard.instantiateViewController(withIdentifier: "NewHomeVC") as! HomeVC
             
             let scene = UIApplication.shared.connectedScenes.first
             if let sd : SceneDelegate = (scene?.delegate as? SceneDelegate) {

@@ -17,7 +17,7 @@ class SliderMenuVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     var navigationView = UIView()
 
     let arrImages = ["orders_icon", "addr_icon", "saved_cards_icon", "notification_icon", "wishlist_icon_gray copy"]
-    let arrCategories = ["Men", "Women", "Kids", "Unisex"]
+    let arrCategories = ["Summer", "Winter"]
     let arrAccount = ["Country", "Language"]
     let arrImgAccount = ["flag_icon", "lang_icon"]
     let arrSupport = ["FAQs", "Customer Care","About"]
@@ -146,36 +146,31 @@ class SliderMenuVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
                 
                 let dic = CategoryList[0] as! NSDictionary
                 
-                     var controller = HomePageVC()
-                     controller  = HomePageVC(nibName: "SubCategory1", bundle: nil)
-                       controller.title = dic.value(forKey: NSLocalizedString("category_name", comment: "")) as? String
-                       controller.arrSubCategoryList = dic.value(forKey: "children") as! NSArray
-                controller.fromSideMenue = true
-                self.navigationController?.pushViewController(controller, animated: true)
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                     
+                let categoryVC = storyboard.instantiateViewController(withIdentifier: "CategoryVC") as! CategoryVC
+
+                categoryVC.title = dic.value(forKey: NSLocalizedString("category_name", comment: "")) as? String
+                
+                categoryVC.categoryDic = dic
+
+                self.navigationController?.pushViewController(categoryVC, animated: true)
                 
             } else if indexPath.row == 1 {
                 
                 let dic = CategoryList[1] as! NSDictionary
                 
-                     var controller = HomePageVC()
-                     controller  = HomePageVC(nibName: "SubCategory1", bundle: nil)
-                       controller.title = dic.value(forKey: NSLocalizedString("category_name", comment: "")) as? String
-                       controller.arrSubCategoryList = dic.value(forKey: "children") as! NSArray
-                controller.fromSideMenue = true
-                self.navigationController?.pushViewController(controller, animated: true)
+                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                          
+                     let categoryVC = storyboard.instantiateViewController(withIdentifier: "CategoryVC") as! CategoryVC
+
+                     categoryVC.title = dic.value(forKey: NSLocalizedString("category_name", comment: "")) as? String
+                     
+                     categoryVC.categoryDic = dic
+
+                     self.navigationController?.pushViewController(categoryVC, animated: true)
                 
-            } else if indexPath.row == 2 {
-                
-                let dic = CategoryList[2] as! NSDictionary
-                
-                     var controller = HomePageVC()
-                     controller  = HomePageVC(nibName: "SubCategory1", bundle: nil)
-                       controller.title = dic.value(forKey: NSLocalizedString("category_name", comment: "")) as? String
-                       controller.arrSubCategoryList = dic.value(forKey: "children") as! NSArray
-                controller.fromSideMenue = true
-                self.navigationController?.pushViewController(controller, animated: true)
-                
-            }
+            } 
             
         } else if indexPath.section == 1 {
             

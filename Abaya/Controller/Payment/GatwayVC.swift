@@ -88,9 +88,11 @@ extension GatwayVC {
 
     @objc func backAction()
     {
-        let vc = HomeVC(nibName: "productDetail", bundle: nil)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let homeVC = storyboard.instantiateViewController(withIdentifier: "NewHomeVC") as! HomeVC
 
-        self.navigationController?.pushViewController(vc, animated: true)
+        self.navigationController?.pushViewController(homeVC, animated: true)
 
     }
 

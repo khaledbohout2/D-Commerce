@@ -12,26 +12,40 @@ import SDWebImage
 
 
 class CategoryVC: UIViewController {
-    
+
     @IBOutlet weak var bannerImageView: UIImageView!
     
-    @IBOutlet weak var browseProductslbl: UILabel!
+    @IBOutlet weak var tableView: UITableView!
     
-    @IBOutlet weak var scroll: UIScrollView!
+    var categoryDic = NSDictionary()
     
-    var dicDetail = NSDictionary()
-    var arrCategory = NSArray()
-    var pageMenu : CAPSPageMenu?
+    var arrSubCategories = NSArray()
+    
+//    var lblNewBlocks  = UILabel()
+//
+//    var btnShowAll = UIButton()
+    
+    var iD = Int()
+    
+    @IBOutlet weak var bannerHeight: NSLayoutConstraint!
+    
     var hud = JGProgressHUD(style: .extraLight)
-  //  let lastcat = arrCategory[IndexPath.row]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        tableView.register(UINib(nibName: "storeCell", bundle: nil), forCellReuseIdentifier: "storeCell")
+        
+        self.bannerHeight.constant = self.view.frame.width
+
+        
         setupNavButtons()
         
-        
         loadProducts()
+        
         // Do any additional setup after loading the view.
     }
 
@@ -42,69 +56,77 @@ class CategoryVC: UIViewController {
         
         hud.show(in: self.view)
         
-        let arrCat1 = dicDetail .value(forKey: "children") as! NSArray
+        
+        arrSubCategories = categoryDic .value(forKey: "children") as! NSArray
 
-        arrCategory = arrCat1
         
-        self.title = (dicDetail.value(forKey: NSLocalizedString("category_name", comment: "")) as! String)
+        self.title = (categoryDic.value(forKey: NSLocalizedString("category_name", comment: "")) as! String)
         
-        let imgStrUrl = .imagebaseURL + "category/" + (dicDetail.value(forKey: "category_image") as! String)
-        
-        self.addPageMenu(count: arrCategory.count)
+        let imgStrUrl = .imagebaseURL + "category/" + (categoryDic.value(forKey: "category_image") as! String)
         
         let fileUrl = URL(string: imgStrUrl)
         
         bannerImageView.sd_setImage(with: fileUrl! as URL, placeholderImage: UIImage(named: "store_cover_two"),options: SDWebImageOptions(rawValue: 0), completed: { (image, error, cacheType, imageURL) in
         })
         
-      //  bannerImageView.image = UIImage(url: fileUrl)
-        
         hud.dismiss()
     }
 
 }
 
-extension CategoryVC {
+extension CategoryVC: UITableViewDataSource, UITableViewDelegate {
     
-    func addPageMenu(count: Int) {
-        var controllerArray : [UIViewController] = []
-       // print(CategoryList)
-       
-        var dic = NSDictionary()
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return arrSubCategories.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        for  i in arrCategory {
-            
-             var controller = CategoryPageVC()
-             controller  = CategoryPageVC(nibName: "CategoryPageVC", bundle: nil)
-            
-               controllerArray.append(controller)
-            
-               dic = i as! NSDictionary
-            
-               controller.title = dic.value(forKey: NSLocalizedString("category_name", comment: "")) as? String
-               controller.lastCat = dic.value(forKey: "children") as! NSArray
-            
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "storeCell", for: indexPath as IndexPath) as! storeCell
         
-        let parameters = [CAPSPageMenuOptionScrollMenuBackgroundColor: UIColor.clear,
-                          CAPSPageMenuOptionViewBackgroundColor: UIColor.white,
-                          CAPSPageMenuOptionSelectionIndicatorColor: UIColor.black,
-                          CAPSPageMenuOptionBottomMenuHairlineColor: UIColor.clear,
-                          CAPSPageMenuOptionSelectedMenuItemLabelColor: UIColor.black,
-                          CAPSPageMenuOptionUnselectedMenuItemLabelColor: UIColor.lightGray,
-                          CAPSPageMenuOptionMenuItemSeparatorWidth:self.view.frame.width/2.2,
-                          CAPSPageMenuOptionMenuItemFont: UIFont(name: "HelveticaNeue", size: 15.0)!, CAPSPageMenuOptionMenuHeight: 50.0, CAPSPageMenuOptionMenuItemWidth: self.view.frame.width/4.5, CAPSPageMenuOptionCenterMenuItems: true] as [String : Any]
+        let dic = arrSubCategories[indexPath.row] as! NSDictionary
         
-        // Initialize scroll menu
-       
-            pageMenu = CAPSPageMenu(viewControllers: controllerArray, frame: CGRect(x: self.view.frame.origin.x, y: browseProductslbl.frame.origin.y+browseProductslbl.frame.size.height+5, width: self.view.frame.width, height: self.view.frame.height - bannerImageView.frame.size.height), options: parameters)
-       
-        pageMenu?.view.backgroundColor = UIColor.clear
-        self.addChild(pageMenu!)
-        scroll.addSubview(pageMenu!.view)
+        cell.store_name.text = (dic.value(forKey: NSLocalizedString("category_name", comment: "")) as? String)!
+               
+        cell.store_coutry.text = ""
+               
+        cell.store_coutry.textColor = UIColor.white
+               
+        cell.store_name.textColor = UIColor.white
+               
+        let strurl = .imagebaseURL + "category/" + (dic.value(forKey: "category_image") as! String)
+            
+        let fileUrl = URL(string: strurl)
+
+        cell.store_imageimage.sd_setImage(with: fileUrl! as URL, placeholderImage: UIImage(named: ""),options: SDWebImageOptions(rawValue: 0), completed: { (image, error, cacheType, imageURL) in
+               })
+
+        cell.selectionStyle = .none
+        
+        return cell
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return self.view.frame.size.width/2.2
         
 
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let catDic = arrSubCategories[indexPath.row] as! NSDictionary
+        
+        iD = catDic .value(forKey: "id") as! Int
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "ProductListVC")
+        categpryID = String(iD)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
 }
 
 extension CategoryVC {
@@ -117,7 +139,6 @@ extension CategoryVC {
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.view.backgroundColor = UIColor.lightGray
         self.navigationController?.navigationBar.tintColor = UIColor.black
-        self.title = (dicDetail.value(forKey: NSLocalizedString("category_name", comment: "")) as! String)
         let menuButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "backIcon"), style: .plain, target: self, action: #selector(menuAction))
         
         navigationItem.leftBarButtonItem = menuButtonItem
@@ -157,4 +178,3 @@ extension CategoryVC {
     }
     
 }
-
