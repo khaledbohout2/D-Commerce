@@ -71,24 +71,28 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
         imagesCollectionView.isPagingEnabled = true
         
         imagesCollectionView.register(UINib.init(nibName: "HomeSliderCell", bundle: nil), forCellWithReuseIdentifier: "HomeSliderCell")
-        
-        recommendedCollectionView.delegate = self
 
-        recommendedCollectionView.dataSource = self
 
-        recommendedCollectionView.isPagingEnabled = true
+            let Rlayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+            
+            Rlayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+           
+            Rlayout.scrollDirection = .horizontal
+            
+            Rlayout.minimumInteritemSpacing = 10
+            Rlayout.minimumLineSpacing = 10
+                                
+            recommendedCollectionView.collectionViewLayout = Rlayout
+           
+            recommendedCollectionView.dataSource = self
+            recommendedCollectionView.delegate = self
+            recommendedCollectionView.isPagingEnabled = false
+            
+            recommendedCollectionView.register(UINib.init(nibName: "subcat2CollectionCell", bundle: nil), forCellWithReuseIdentifier: "subcat2CollectionCell")
+            recommendedCollectionView.showsVerticalScrollIndicator = false
+            
+            recommendedCollectionView.backgroundColor = UIColor.white
 
-        recommendedCollectionView.register(UINib.init(nibName: "subcat2CollectionCell", bundle: nil), forCellWithReuseIdentifier: "subcat2CollectionCell")
-        
-         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-         
-         //layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        
-         layout.scrollDirection = .horizontal
-         
-         layout.minimumInteritemSpacing = 10
-        
-         layout.minimumLineSpacing = 10
          
          imagesCollectionView.showsVerticalScrollIndicator = false
          
@@ -213,8 +217,7 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
         size =  CGSize(width: (self.imagesCollectionView.frame.width), height: (self.imagesCollectionView.frame.height
         ))
         } else {
-        size =  CGSize(width: (self.imagesCollectionView.frame.width/3), height: (self.imagesCollectionView.frame.height
-        ))
+        size =  CGSize(width: (self.recommendedCollectionView.frame.width/3), height: (self.recommendedCollectionView.frame.height))
         }
         return size!
     }
@@ -232,9 +235,10 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
         
        // let strimgUrl = .imagebaseURL + "banners/" + (dic.value(forKey: "image") as? String)!
          let strimgUrl = .imagebaseURL + "products/" + (dic.value(forKey: "image") as? String)!
+            print(strimgUrl)
         let fileUrl = NSURL(string: strimgUrl)
         
-        cell.imgSlider.sd_setImage(with: fileUrl! as URL, placeholderImage: UIImage(named: ""),options: SDWebImageOptions(rawValue: 0), completed: { (image, error, cacheType, imageURL) in
+        cell.imgSlider.sd_setImage(with: fileUrl! as URL, placeholderImage: UIImage(named: "store_cover_two"),options: SDWebImageOptions(rawValue: 0), completed: { (image, error, cacheType, imageURL) in
         })
             myCell = cell
             
@@ -267,11 +271,18 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
     {
         if collectionView == recommendedCollectionView {
             
+            print("selected")
+            
             let dic = relatedArr[indexPath.row] as! NSDictionary
+            
+            print(dic)
             
             let x : Int = dic.value(forKey: "product_id") as! NSInteger
             
+            print(x)
+            
             strProductId = String(x)
+            
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             
@@ -408,6 +419,7 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
             
             self?.mydic = dic
             self?.arrSlider = dic["products_images"] as! NSArray
+            print(self!.arrSlider.count)
             self?.imagesCollectionView.reloadData()
             self?.pageControl.numberOfPages = (self?.arrSlider.count)!
             self!.startTimer()
