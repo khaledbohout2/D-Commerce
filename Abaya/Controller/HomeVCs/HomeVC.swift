@@ -19,8 +19,8 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UICo
 
     @IBOutlet weak var pageControl: UIPageControl!
     
-    
-   // @IBOutlet weak var collectionViewHieght: NSLayoutConstraint!
+    @IBOutlet weak var categoriesCollectionWidth: NSLayoutConstraint!
+    // @IBOutlet weak var collectionViewHieght: NSLayoutConstraint!
     
     var arrSlider = NSArray()
     
@@ -31,6 +31,8 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UICo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        categoriesCollectionWidth.constant = self.view.frame.width
         
        // collectionViewHieght.constant = self.view.frame.size.width
         
@@ -54,9 +56,7 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UICo
 
        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
            
-           
-           
-           
+
            let cell = tableView.dequeueReusableCell(withIdentifier: "storeCell", for: indexPath as IndexPath) as! storeCell
            
            
@@ -71,7 +71,6 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UICo
            
            cell.store_coutry.text = "Slogan"
 
-           
            cell.store_coutry.textColor = UIColor.white
            
            cell.store_name.textColor = UIColor.white
@@ -80,7 +79,7 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UICo
            
            let fileUrl = URL(string: strurl)
 
-           cell.store_imageimage.sd_setImage(with: fileUrl! as URL, placeholderImage: UIImage(named: ""),options: SDWebImageOptions(rawValue: 0), completed: { (image, error, cacheType, imageURL) in
+           cell.store_imageimage.sd_setImage(with: fileUrl! as URL, placeholderImage: UIImage(named: "store_cover_two"),options: SDWebImageOptions(rawValue: 0), completed: { (image, error, cacheType, imageURL) in
            })
 
            cell.selectionStyle = .none
@@ -100,9 +99,7 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UICo
 
            
            return CategoryList.count
-           
 
-           
        }
        
        
@@ -141,6 +138,8 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UICo
          //  categoryVC.dicDetail = dicDetail
         
         categoryVC.categoryDic = dic
+        
+        
            
           
 

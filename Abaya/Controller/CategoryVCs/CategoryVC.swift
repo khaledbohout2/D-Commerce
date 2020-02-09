@@ -123,6 +123,7 @@ extension CategoryVC: UITableViewDataSource, UITableViewDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "ProductListVC")
         categpryID = String(iD)
+        print(categpryID)
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

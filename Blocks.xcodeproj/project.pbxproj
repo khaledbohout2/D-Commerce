@@ -24,7 +24,6 @@
 		6CDA27BD237407B20029E79F /* CategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDA27BC237407B20029E79F /* CategoryVC.swift */; };
 		7C0248012370A6EC00623383 /* HomeSliderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C0248002370A6EC00623383 /* HomeSliderCell.xib */; };
 		7C0248032370A6F400623383 /* HomeSliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0248022370A6F400623383 /* HomeSliderCell.swift */; };
-		7C0248072370A77700623383 /* SubCategory1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C0248052370A77700623383 /* SubCategory1.xib */; };
 		7C02480B2370A8FE00623383 /* newStorOneBlocksModelClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C02480A2370A8FE00623383 /* newStorOneBlocksModelClass.swift */; };
 		7C02480D2370A95100623383 /* subcat2CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C02480C2370A95100623383 /* subcat2CollectionCell.swift */; };
 		7C02480F2370A95800623383 /* subcat2CollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C02480E2370A95800623383 /* subcat2CollectionCell.xib */; };
@@ -67,7 +66,6 @@
 		7C502E8B2363962100A1357A /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C502E8A2363962100A1357A /* SignUpVC.swift */; };
 		7C62513D2373693900DEB51E /* SliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C62513C2373693900DEB51E /* SliderCell.swift */; };
 		7C6EEA0623982FDC001FA4AA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C6EEA0823982FDC001FA4AA /* Localizable.strings */; };
-		7C6EEA0D23984911001FA4AA /* productDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C6EEA0F23984911001FA4AA /* productDetail.xib */; };
 		7C6EEA12239849BA001FA4AA /* AddressesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C6EEA14239849BA001FA4AA /* AddressesCell.xib */; };
 		7C6EEA1723984A29001FA4AA /* WishListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C6EEA1923984A29001FA4AA /* WishListCell.xib */; };
 		7C6EEA1C23984A76001FA4AA /* OrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C6EEA1E23984A76001FA4AA /* OrderCell.xib */; };
@@ -132,7 +130,6 @@
 		6CDA27BC237407B20029E79F /* CategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryVC.swift; sourceTree = "<group>"; };
 		7C0248002370A6EC00623383 /* HomeSliderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeSliderCell.xib; sourceTree = "<group>"; };
 		7C0248022370A6F400623383 /* HomeSliderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeSliderCell.swift; sourceTree = "<group>"; };
-		7C0248052370A77700623383 /* SubCategory1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubCategory1.xib; sourceTree = "<group>"; };
 		7C02480A2370A8FE00623383 /* newStorOneBlocksModelClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newStorOneBlocksModelClass.swift; sourceTree = "<group>"; };
 		7C02480C2370A95100623383 /* subcat2CollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = subcat2CollectionCell.swift; sourceTree = "<group>"; };
 		7C02480E2370A95800623383 /* subcat2CollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = subcat2CollectionCell.xib; sourceTree = "<group>"; };
@@ -180,8 +177,6 @@
 		7C62513C2373693900DEB51E /* SliderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderCell.swift; sourceTree = "<group>"; };
 		7C6EEA0723982FDC001FA4AA /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7C6EEA0923982FDF001FA4AA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		7C6EEA0E23984911001FA4AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/productDetail.xib; sourceTree = "<group>"; };
-		7C6EEA1123984914001FA4AA /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/productDetail.strings; sourceTree = "<group>"; };
 		7C6EEA13239849BA001FA4AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AddressesCell.xib; sourceTree = "<group>"; };
 		7C6EEA16239849BF001FA4AA /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/AddressesCell.strings; sourceTree = "<group>"; };
 		7C6EEA1823984A29001FA4AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WishListCell.xib; sourceTree = "<group>"; };
@@ -387,8 +382,6 @@
 		7C3AB7A32362F8F400348050 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				7C0248052370A77700623383 /* SubCategory1.xib */,
-				7C6EEA0F23984911001FA4AA /* productDetail.xib */,
 				7C0248092370A7BA00623383 /* custom cells */,
 				7C7D573E2368D8FC003A6CF9 /* Custom Buttons */,
 			);
@@ -603,7 +596,6 @@
 				7C02481B2370AFFA00623383 /* subCatCell.xib in Resources */,
 				7C97AD3E2364A75300A61677 /* Montserrat-Regular.ttf in Resources */,
 				7C97AD3C2364A75300A61677 /* Montserrat-SemiBold.ttf in Resources */,
-				7C6EEA0D23984911001FA4AA /* productDetail.xib in Resources */,
 				7C6EEA12239849BA001FA4AA /* AddressesCell.xib in Resources */,
 				7C0248012370A6EC00623383 /* HomeSliderCell.xib in Resources */,
 				7C97AD3B2364A75300A61677 /* Montserrat-Bold.ttf in Resources */,
@@ -614,7 +606,6 @@
 				7C6EEA1C23984A76001FA4AA /* OrderCell.xib in Resources */,
 				7C2AFB34239A95C900D55212 /* OrderItemCell.xib in Resources */,
 				7C3AB7972362F59A00348050 /* Assets.xcassets in Resources */,
-				7C0248072370A77700623383 /* SubCategory1.xib in Resources */,
 				7CCE3F122379FDA4004DB19C /* CountryCell.xib in Resources */,
 				7C97AD3A2364A75300A61677 /* Montserrat-Medium.ttf in Resources */,
 				7C759399237F25CE00FE0CA5 /* ProductListCell.xib in Resources */,
@@ -782,15 +773,6 @@
 				7C6EEA0923982FDF001FA4AA /* en */,
 			);
 			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		7C6EEA0F23984911001FA4AA /* productDetail.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7C6EEA0E23984911001FA4AA /* Base */,
-				7C6EEA1123984914001FA4AA /* ar */,
-			);
-			name = productDetail.xib;
 			sourceTree = "<group>";
 		};
 		7C6EEA14239849BA001FA4AA /* AddressesCell.xib */ = {
