@@ -97,7 +97,8 @@ class SignUpVC: UIViewController {
             alert.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: ""), style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
             
-        } else if isValidEmail(testStr: emailAdressTextField.text!) {
+        } else if !isValidEmail(testStr: emailAdressTextField.text!) {
+            // Added ! to the check to pass valid email.
             
             let alert = UIAlertController(title: "", message: .inValid_email, preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: ""), style: UIAlertAction.Style.default, handler: nil))
