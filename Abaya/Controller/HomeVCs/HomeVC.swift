@@ -197,32 +197,32 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UICo
     }
 
     
-    func startTimer() {
-
-        _ =  Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(self.scrollAutomatically), userInfo: nil, repeats: true)
-    }
-
-
-    @objc func scrollAutomatically(_ timer1: Timer) {
-
-        if let coll  = bannersCollectionView {
-            for cell in coll.visibleCells {
-                let indexPath: IndexPath? = coll.indexPath(for: cell)
-                if ((indexPath?.row)! < arrSlider.count - 1){
-                    let indexPath1: IndexPath?
-                    indexPath1 = IndexPath.init(row: (indexPath?.row)! + 1, section: (indexPath?.section)!)
-
-                    coll.scrollToItem(at: indexPath1!, at: .right, animated: true)
-                }
-                else{
-                    let indexPath1: IndexPath?
-                    indexPath1 = IndexPath.init(row: 0, section: (indexPath?.section)!)
-                    coll.scrollToItem(at: indexPath1!, at: .left, animated: true)
-                }
-
-            }
-        }
-    }
+//    func startTimer() {
+//
+//        _ =  Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(self.scrollAutomatically), userInfo: nil, repeats: true)
+//    }
+//
+//
+//    @objc func scrollAutomatically(_ timer1: Timer) {
+//
+//        if let coll  = bannersCollectionView {
+//            for cell in coll.visibleCells {
+//                let indexPath: IndexPath? = coll.indexPath(for: cell)
+//                if ((indexPath?.row)! < arrSlider.count - 1){
+//                    let indexPath1: IndexPath?
+//                    indexPath1 = IndexPath.init(row: (indexPath?.row)! + 1, section: (indexPath?.section)!)
+//
+//                    coll.scrollToItem(at: indexPath1!, at: .right, animated: true)
+//                }
+//                else{
+//                    let indexPath1: IndexPath?
+//                    indexPath1 = IndexPath.init(row: 0, section: (indexPath?.section)!)
+//                    coll.scrollToItem(at: indexPath1!, at: .left, animated: true)
+//                }
+//
+//            }
+//        }
+//    }
     
     func GetCategoryApi()
     {
@@ -275,7 +275,7 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UICo
               //  self!.collectionViewHieght.constant = self!.view.frame.size.width
                // self?.bannersCollectionView.constant = self!.view.frame.size.width
                 self?.pageControl.numberOfPages = (self?.arrSlider.count)!
-                self!.startTimer()
+            //    self!.startTimer()
                 
             }
             else
