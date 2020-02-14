@@ -175,7 +175,7 @@ extension AddAddressVC {
        // self.navigationController?.navigationBar.shadowImage = UIColor.redColor.as1ptImage()
         self.title = NSLocalizedString("Add Address", comment: "")
         
-        let backButton = UIBarButtonItem(image: UIImage(named: "back_arrow"), style: .plain, target: self, action: #selector(backAction))
+        let backButton = UIBarButtonItem(image: UIImage(named: NSLocalizedString("back_arrow", comment: "")), style: .plain, target: self, action: #selector(backAction))
         navigationItem.leftBarButtonItem = backButton
         let btnSave = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveAction))
         navigationItem.rightBarButtonItem = btnSave

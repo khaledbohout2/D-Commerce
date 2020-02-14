@@ -28,6 +28,8 @@ class OrdersVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupNavButtons()
+        
         self.getCompletedOrders()
         self.getActiveOrders()
         
@@ -146,5 +148,33 @@ extension OrdersVC {
         contentView.addSubview(pageMenu!.view)
 
     }
+}
+
+extension OrdersVC {
+    
+    func setupNavButtons() {
+        
+        
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.view.backgroundColor = UIColor.lightGray
+        self.navigationController?.navigationBar.tintColor = UIColor.black
+        self.title = NSLocalizedString("Addresses", comment: "")
+        
+        
+        let backButton = UIBarButtonItem(image: UIImage(named: NSLocalizedString("back_arrow", comment: "")), style: .plain, target: self, action: #selector(backAction))
+        
+        navigationItem.leftBarButtonItem = backButton
+        
+        navigationController?.navigationBar.setNeedsLayout()
+    }
+    
+    @objc func backAction()
+    {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
 }
 

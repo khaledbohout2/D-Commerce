@@ -137,7 +137,7 @@ extension EditProfileVC {
         self.navigationController?.navigationBar.tintColor = UIColor.black
         self.title = "Edit Profile"
         
-        let backButton = UIBarButtonItem(image: UIImage(named: "back_arrow"), style: .plain, target: self, action: #selector(backAction))
+        let backButton = UIBarButtonItem(image: UIImage(named: NSLocalizedString("back_arrow", comment: "")), style: .plain, target: self, action: #selector(backAction))
         navigationItem.leftBarButtonItem = backButton
         let btnSave = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveAction))
         navigationItem.rightBarButtonItem = btnSave

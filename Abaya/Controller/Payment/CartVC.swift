@@ -697,7 +697,7 @@ extension CartVC {
         //self.title = "Cart"
         
         
-        let backButton = UIBarButtonItem(image: #imageLiteral(resourceName: "backIcon"), style: .plain, target: self, action: #selector(backAction))
+        let backButton = UIBarButtonItem(image: UIImage(named: NSLocalizedString("back_arrow", comment: "")), style: .plain, target: self, action: #selector(backAction))
         
         navigationItem.leftBarButtonItem = backButton
         

@@ -603,7 +603,7 @@ extension ProductDetail {
         self.navigationController?.navigationBar.tintColor = UIColor.black
         self.title = NSLocalizedString("Product Detail", comment: "") 
         
-        let menuButtonItem = UIBarButtonItem(image: UIImage(named: "back_arrow"), style: .plain, target: self, action: #selector(backAction))
+        let menuButtonItem = UIBarButtonItem(image: UIImage(named: NSLocalizedString("back_arrow", comment: "")), style: .plain, target: self, action: #selector(backAction))
         
         navigationItem.leftBarButtonItem = menuButtonItem
         

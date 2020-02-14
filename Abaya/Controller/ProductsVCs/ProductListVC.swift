@@ -127,7 +127,7 @@ class ProductListVC: UIViewController {
             self.title = NSLocalizedString("New On Blocks", comment: "")
             getPageNumber()
             
-            let menuButtonItem = UIBarButtonItem(image: UIImage(named: "back_arrow"), style: .plain, target: self, action: #selector(backAction))
+            let menuButtonItem = UIBarButtonItem(image: UIImage(named: NSLocalizedString("back_arrow", comment: "")), style: .plain, target: self, action: #selector(backAction))
             
             navigationItem.leftBarButtonItem = menuButtonItem
             
