@@ -29,6 +29,8 @@ class OrderConfirmVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        backBySwipe()
 
         drawDottedLine(start: CGPoint(x: dashedView.bounds.minX, y: dashedView.bounds.minY), end: CGPoint(x: dashedView.bounds.maxX, y: dashedView.bounds.minY), view: dashedView)
         
@@ -43,6 +45,18 @@ class OrderConfirmVC: UIViewController {
        // self.view.addSubview(viewBox)
         setupNavButtons()
         getOrders()
+    }
+    
+    func backBySwipe() {
+        
+        let gesture = UISwipeGestureRecognizer(target: self, action: #selector(dismiss(fromGesture:)))
+        self.view.addGestureRecognizer(gesture)
+    }
+    
+
+    @objc func dismiss(fromGesture gesture: UISwipeGestureRecognizer) {
+
+        self.navigationController?.popViewController(animated: true)
     }
 
     func drawDottedLine(start p0: CGPoint, end p1: CGPoint, view: UIView) {

@@ -42,6 +42,8 @@ class TrackOrderVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        backBySwipe()
+        
         setupNavButtons()
         
         itemsTableView.delegate = self
@@ -55,6 +57,20 @@ class TrackOrderVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
         // Do any additional setup after loading the view.
     }
+    
+    func backBySwipe() {
+        
+        let gesture = UISwipeGestureRecognizer(target: self, action: #selector(dismiss(fromGesture:)))
+        self.view.addGestureRecognizer(gesture)
+        self.itemsTableView.addGestureRecognizer(gesture)
+    }
+    
+
+    @objc func dismiss(fromGesture gesture: UISwipeGestureRecognizer) {
+
+        self.navigationController?.popViewController(animated: true)
+    }
+
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         

@@ -28,7 +28,7 @@ class AdressesVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        backBySwipe()
         
         tblAddresses.register(UINib(nibName: "AddressesCell", bundle: nil), forCellReuseIdentifier: "AddressesCell")
       tblAddresses.allowsMultipleSelection = false
@@ -37,6 +37,19 @@ class AdressesVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         GetUserAddress()
 
+    }
+    
+    func backBySwipe() {
+        
+        let gesture = UISwipeGestureRecognizer(target: self, action: #selector(dismiss(fromGesture:)))
+        self.view.addGestureRecognizer(gesture)
+        self.tblAddresses.addGestureRecognizer(gesture)
+    }
+    
+
+    @objc func dismiss(fromGesture gesture: UISwipeGestureRecognizer) {
+
+        self.navigationController?.popViewController(animated: true)
     }
 
     @IBAction func btnAddAddressClicked(_ sender: Any) {

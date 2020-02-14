@@ -34,6 +34,9 @@ class ProfileVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        backBySwipe()
+        setupNavButtons()
+        
         
         tblProfile.delegate = self
         tblProfile.dataSource = self
@@ -59,6 +62,19 @@ class ProfileVC: UIViewController {
         
         tblProfile.register(UINib(nibName: "ProfileCell", bundle: nil), forCellReuseIdentifier: "ProfileCell")
 
+    }
+    
+    func backBySwipe() {
+        
+        let gesture = UISwipeGestureRecognizer(target: self, action: #selector(dismiss(fromGesture:)))
+        self.tblProfile.addGestureRecognizer(gesture)
+        self.view.addGestureRecognizer(gesture)
+    }
+    
+
+    @objc func dismiss(fromGesture gesture: UISwipeGestureRecognizer) {
+
+        self.navigationController?.popViewController(animated: true)
     }
 
     @IBAction func editBtnClicked(_ sender: Any) {

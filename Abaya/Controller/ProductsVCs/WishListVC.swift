@@ -20,6 +20,8 @@ class WishListVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        backBySwipe()
 
        setupNavButtons()
         
@@ -30,6 +32,19 @@ class WishListVC: UIViewController {
         super.didReceiveMemoryWarning()
       
     }
+    
+    func backBySwipe() {
+        
+        let gesture = UISwipeGestureRecognizer(target: self, action: #selector(dismiss(fromGesture:)))
+        wishCollcationView.addGestureRecognizer(gesture)
+    }
+    
+
+    @objc func dismiss(fromGesture gesture: UISwipeGestureRecognizer) {
+
+        self.navigationController?.popViewController(animated: true)
+    }
+    
 }
     // MARK:- Navigation
     extension WishListVC {
@@ -68,7 +83,7 @@ class WishListVC: UIViewController {
                     var dic = NSDictionary()
                     dic = response as NSDictionary
                     self?.arrWishlist = dic["data"] as! NSArray
-                  //  print(self?.arrWishlist)
+                    print(self?.arrWishlist)
                     self?.wishCollcationView.reloadData()
                     hud.dismiss()
                 }
@@ -242,6 +257,22 @@ extension WishListVC:UICollectionViewDelegate,UICollectionViewDataSource,UIColle
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let product = arrWishlist[indexPath.row] as! NSDictionary
+        
+        let id = product .value(forKey: "product_id") as! Int
+        
+        strProductId = String(id)
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let productVC = storyboard.instantiateViewController(identifier: "productVC") as! ProductDetail
+        
+        self.navigationController?.pushViewController(productVC, animated: true)
+        
+        
+        
+        
         
 
     }

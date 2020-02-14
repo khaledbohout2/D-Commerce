@@ -21,16 +21,33 @@ class ProductListVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        backBySwipe()
 
        setupNavButtons()
         
         ProductsCollectionView.register(UINib(nibName: "ProductListCell", bundle: nil), forCellWithReuseIdentifier: "ProductListCell")
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
       
     }
+    
+    func backBySwipe() {
+        
+        let gesture = UISwipeGestureRecognizer(target: self, action: #selector(dismiss(fromGesture:)))
+        ProductsCollectionView.addGestureRecognizer(gesture)
+    }
+    
+
+    @objc func dismiss(fromGesture gesture: UISwipeGestureRecognizer) {
+
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    
     
           func getPageNumber() {
            
@@ -227,3 +244,5 @@ extension ProductListVC:UICollectionViewDelegate,UICollectionViewDataSource,UICo
     
     
 }
+
+

@@ -22,6 +22,8 @@ class CheckoutVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        backBySwipe()
+        
         tblAddresses.register(UINib(nibName: "AddressesCell", bundle: nil), forCellReuseIdentifier: "AddressesCell")
         
         setupNavButtons()
@@ -29,14 +31,24 @@ class CheckoutVC: UIViewController {
         
         let indexPath = NSIndexPath(row: 0, section: 0)
         tblAddresses.selectRow(at: indexPath as IndexPath, animated: false, scrollPosition: .none)
-
-        
-        
     }
 
     
     override func viewWillAppear(_ animated: Bool) {
         
+    }
+    
+    func backBySwipe() {
+        
+        let gesture = UISwipeGestureRecognizer(target: self, action: #selector(dismiss(fromGesture:)))
+        self.view.addGestureRecognizer(gesture)
+        self.tblAddresses.addGestureRecognizer(gesture)
+    }
+    
+
+    @objc func dismiss(fromGesture gesture: UISwipeGestureRecognizer) {
+
+        self.navigationController?.popViewController(animated: true)
     }
 
 

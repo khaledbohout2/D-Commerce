@@ -28,6 +28,8 @@ class PaymentVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        backBySwipe()
+        
         setupNavButtons()
         
         self.imgCashOnDelivery.alpha = 0.25;
@@ -45,6 +47,18 @@ class PaymentVC: UIViewController {
         self.imgCricleKnet.alpha = 0.25;
         self.btnKnet.alpha = 0.25;
      
+    }
+    
+    func backBySwipe() {
+        
+        let gesture = UISwipeGestureRecognizer(target: self, action: #selector(dismiss(fromGesture:)))
+        self.view.addGestureRecognizer(gesture)
+    }
+    
+
+    @objc func dismiss(fromGesture gesture: UISwipeGestureRecognizer) {
+
+        self.navigationController?.popViewController(animated: true)
     }
     
     

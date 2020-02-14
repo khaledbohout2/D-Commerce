@@ -21,6 +21,8 @@ class SearchResultsVC: UIViewController, UICollectionViewDelegate, UICollectionV
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        backBySwipe()
+        
         collectionView.delegate = self
         
         collectionView.dataSource = self
@@ -30,6 +32,19 @@ class SearchResultsVC: UIViewController, UICollectionViewDelegate, UICollectionV
         filterProducts()
 
         // Do any additional setup after loading the view.
+    }
+    
+    func backBySwipe() {
+        
+        let gesture = UISwipeGestureRecognizer(target: self, action: #selector(dismiss(fromGesture:)))
+        self.view.addGestureRecognizer(gesture)
+        self.collectionView.addGestureRecognizer(gesture)
+    }
+    
+
+    @objc func dismiss(fromGesture gesture: UISwipeGestureRecognizer) {
+
+        self.navigationController?.popViewController(animated: true)
     }
     
     func filterProducts() {

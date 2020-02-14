@@ -15,9 +15,23 @@ class OrdersList: UITableViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        backBySwipe()
         
         tableView.register(UINib(nibName: "OrderCell", bundle: nil), forCellReuseIdentifier: "OrderCell")
     }
+    
+    func backBySwipe() {
+        
+        let gesture = UISwipeGestureRecognizer(target: self, action: #selector(dismiss(fromGesture:)))
+        self.tableView.addGestureRecognizer(gesture)
+    }
+    
+
+    @objc func dismiss(fromGesture gesture: UISwipeGestureRecognizer) {
+
+        self.navigationController?.popViewController(animated: true)
+    }
+
 
     // MARK: - Table view data source
 

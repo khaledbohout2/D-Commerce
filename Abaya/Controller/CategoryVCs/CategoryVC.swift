@@ -34,6 +34,9 @@ class CategoryVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        backBySwipe()
+                
+        
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -70,6 +73,18 @@ class CategoryVC: UIViewController {
         })
         
         hud.dismiss()
+    }
+    
+    func backBySwipe() {
+        
+        let gesture = UISwipeGestureRecognizer(target: self, action: #selector(dismiss(fromGesture:)))
+        tableView.addGestureRecognizer(gesture)
+    }
+    
+
+    @objc func dismiss(fromGesture gesture: UISwipeGestureRecognizer) {
+
+        self.navigationController?.popViewController(animated: true)
     }
 
 }
@@ -128,6 +143,8 @@ extension CategoryVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     
+    
+    
 }
 
 extension CategoryVC {
@@ -175,3 +192,5 @@ extension CategoryVC {
     }
     
 }
+
+

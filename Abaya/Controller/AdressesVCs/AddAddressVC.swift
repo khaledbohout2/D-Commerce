@@ -35,6 +35,8 @@ class AddAddressVC: UIViewController,UIScrollViewDelegate,SetState {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        backBySwipe()
+        
         tftCountry.isUserInteractionEnabled = false
         tftState.isUserInteractionEnabled = false
         strCountryID = ""
@@ -53,6 +55,18 @@ class AddAddressVC: UIViewController,UIScrollViewDelegate,SetState {
    
 
         
+    }
+    
+    func backBySwipe() {
+        
+        let gesture = UISwipeGestureRecognizer(target: self, action: #selector(dismiss(fromGesture:)))
+        self.view.addGestureRecognizer(gesture)
+    }
+    
+
+    @objc func dismiss(fromGesture gesture: UISwipeGestureRecognizer) {
+
+        self.navigationController?.popViewController(animated: true)
     }
 
     

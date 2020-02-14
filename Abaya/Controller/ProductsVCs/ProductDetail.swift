@@ -59,6 +59,8 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        backBySwipe()
+        
         self.widthLbl.text = NSLocalizedString("width", comment: "")
         self.widthValueLbl.text = NSLocalizedString("double width", comment: "")
 
@@ -110,6 +112,18 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
     override func viewWillAppear(_ animated: Bool) {
         
         setupNavButtons()
+    }
+    
+    func backBySwipe() {
+        
+        let gesture = UISwipeGestureRecognizer(target: self, action: #selector(dismiss(fromGesture:)))
+        self.view.addGestureRecognizer(gesture)
+    }
+    
+
+    @objc func dismiss(fromGesture gesture: UISwipeGestureRecognizer) {
+
+        self.navigationController?.popViewController(animated: true)
     }
     
 

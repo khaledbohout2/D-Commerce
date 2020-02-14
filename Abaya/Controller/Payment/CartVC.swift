@@ -27,6 +27,8 @@ class CartVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        backBySwipe()
+        
        // self.view.frame =  CGRect(0, 0, self.view.frame.size.width, self.view.frame.size.height+1000)
         
         GetCartList()
@@ -63,6 +65,19 @@ class CartVC: UIViewController {
     //        self.view.frame = (frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height+600))
             
         }
+    
+    func backBySwipe() {
+        
+        let gesture = UISwipeGestureRecognizer(target: self, action: #selector(dismiss(fromGesture:)))
+        self.view.addGestureRecognizer(gesture)
+        self.tblCart.addGestureRecognizer(gesture)
+    }
+    
+
+    @objc func dismiss(fromGesture gesture: UISwipeGestureRecognizer) {
+
+        self.navigationController?.popViewController(animated: true)
+    }
     
     func GetCartList()
         

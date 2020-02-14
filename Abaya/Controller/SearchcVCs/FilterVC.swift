@@ -25,11 +25,25 @@ class FilterVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        backBySwipe()
+        
         highToLowOutlet.isUserInteractionEnabled = false
         lowToHighOutlet.isUserInteractionEnabled = false
         highToLowOutlet.isHidden = true
         lowToHighOutlet.isHidden = true
     
+    }
+    
+    func backBySwipe() {
+        
+        let gesture = UISwipeGestureRecognizer(target: self, action: #selector(dismiss(fromGesture:)))
+        self.view.addGestureRecognizer(gesture)
+    }
+    
+
+    @objc func dismiss(fromGesture gesture: UISwipeGestureRecognizer) {
+
+        self.navigationController?.popViewController(animated: true)
     }
     
     

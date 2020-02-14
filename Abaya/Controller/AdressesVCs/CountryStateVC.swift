@@ -33,6 +33,8 @@ class CountryStateVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        backBySwipe()
+        
         tblCountry.isHidden = true
         
         tblCountry.register(UINib(nibName: "CountryCell", bundle: nil), forCellReuseIdentifier: "CountryCell")
@@ -200,6 +202,18 @@ extension CountryStateVC: UITableViewDataSource, UITableViewDelegate
         
         
         }
+    
+    func backBySwipe() {
+        
+        let gesture = UISwipeGestureRecognizer(target: self, action: #selector(dismiss(fromGesture:)))
+        self.tblCountry.addGestureRecognizer(gesture)
+    }
+    
+
+    @objc func dismiss(fromGesture gesture: UISwipeGestureRecognizer) {
+
+        self.navigationController?.popViewController(animated: true)
+    }
 }
 // MARK:- Navigation
 extension CountryStateVC {

@@ -16,10 +16,7 @@ class OrdersVC: UIViewController {
     @IBOutlet weak var contentView: UIView!
     
     @IBOutlet weak var headerView: UIView!
-    
 
-
-    
     var completedOrdersArr = NSArray()
     var activeOrdersArr = NSArray()
     
@@ -28,14 +25,27 @@ class OrdersVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        backBySwipe()
+        
         setupNavButtons()
         
         self.getCompletedOrders()
         self.getActiveOrders()
-        
-        
 
     }
+    
+    func backBySwipe() {
+        
+        let gesture = UISwipeGestureRecognizer(target: self, action: #selector(dismiss(fromGesture:)))
+        self.view.addGestureRecognizer(gesture)
+    }
+    
+
+    @objc func dismiss(fromGesture gesture: UISwipeGestureRecognizer) {
+
+        self.navigationController?.popViewController(animated: true)
+    }
+
     
     func getCompletedOrders() {
         

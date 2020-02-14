@@ -20,6 +20,8 @@ class SearchVC: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITa
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        backBySwipe()
+        
         setUpNavigation()
         
         tableView.isHidden = true
@@ -31,6 +33,19 @@ class SearchVC: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITa
         tableView.dataSource = self
 
         // Do any additional setup after loading the view.
+    }
+    
+    func backBySwipe() {
+        
+        let gesture = UISwipeGestureRecognizer(target: self, action: #selector(dismiss(fromGesture:)))
+        self.view.addGestureRecognizer(gesture)
+        self.tableView.addGestureRecognizer(gesture)
+    }
+    
+
+    @objc func dismiss(fromGesture gesture: UISwipeGestureRecognizer) {
+
+        self.navigationController?.popViewController(animated: true)
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {

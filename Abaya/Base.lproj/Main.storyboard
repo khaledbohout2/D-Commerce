@@ -2011,7 +2011,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NnL-ej-pcU">
-                                                <rect key="frame" x="287" y="243.5" width="48" height="48"/>
+                                                <rect key="frame" x="311" y="255.5" width="24" height="24"/>
                                                 <state key="normal" image="wishlist_icon_gray copy"/>
                                                 <connections>
                                                     <action selector="favButtonTapped:" destination="BAc-ij-7Md" eventType="touchUpInside" id="TtS-zw-dgU"/>
