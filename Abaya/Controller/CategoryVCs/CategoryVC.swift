@@ -140,7 +140,7 @@ extension CategoryVC {
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.view.backgroundColor = UIColor.lightGray
         self.navigationController?.navigationBar.tintColor = UIColor.black
-        let menuButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "backIcon"), style: .plain, target: self, action: #selector(menuAction))
+        let menuButtonItem = UIBarButtonItem(image: UIImage(named: NSLocalizedString("back_arrow", comment: "")), style: .plain, target: self, action: #selector(backAction))
         
         navigationItem.leftBarButtonItem = menuButtonItem
         
@@ -154,11 +154,7 @@ extension CategoryVC {
         
     }
     
-    @objc func backAction(sender: UIBarButtonItem) {
-        navigationController?.popViewController(animated: true)
-    }
-    
-    @objc func menuAction()
+    @objc func backAction()
     {
         
       navigationController?.popViewController(animated: true)

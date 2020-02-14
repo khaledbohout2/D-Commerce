@@ -388,11 +388,6 @@ extension HomeVC {
         
     }
     
-    @objc func backAction(sender: UIBarButtonItem) {
-        
-        navigationController?.popViewController(animated: true)
-    }
-    
     @objc func menuAction()
     {
         

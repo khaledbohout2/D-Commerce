@@ -127,7 +127,7 @@ class ProductListVC: UIViewController {
             self.title = NSLocalizedString("New On Blocks", comment: "")
             getPageNumber()
             
-            let menuButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "backIcon"), style: .plain, target: self, action: #selector(menuAction))
+            let menuButtonItem = UIBarButtonItem(image: UIImage(named: "back_arrow"), style: .plain, target: self, action: #selector(backAction))
             
             navigationItem.leftBarButtonItem = menuButtonItem
             
@@ -144,13 +144,7 @@ class ProductListVC: UIViewController {
         @objc func backAction(sender: UIBarButtonItem) {
             navigationController?.popViewController(animated: true)
         }
-        
-        @objc func menuAction()
-        {
-            
-          navigationController?.popViewController(animated: true)
 
-        }
         
         @objc func openCart()
         {

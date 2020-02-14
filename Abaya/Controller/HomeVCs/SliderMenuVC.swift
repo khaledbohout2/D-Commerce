@@ -326,9 +326,6 @@ extension SliderMenuVC {
 
     }
 
-    @objc func backAction(sender: UIBarButtonItem) {
-        navigationController?.popViewController(animated: true)
-    }
 
     @objc func closeAction()
     {

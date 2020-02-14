@@ -248,7 +248,7 @@ extension AdressesVC {
         self.title = NSLocalizedString("Addresses", comment: "") 
         
         
-        let backButton = UIBarButtonItem(image: #imageLiteral(resourceName: "backIcon"), style: .plain, target: self, action: #selector(backAction))
+        let backButton = UIBarButtonItem(image: UIImage(named: "back_arrow"), style: .plain, target: self, action: #selector(backAction))
         
         navigationItem.leftBarButtonItem = backButton
         

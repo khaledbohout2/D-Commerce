@@ -603,7 +603,7 @@ extension ProductDetail {
         self.navigationController?.navigationBar.tintColor = UIColor.black
         self.title = NSLocalizedString("Product Detail", comment: "") 
         
-        let menuButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "backIcon"), style: .plain, target: self, action: #selector(menuAction))
+        let menuButtonItem = UIBarButtonItem(image: UIImage(named: "back_arrow"), style: .plain, target: self, action: #selector(backAction))
         
         navigationItem.leftBarButtonItem = menuButtonItem
         
@@ -617,11 +617,7 @@ extension ProductDetail {
         
     }
     
-    @objc func backAction(sender: UIBarButtonItem) {
-        navigationController?.popViewController(animated: true)
-    }
-    
-    @objc func menuAction()
+    @objc func backAction()
     {
         
       navigationController?.popViewController(animated: true)

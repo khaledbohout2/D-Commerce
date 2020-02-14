@@ -59,6 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MOLHResetable {
             defaults.removeObject(forKey: "isAppAlreadyLaunchedOnce")
         }
 
+
         return true
     }
 
