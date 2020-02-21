@@ -10,7 +10,9 @@ import UIKit
 
 class OrdersList: UITableViewController {
     
-    var ordersArr = NSArray()
+    var ordersArr = Array<Any>()
+    
+    var orderToCancel : Int?
 
     override func viewDidLoad() {
         
@@ -69,6 +71,7 @@ class OrdersList: UITableViewController {
            // cell!.clipsToBounds = true
         
         cell?.btnTrackOrder.addTarget(self, action: #selector(buttonTrackOrdr), for: .touchUpInside)
+        cell?.btnCancelOrder.addTarget(self, action: #selector(buttonCancelOrdr), for: .touchUpInside)
         //cell?.btnCancelOrder.addTarget(self, action: #selector(buttonCancelOrder), for: .touchUpInside)
 
         let orderDic = ordersArr[indexPath.section] as! NSDictionary
@@ -106,6 +109,55 @@ class OrdersList: UITableViewController {
         self.navigationController?.pushViewController(vc, animated: true)
        // print(strDeleteId)
        // DeleteUserAddress()
+    }
+    
+    @objc func buttonCancelOrdr(sender: UIButton){
+        
+        let buttonPosition:CGPoint = sender.convert(CGPoint.zero, to:self.tableView)
+        
+        let indexPath = self.tableView.indexPathForRow(at: buttonPosition)
+        
+        var dicuserDetail = NSDictionary()
+        
+        dicuserDetail = self.ordersArr[(indexPath?.row)!] as! NSDictionary
+        
+        orderToCancel = dicuserDetail.value(forKey: "id") as? Int
+        
+        cencelOrder(id: orderToCancel!, indexPath: indexPath!.row)
+        
+
+    }
+    
+    func cencelOrder(id : Int,indexPath : Int) {
+        
+        hud.textLabel.text = NSLocalizedString("Loading", comment: "")
+        hud.show(in: self.view)
+        
+        let par = ["orderId" : id] as [String : Any]
+        
+        print(par)
+        
+        ApiBaseClass.apiCallingMethodeca(url: BaseUrl.cancelOrder(), parameter: par, completion: { (response) in
+            let success = response["success"] as! Bool
+            print(response)
+            if success {
+                
+                hud.dismiss()
+                
+                self.view.makeToast(NSLocalizedString("order cancelled", comment: ""), duration: 2.0, position: .center)
+                
+                self.ordersArr.remove(at: indexPath)
+                
+                self.tableView.reloadData()
+                
+            } else {
+                hud.dismiss()
+            }
+        }) { (error) in
+            hud.dismiss()
+            Alert.Show(title: NSLocalizedString("Not Connected", comment: ""), mesage: NSLocalizedString("please check your internet connection", comment: ""), viewcontroller: self)
+        }
+        
     }
 
 

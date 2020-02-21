@@ -112,4 +112,18 @@
 "Cancel" = "Cancel";
 "Invalid Email" = "Invalid Email";
 "back_arrow" = "backIcon";
+"Reset Password Code" = "Reset Password Code";
+"New Password" = "New Password";
+"Confirm New Password" = "Confirm New Password";
+"New to Blocks? Sign up" = "New to Blocks? Sign up";
+"Forgot password?" = "Forgot password?";
+"we're here to help!" = "we're here to help!";
+"Reset password code sent to your E-mail" = "Reset password code sent to your E-mail";
+"Reset Password" = "Reset Password";
+"PASSWORD RESET" ="PASSWORD RESET";
+"can not found this email" = "can not found this email";
+"Not Connected" = "Not Connected";
+"please check your internet connection" = "please check your internet connection";
+"passwords do not match" = "passwords do not match";
+"order cancelled" = "order canceled";
 

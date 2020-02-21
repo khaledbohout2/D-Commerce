@@ -17,8 +17,8 @@ class OrdersVC: UIViewController {
     
     @IBOutlet weak var headerView: UIView!
 
-    var completedOrdersArr = NSArray()
-    var activeOrdersArr = NSArray()
+    var completedOrdersArr = Array<Any>()
+    var activeOrdersArr = Array<Any>()
     
     var pageMenu : CAPSPageMenu?
 
@@ -59,7 +59,7 @@ class OrdersVC: UIViewController {
             {
                 var dic = NSDictionary()
                 dic = response as NSDictionary
-                let data = dic["data"] as! NSArray
+                let data = dic["data"] as! Array<Any>
                 self!.completedOrdersArr = data
    
                 
@@ -91,7 +91,7 @@ class OrdersVC: UIViewController {
                 var dic = NSDictionary()
                 dic = response as NSDictionary
                 if let datadic = (dic["data"] as? NSDictionary) {
-                let data = datadic .value(forKey: "data") as! NSArray
+                    let data = datadic .value(forKey: "data") as! Array<Any>
                 print(data)
                 self!.activeOrdersArr = data
                 self!.addPageMenu()

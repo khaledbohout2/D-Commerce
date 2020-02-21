@@ -73,7 +73,7 @@ class SignInVC: UIViewController {
                
            }
            else{
-           hud.textLabel.text = "Loading"
+           hud.textLabel.text = NSLocalizedString("Loading", comment: "") 
            hud.show(in: self.view)
            let username:String = emailTxtField.text!
            

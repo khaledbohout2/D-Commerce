@@ -2,7 +2,7 @@
 //  OrderCell.swift
 //  Abaya
 //
-//  Created by Abdullah elotabi on 11/18/19.
+//  Created by Khaled Bohout on 11/18/19.
 //  Copyright © 2019 Khaled Bohout. All rights reserved.
 //
 
@@ -38,11 +38,7 @@ class OrderCell: UITableViewCell {
         orderStatus.text = order.orderStatus
         orderItemsNumber.text = String(order.orderItems.count) + " items"
         priceLbl.text = "KD " + String(order.orderPrice)
-        
-        
-        
+
     }
-
-
 
 }

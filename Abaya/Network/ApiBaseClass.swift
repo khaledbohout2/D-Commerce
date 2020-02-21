@@ -47,6 +47,40 @@ class ApiBaseClass: BaseUrl {
 
         }
  }
+        static func apiCallingMethodeca(url:String,parameter:[String:Any],completion: @escaping response,failure:@escaping FailureCase)
+            
+    {
+        
+        var str = String()
+        str = "Bearer " + (loginAccessToken as String)
+        Authorization = ["Authorization": str, "Accept":"application/json","Content-Language" : NSLocalizedString("lang", comment: "")]
+        
+        AF.request(url, method: .post, parameters:parameter, headers:Authorization ).responseJSON{ (response)
+            in
+            print("url is \(url)")
+            
+            print("parameter is \(parameter)")
+            
+            print(response.result)
+              
+                switch response.result {
+                  
+                case .success(let json):
+                    
+                    if let dict = json as? [String: AnyObject] {
+                        
+                     completion(dict)
+                        
+                    print(dict)
+                    }
+
+                case .failure(let error):
+
+                    print(error)
+                }
+
+            }
+     }
 
 static func apiCallingWithGetMethode(url:String,completion: @escaping response,failure:@escaping FailureCase)
 {

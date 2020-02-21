@@ -134,6 +134,14 @@ class SignUpVC: UIViewController {
             
         }
             
+        else if (confirmPasswordTextField.text == passWordTxtField.text) {
+                
+                let alert = UIAlertController(title: "", message: .confirmPassword, preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: ""), style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                
+            }
+            
         else{
             hud.textLabel.text = "Loading"
             hud.show(in: self.view)

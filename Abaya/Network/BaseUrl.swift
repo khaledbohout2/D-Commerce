@@ -35,7 +35,7 @@ class BaseUrl {
     private static let autoComplete = "getProductAutoComplete/"
     private static let usersOrderById = "getUsersOrderById/"
     private static let filter = "searchProducts"
-    static let forgotPassword = "forgotPassword"
+    static let forgotpassword = "forgotPassword"
     static let change_password = "changePassword"
     static let signUpApi = "register"
     static let loginApi = "login"
@@ -68,6 +68,8 @@ class BaseUrl {
     static let complelist = "shopType"
     static let getprofie = "myProfile"
     static let addWishList = "addToWishlist"
+    static let resetpassword = "resetPassword"
+    static let cancelorder = "cancelOrder"
     
     public static func addNewCard() ->String
     {
@@ -232,6 +234,23 @@ class BaseUrl {
         
         return baseUrl + filter
     }
+    
+    public static func forgotPassword() -> String {
+        
+        return baseUrl + forgotpassword
+    }
+    
+    public static func resetPassword() -> String {
+        
+        return baseUrl + resetpassword
+    }
+    
+    public static func cancelOrder() -> String {
+        
+        return baseUrl + cancelorder
+    }
+    
+    
   
 
     
