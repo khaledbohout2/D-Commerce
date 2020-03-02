@@ -2,7 +2,7 @@
 //  OrdersTable.swift
 //  Abaya
 //
-//  Created by Abdullah elotabi on 11/18/19.
+//  Created by Khaled Bohout on 11/18/19.
 //  Copyright © 2019 Khaled Bohout. All rights reserved.
 //
 
@@ -107,8 +107,6 @@ class OrdersList: UITableViewController {
         let vc = storyboard.instantiateViewController(withIdentifier: "TrackOrderVC") as! TrackOrderVC
         
         self.navigationController?.pushViewController(vc, animated: true)
-       // print(strDeleteId)
-       // DeleteUserAddress()
     }
     
     @objc func buttonCancelOrdr(sender: UIButton){
@@ -159,8 +157,5 @@ class OrdersList: UITableViewController {
         }
         
     }
-
-
-
 
 }
