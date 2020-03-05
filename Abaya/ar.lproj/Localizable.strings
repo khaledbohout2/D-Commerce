@@ -105,9 +105,8 @@
 "Sign Up First" = "قم بإنشاء حساب أولا";
 "Cancel" = "إلغاء";
 "Invalid Email" = "البريد الإلكتروني غير صالح";
-"back_arrow" = "back_arrow-ar";
+"back_arrow" = "backIcon-ar";
 "Invalid Email" = "بريد الكتروني غير صحيح";
-"back_arrow" = "backIcon";
 "Reset Password Code" = "كود إعادة تعيين كلمة السر";
 "New Password" = "كلمة السر الجديدة";
 "Confirm New Password" = "تأكيد كلمة السر الجديدة";
@@ -122,3 +121,4 @@
 "please check your internet connection" = "من فضلك تأكد من الإتصال بالإنترنت";
 "passwords do not match" = "كلمتا السر لا تتطابق";
 "order cancelled" = "تم الغاء الطلب";
+"Arrow" = "arrow_left";

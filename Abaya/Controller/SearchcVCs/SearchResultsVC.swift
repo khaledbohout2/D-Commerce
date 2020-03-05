@@ -110,7 +110,7 @@ class SearchResultsVC: UIViewController, UICollectionViewDelegate, UICollectionV
         cell.lblName.text = dic .object(forKey: "brand") as?String
         cell.lbldetail.text = dic .object(forKey: "product_name") as?String
         
-        let x : Int = (dic .object(forKey: "product_current_price") as? NSInteger)!
+        let x : Double = (dic .object(forKey: "product_current_price") as? Double)!
         let stringValue = "\(x)"
         print(stringValue)
         

@@ -10,11 +10,11 @@
         <array key="Montserrat-Medium.ttf">
             <string>Montserrat-Medium</string>
         </array>
-        <array key="Montserrat-Regular.ttf">
-            <string>Montserrat-Regular</string>
-        </array>
         <array key="Montserrat-SemiBold.ttf">
             <string>Montserrat-SemiBold</string>
+        </array>
+        <array key="montserrat.ttf">
+            <string>Montserrat-Regular</string>
         </array>
     </customFonts>
     <scenes>
@@ -1453,13 +1453,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QsC-xq-vv5">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <imageView key="tableHeaderView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="0Zk-bN-Mci">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="285"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="285" id="fci-bp-iNq"/>
-                                    </constraints>
-                                </imageView>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1472,8 +1465,6 @@
                         <viewLayoutGuide key="safeArea" id="ltl-Gv-CG7"/>
                     </view>
                     <connections>
-                        <outlet property="bannerHeight" destination="fci-bp-iNq" id="31g-hm-pv6"/>
-                        <outlet property="bannerImageView" destination="0Zk-bN-Mci" id="Tue-Og-VtG"/>
                         <outlet property="tableView" destination="QsC-xq-vv5" id="xBc-9L-HCO"/>
                     </connections>
                 </viewController>
@@ -3097,7 +3088,7 @@
                                                 </connections>
                                             </tableView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zdQ-Xo-tmY">
-                                                <rect key="frame" x="128.5" y="552" width="118" height="30"/>
+                                                <rect key="frame" x="130" y="552" width="115" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="wfa-nh-KdJ"/>
                                                 </constraints>

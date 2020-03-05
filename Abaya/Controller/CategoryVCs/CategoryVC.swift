@@ -13,7 +13,6 @@ import SDWebImage
 
 class CategoryVC: UIViewController {
 
-    @IBOutlet weak var bannerImageView: UIImageView!
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -42,7 +41,6 @@ class CategoryVC: UIViewController {
         
         tableView.register(UINib(nibName: "storeCell", bundle: nil), forCellReuseIdentifier: "storeCell")
         
-        self.bannerHeight.constant = self.view.frame.width
 
         
         setupNavButtons()
@@ -67,10 +65,6 @@ class CategoryVC: UIViewController {
         
         let imgStrUrl = .imagebaseURL + "category/" + (categoryDic.value(forKey: "category_image") as! String)
         
-        let fileUrl = URL(string: imgStrUrl)
-        
-        bannerImageView.sd_setImage(with: fileUrl! as URL, placeholderImage: UIImage(named: "store_cover_two"),options: SDWebImageOptions(rawValue: 0), completed: { (image, error, cacheType, imageURL) in
-        })
         
         hud.dismiss()
     }
@@ -113,7 +107,7 @@ extension CategoryVC: UITableViewDataSource, UITableViewDelegate {
             
         let fileUrl = URL(string: strurl)
 
-        cell.store_imageimage.sd_setImage(with: fileUrl! as URL, placeholderImage: UIImage(named: ""),options: SDWebImageOptions(rawValue: 0), completed: { (image, error, cacheType, imageURL) in
+        cell.store_imageimage.sd_setImage(with: fileUrl! as URL, placeholderImage: UIImage(named: "store_cover_two"),options: SDWebImageOptions(rawValue: 0), completed: { (image, error, cacheType, imageURL) in
                })
 
         cell.selectionStyle = .none

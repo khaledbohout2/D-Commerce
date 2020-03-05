@@ -246,7 +246,7 @@ class SliderMenuVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
         let rectImg = CGRect(x: self.view.frame.size.width-35, y: 60, width: 25, height: 25)
         let imageViewArrow = UIImageView(frame:rectImg);
-        let imageA = UIImage(named: NSLocalizedString("Arrow", comment: ""));
+        let imageA = UIImage(named: "Arrow");
         imageViewArrow.image = imageA;
         header.imageView.addSubview(imageViewArrow)
 

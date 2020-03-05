@@ -15,9 +15,14 @@ class ProfileCell: UITableViewCell {
     @IBOutlet weak var btnNext: UIButton!
     @IBOutlet weak var lblList: UILabel!
     
+    @IBOutlet weak var arrowImage: UIImageView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        let imageA = UIImage(named: NSLocalizedString("Arrow", comment: ""))
+        arrowImage.image = imageA
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
