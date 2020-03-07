@@ -15,9 +15,8 @@ class SliderMenuVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     var header : StretchHeader!
     
     var navigationView = UIView()
-
     let arrImages = ["orders_icon", "addr_icon", "saved_cards_icon", "notification_icon", "wishlist_icon_gray copy"]
-    let arrCategories = ["Summer", "Winter"]
+    let arrCategories = [NSLocalizedString("Summer", comment: ""), NSLocalizedString("Winter", comment: "")]
     let arrAccount = ["Country", "Language"]
     let arrImgAccount = ["flag_icon", "lang_icon"]
     let arrSupport = ["FAQs", "Customer Care","About"]

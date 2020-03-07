@@ -171,7 +171,7 @@ extension OrdersVC {
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.view.backgroundColor = UIColor.lightGray
         self.navigationController?.navigationBar.tintColor = UIColor.black
-        self.title = NSLocalizedString("Addresses", comment: "")
+        self.title = NSLocalizedString("Orders", comment: "")
         
         
         let backButton = UIBarButtonItem(image: UIImage(named: NSLocalizedString("back_arrow", comment: "")), style: .plain, target: self, action: #selector(backAction))
