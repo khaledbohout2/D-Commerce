@@ -106,9 +106,9 @@ class SignInVC: UIViewController {
                        UserDefaults.standard.synchronize()
                      
                     
-               let CountryViewController = self.storyboard!.instantiateViewController(withIdentifier: "CountryViewController") as! CountryViewController
-                          
-                       self.navigationController?.pushViewController(CountryViewController, animated: true)
+               let storyboard = UIStoryboard(name: "Main", bundle: nil)
+               let homeVC = storyboard.instantiateViewController(withIdentifier: "NewHomeVC") as! HomeVC
+               self.navigationController?.pushViewController(homeVC, animated: true)
                    
                }
                

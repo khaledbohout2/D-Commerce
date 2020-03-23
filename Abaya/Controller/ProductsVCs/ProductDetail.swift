@@ -14,15 +14,11 @@ import Toast_Swift
 
 class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout ,UIScrollViewDelegate {
 
-    @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
     @IBOutlet weak var scroll: UIScrollView!
-    @IBOutlet var lblBrowseShops: UILabel!
-    @IBOutlet var scrollMain: UIScrollView!
     @IBOutlet var pageControl: UIPageControl!
     @IBOutlet var imagesCollectionView: UICollectionView!
     @IBOutlet weak var lblProductName: UILabel!
     @IBOutlet weak var lblProductPrice: UILabel!
-    @IBOutlet weak var lblReviews: UILabel!
     @IBOutlet weak var lblDescription: UILabel!
     @IBOutlet weak var lblBrandName: UILabel!
     @IBOutlet weak var lblQuality: UILabel!
@@ -30,82 +26,40 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
     @IBOutlet weak var lblMaterial: UILabel!
     @IBOutlet weak var lblMenufacturedIn: UILabel!
     @IBOutlet weak var lblProductCount: UILabel!
-    
     @IBOutlet weak var favButton: UIButton!
-    
     @IBOutlet weak var widthLbl: UILabel!
-    
-    
     @IBOutlet weak var widthValueLbl: UILabel!
-    
-    
     @IBOutlet weak var recommendedCollectionView: UICollectionView!
+    @IBOutlet weak var sizesCollectionView: UICollectionView!
     
     var count = 1
-    
-    
-
     var arrSlider = NSArray()
     var arrNewArr = NSArray()
     var relatedArr = NSArray()
-    
     var arrSize = NSArray()
     var arrColor = NSArray()
     var mydic = NSDictionary()
-    
     var hud = JGProgressHUD(style: .extraLight)
     var pageMenu : CAPSPageMenu?
+    var sizesArr = NSArray()
+    var SKu = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(strProductId)
         
         backBySwipe()
         
         self.widthLbl.text = NSLocalizedString("width", comment: "")
         self.widthValueLbl.text = NSLocalizedString("double width", comment: "")
 
-          self.view.frame =  CGRect(0, 0, self.view.frame.size.width, self.view.frame.size.height+800)
-
-        imagesCollectionView.dataSource = self
-
-        imagesCollectionView.delegate = self
+        self.view.frame =  CGRect(0, 0, self.view.frame.size.width, self.view.frame.size.height+800)
         
-        imagesCollectionView.isPagingEnabled = true
-        
-        imagesCollectionView.register(UINib.init(nibName: "HomeSliderCell", bundle: nil), forCellWithReuseIdentifier: "HomeSliderCell")
+        setUpCollectionViews()
 
-
-            let Rlayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-            
-            Rlayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-           
-            Rlayout.scrollDirection = .horizontal
-            
-            Rlayout.minimumInteritemSpacing = 10
-            Rlayout.minimumLineSpacing = 10
-                                
-            recommendedCollectionView.collectionViewLayout = Rlayout
-           
-            recommendedCollectionView.dataSource = self
-            recommendedCollectionView.delegate = self
-            recommendedCollectionView.isPagingEnabled = false
-            
-            recommendedCollectionView.register(UINib.init(nibName: "subcat2CollectionCell", bundle: nil), forCellWithReuseIdentifier: "subcat2CollectionCell")
-            recommendedCollectionView.showsVerticalScrollIndicator = false
-            
-            recommendedCollectionView.backgroundColor = UIColor.white
-
-         
-         imagesCollectionView.showsVerticalScrollIndicator = false
-         
-         imagesCollectionView.backgroundColor = UIColor.white
-        
-       // self.GetNewBlock()
         GetProductDetail()
         
-        
         setupNavButtons()
-        
      
     }
     
@@ -120,15 +74,53 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
         self.view.addGestureRecognizer(gesture)
     }
     
+    
 
     @objc func dismiss(fromGesture gesture: UISwipeGestureRecognizer) {
 
         self.navigationController?.popViewController(animated: true)
     }
     
+    func setUpCollectionViews() {
+        
+        imagesCollectionView.dataSource = self
+        imagesCollectionView.delegate = self
+        imagesCollectionView.isPagingEnabled = true
+        imagesCollectionView.register(UINib.init(nibName: "HomeSliderCell", bundle: nil), forCellWithReuseIdentifier: "HomeSliderCell")
+        
+        imagesCollectionView.showsVerticalScrollIndicator = false
+        imagesCollectionView.backgroundColor = UIColor.white
+        
+        let Rlayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        Rlayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        Rlayout.scrollDirection = .horizontal
+        Rlayout.minimumInteritemSpacing = 10
+        Rlayout.minimumLineSpacing = 10
+        
+        
+        sizesCollectionView.dataSource = self
+        sizesCollectionView.delegate = self
+        sizesCollectionView.isPagingEnabled = true
+        sizesCollectionView.register(UINib.init(nibName: "ProductSizeCell", bundle: nil), forCellWithReuseIdentifier: "ProductSizeCell")
+        
+        sizesCollectionView.showsVerticalScrollIndicator = false
+        sizesCollectionView.backgroundColor = UIColor.white
+        
+
+
+
+    
+        recommendedCollectionView.collectionViewLayout = Rlayout
+        recommendedCollectionView.dataSource = self
+        recommendedCollectionView.delegate = self
+        recommendedCollectionView.isPagingEnabled = true
+        recommendedCollectionView.register(UINib.init(nibName: "subcat2CollectionCell", bundle: nil), forCellWithReuseIdentifier: "subcat2CollectionCell")
+        recommendedCollectionView.showsVerticalScrollIndicator = false
+        recommendedCollectionView.backgroundColor = UIColor.white
+    }
+    
 
     @IBAction func AddToBagTapped(_ sender: Any) {
-        
         
         let signed = getUserDetails()
         
@@ -140,8 +132,6 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
             
             Alert.showSignUpAlert(viewcontroller: self)
         }
-        
-
     }
     
     override func viewDidLayoutSubviews()
@@ -153,8 +143,6 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
         
     }
             
-
-    
     func GetWishList()
     {
         let signed = getUserDetails()
@@ -184,9 +172,6 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
                         self?.favButton.setImage(UIImage(named: "wishlist_heart_filled"), for: .normal)
                     }
                 }
-              //  print(self?.arrWishlist)
-                //self?.wishCollcationView.reloadData()
-                
             }
             else
             {
@@ -215,6 +200,9 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
             
         count =  relatedArr.count
             
+        } else if collectionView == sizesCollectionView {
+            
+            count = sizesArr.count
         }
         
         return count!
@@ -230,8 +218,14 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
         
         size =  CGSize(width: (self.imagesCollectionView.frame.width), height: (self.imagesCollectionView.frame.height
         ))
-        } else {
+        } else if collectionView == recommendedCollectionView {
+            
         size =  CGSize(width: (self.recommendedCollectionView.frame.width/3), height: (self.recommendedCollectionView.frame.height))
+            
+        } else if collectionView == sizesCollectionView {
+            
+            size = CGSize(width: 60.0, height: 45.0)
+            
         }
         return size!
     }
@@ -273,7 +267,26 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
                         
         cell.img.sd_setImage(with: fileUrl! as URL, placeholderImage: UIImage(named: ""),options: SDWebImageOptions(rawValue: 0), completed: { (image, error, cacheType, imageURL) in
                         })
-        
+            myCell =  cell
+            
+        } else if collectionView == sizesCollectionView  {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductSizeCell", for: indexPath) as! ProductSizeCell
+            print(sizesArr)
+            let size = sizesArr[indexPath.row] as! NSDictionary
+            let sizeValue = (size .value(forKey: "attribute_option") as? String)!
+            cell.sizeBtn.setTitle(sizeValue, for: .normal)
+            cell.sizeBtn.tag = indexPath.row
+            cell.sizeBtn.addTarget(self, action: #selector(buttonSize), for: .touchUpInside)
+            let skuarr = size .value(forKey: "sku") as! NSArray
+            if skuarr[0] as? Int == Int(SKu) {
+               cell.sizeBtn.backgroundColor = UIColor.black
+               cell.sizeBtn.setTitleColor(UIColor.white, for: .normal)
+                
+            } else {
+                
+                cell.sizeBtn.backgroundColor = UIColor.white
+                cell.sizeBtn.setTitleColor(UIColor.black, for: .normal)
+            }
             myCell =  cell
         }
         
@@ -303,6 +316,25 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
             let productCV = storyboard.instantiateViewController(withIdentifier: "productVC") as! ProductDetail
             
             self.navigationController?.pushViewController(productCV, animated: true)
+            
+        } else if collectionView == imagesCollectionView {
+            
+             let dic = arrSlider[indexPath.row] as! NSDictionary
+             
+            // let strimgUrl = .imagebaseURL + "banners/" + (dic.value(forKey: "image") as? String)!
+            let imagePath =  (dic.value(forKey: "image") as? String)!
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            let productImageVC = storyboard.instantiateViewController(withIdentifier: "ProductImageVC") as! ProductImageVC
+            
+            productImageVC.imagePath = imagePath
+            
+            self.navigationController?.pushViewController(productImageVC, animated: true)
+            
+        }  else if collectionView == sizesCollectionView {
+            
+            print("selected")
         }
     }
     
@@ -372,8 +404,6 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
         
         hud.show(in: self.view)
         
-        var SKu = String()
-        
         let priduct_id = strProductId as String
         
         let producttype = mydic.value(forKey: "product_type") as! String
@@ -429,14 +459,20 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
             var dic = NSDictionary()
             
             dic = response["data"] as! NSDictionary
-            print("khaled \(dic)")
+            print( "\(dic)")
             
             self?.mydic = dic
+            let attribute_group = dic.value(forKey: "attribute_group") as! NSDictionary
+            let attributes = attribute_group.value(forKey: "attributes") as! NSArray
+            let attribute_options = attributes.value(forKey: "attribute_options") as! NSArray
+            let sizesByMetre = attribute_options[0] as! NSArray
+            self?.sizesArr = sizesByMetre
+            self?.sizesCollectionView.reloadData()
             self?.arrSlider = dic["products_images"] as! NSArray
             print(self!.arrSlider.count)
             self?.imagesCollectionView.reloadData()
             self?.pageControl.numberOfPages = (self?.arrSlider.count)!
-         //   self!.startTimer()
+            //self!.startTimer()
             self?.lblProductName.text = dic.object(forKey: "product_name") as? String
             let strPrice = String(format: "%@%@","KD ", dic.value(forKey: "product_current_price") as! CVarArg)
             self?.lblProductPrice.text = strPrice as String
@@ -445,7 +481,7 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
             self?.lblMenufacturedIn.text = dic.object(forKey: "made_in_country") as? String
             self?.lblWeight.text = dic.object(forKey: "weight") as? String
             self?.lblMaterial.text = dic.object(forKey: "material") as? String
-           // self?.widthValueLbl.text = "\((dic.object(forKey: "width") as! Int) * 2 )"
+            //self?.widthValueLbl.text = "\((dic.object(forKey: "width") as! Int) * 2 )"
             strProductId = String(dic .value(forKey: "id") as! Int)
             
             self!.GetWishList()
@@ -587,6 +623,18 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
           })
     }
     
+    @objc func buttonSize(sender: UIButton){
+        
+        let buttonPosition:CGPoint = sender.convert(CGPoint.zero, to: self.sizesCollectionView)
+        let indexPath = self.sizesCollectionView.indexPathForItem(at: buttonPosition)
+        let sizeDic = self.sizesArr[(indexPath?.row)!] as! NSDictionary
+        let skuArr = sizeDic .value(forKey:  "sku") as! NSArray
+        let sku = skuArr[0] as! Int
+        SKu = String(sku)
+        sizesCollectionView.reloadData()
+        
+    }
+    
     @IBAction func incresecount(_ sender: Any) {
         
         
@@ -601,6 +649,8 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
 
         lblProductCount.text = String(count)
     }
+    
+    
     
 }
 

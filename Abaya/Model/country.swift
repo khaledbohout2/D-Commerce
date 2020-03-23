@@ -8,12 +8,8 @@
 
 import Foundation
 
-class Country: Codable {
-    let id: Int
+struct Country: Codable {
+    
     let country: String
-
-    init(id: Int, country: String) {
-        self.id = id
-        self.country = country
-    }
+    let id: Int
 }

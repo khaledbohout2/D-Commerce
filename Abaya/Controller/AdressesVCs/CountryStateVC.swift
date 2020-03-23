@@ -73,12 +73,16 @@ class CountryStateVC: UIViewController {
                 
                 print(countries)
                 
+                var countriess = [Dictionary<String, Any>]()
                 for country in countries {
                     
-                    if (country as! NSDictionary).value(forKey: "id") as! Int == 117 {
-                        self!.arrCountry = [country]
+                    let id = (country as! NSDictionary).value(forKey: "id") as! Int
+                    if id == 117 || id == 17 || id == 165  ||  id == 178 || id == 191 || id == 229 {
+                        countriess.append(country as! [String : Any])
                     }
                 }
+                print(countriess)
+                self?.arrCountry = countriess as NSArray
               //  countries = dic["data"] as! NSArray
                 self?.tblCountry.reloadData()
                 hud.dismiss()

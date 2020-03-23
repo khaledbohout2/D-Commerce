@@ -33,7 +33,7 @@ class CategoryVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //backBySwipe()
+        backBySwipe()
         
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true;
         self.navigationController?.interactivePopGestureRecognizer?.delegate = nil;
