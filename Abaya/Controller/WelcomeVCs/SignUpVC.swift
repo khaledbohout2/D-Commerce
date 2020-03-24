@@ -32,6 +32,8 @@ class SignUpVC: UIViewController {
         super.viewDidLoad()
         
         setupNavButtons()
+        firstNameTextField.autocapitalizationType = .sentences
+        surNameTextField.autocapitalizationType = .sentences
         
         let sesstioncheck = UserDefaults.standard.string(forKey: "session")
         if (sesstioncheck == "session")

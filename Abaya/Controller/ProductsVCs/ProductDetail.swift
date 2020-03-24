@@ -494,10 +494,7 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
         hud.textLabel.text = NSLocalizedString("Loading", comment: "")
         
         hud.show(in: self.view)
-        
 
-      
-       
         ApiBaseClass.apiCallingWithGetProMethode(url:ApiBaseClass.recommendedProducts(), completion: { [weak self] response in
             
             let errorCheck = response["success"] as! Bool

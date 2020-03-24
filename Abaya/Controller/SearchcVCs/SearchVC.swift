@@ -27,6 +27,7 @@ class SearchVC: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITa
         tableView.isHidden = true
         searchBar.delegate = self
         searchBar.returnKeyType = UIReturnKeyType.done
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).clearButtonMode = .never
         
         
         tableView.delegate = self
@@ -73,7 +74,7 @@ class SearchVC: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITa
         productToFilter = searchBar.text!
         print(productToFilter)
         
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "SearchResultsVC") as! SearchResultsVC
         self.navigationController?.pushViewController(vc, animated: true)
     }
@@ -113,6 +114,7 @@ class SearchVC: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITa
     @IBAction func clearButtonTapped(_ sender: Any) {
         
         searchBar.text = ""
+        hud.dismiss()
         view.endEditing(true)
         self.searchValues = []
         self.tableView.reloadData()
@@ -187,6 +189,7 @@ extension SearchVC {
     @objc func closeButtonfunc(sender: UIBarButtonItem) {
         
         self.dismiss(animated: true, completion: nil)
+        hud.dismiss()
     }
     
     @objc func backAction()
@@ -199,5 +202,7 @@ extension SearchVC {
 
     
 }
+
+
 
 
