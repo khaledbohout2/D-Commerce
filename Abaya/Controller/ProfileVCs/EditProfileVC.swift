@@ -60,6 +60,7 @@ class EditProfileVC: UIViewController {
                 tftLastName.text = (strLastName as String)
                 tftEmail.text =  dicUserProfile["email"] as! NSString as String
                 tftPhone.text =  dicUserProfile["mobile"] as! NSString as String
+                imgProfile.setImage(string: "\(strFirstName) \(strLastName)", color: UIColor.black, circular: true, stroke: true)
         
     }
     

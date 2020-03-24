@@ -1596,7 +1596,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="POG-GY-eGh">
+                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="POG-GY-eGh">
                                                         <rect key="frame" x="10" y="66" width="355" height="45"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <constraints>
@@ -1699,7 +1699,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manufactured in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YYR-uj-oT7">
-                                                <rect key="frame" x="24.999999999999993" y="809" width="100.33333333333331" height="21"/>
+                                                <rect key="frame" x="24.999999999999993" y="809" width="98.333333333333314" height="21"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -1874,7 +1874,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quick shipping and on-time, guaranteed deliveries" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJg-Yd-Sih">
-                                                <rect key="frame" x="83" y="1074" width="280.33333333333331" height="14"/>
+                                                <rect key="frame" x="83" y="1074" width="274.33333333333331" height="14"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="14" id="Gii-hQ-thc"/>
                                                 </constraints>
@@ -1883,7 +1883,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100% original products, shop with confidence" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymf-Gi-xr0">
-                                                <rect key="frame" x="83" y="1132.6666666666667" width="280.33333333333331" height="14"/>
+                                                <rect key="frame" x="83" y="1132.6666666666667" width="274.33333333333331" height="14"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="14" id="1gI-R6-Vh1"/>
                                                     <constraint firstAttribute="height" constant="14" id="Zo7-AR-k50"/>
@@ -1893,7 +1893,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14 days return policy, returns are so simple" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yZw-U7-PeJ">
-                                                <rect key="frame" x="83" y="1193" width="280.33333333333331" height="14"/>
+                                                <rect key="frame" x="83" y="1193" width="274.33333333333331" height="14"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="14" id="JME-OW-Bou"/>
                                                 </constraints>
@@ -1926,20 +1926,6 @@
                                                     <action selector="favButtonTapped:" destination="BAc-ij-7Md" eventType="touchUpInside" id="TtS-zw-dgU"/>
                                                 </connections>
                                             </button>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="r5w-K5-8kL">
-                                                <rect key="frame" x="10" y="1289" width="355" height="175"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="175" id="PHj-23-YCv"/>
-                                                </constraints>
-                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9Dc-4n-qnz">
-                                                    <size key="itemSize" width="50" height="50"/>
-                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                </collectionViewFlowLayout>
-                                                <cells/>
-                                            </collectionView>
                                             <view alpha="0.15000000596046448" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Pa-Mg-cYa">
                                                 <rect key="frame" x="20" y="837" width="335" height="35"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1996,7 +1982,6 @@
                                             <constraint firstItem="9bi-CP-NZw" firstAttribute="top" secondItem="rEh-Le-FSS" secondAttribute="bottom" id="6nz-aM-qX7"/>
                                             <constraint firstItem="udD-Gb-xk0" firstAttribute="height" secondItem="0Td-0o-yl8" secondAttribute="height" id="7t8-Iv-Wwr"/>
                                             <constraint firstItem="O1g-Xz-Skd" firstAttribute="top" secondItem="SGa-5S-sn5" secondAttribute="bottom" constant="25" id="8Fl-fi-HVU"/>
-                                            <constraint firstItem="r5w-K5-8kL" firstAttribute="leading" secondItem="yhj-YG-tvx" secondAttribute="leading" constant="10" id="8ZL-0J-kbj"/>
                                             <constraint firstItem="24u-v7-Ecv" firstAttribute="trailing" secondItem="l48-b9-hcV" secondAttribute="trailing" id="97P-5M-HTl"/>
                                             <constraint firstItem="l48-b9-hcV" firstAttribute="top" secondItem="z4Q-OT-ic6" secondAttribute="bottom" constant="10" id="9QP-oW-V5r"/>
                                             <constraint firstItem="Pp7-GT-PzX" firstAttribute="height" secondItem="Yz4-Jz-5XB" secondAttribute="height" id="9a6-Q7-dwo"/>
@@ -2057,7 +2042,6 @@
                                             <constraint firstItem="rEh-Le-FSS" firstAttribute="trailing" secondItem="tqA-1c-zC0" secondAttribute="trailing" id="Syr-0k-8ZX"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="KhP-qc-gwH" secondAttribute="trailing" constant="20" symbolic="YES" id="T83-bS-ToI"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="wkH-yQ-839" secondAttribute="trailing" constant="20" symbolic="YES" id="TeP-yD-ggS"/>
-                                            <constraint firstItem="r5w-K5-8kL" firstAttribute="top" secondItem="pGs-qa-bHP" secondAttribute="bottom" constant="8" id="Tem-j6-DLa"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="PYp-YZ-YgU" secondAttribute="trailing" constant="20" symbolic="YES" id="Ubg-lm-ms1"/>
                                             <constraint firstItem="8Pa-Mg-cYa" firstAttribute="top" secondItem="9bi-CP-NZw" secondAttribute="bottom" id="Vez-1U-GSw"/>
                                             <constraint firstItem="t3T-5T-ciG" firstAttribute="leading" secondItem="yhj-YG-tvx" secondAttribute="leading" id="WoE-De-RWZ"/>
@@ -2132,7 +2116,6 @@
                                             <constraint firstItem="Uwd-M1-PWV" firstAttribute="height" secondItem="qed-Qh-qMi" secondAttribute="height" multiplier="1.43182" id="wgQ-ch-ddw"/>
                                             <constraint firstItem="yZw-U7-PeJ" firstAttribute="trailing" secondItem="ymf-Gi-xr0" secondAttribute="trailing" id="wzq-eg-UzM"/>
                                             <constraint firstItem="Qzm-BA-H9G" firstAttribute="trailing" secondItem="PiM-CK-Dcm" secondAttribute="trailing" id="xoh-1f-b2v"/>
-                                            <constraint firstAttribute="trailing" secondItem="r5w-K5-8kL" secondAttribute="trailing" constant="10" id="xxV-m1-ZvA"/>
                                             <constraint firstItem="wkH-yQ-839" firstAttribute="leading" secondItem="yhj-YG-tvx" secondAttribute="leading" constant="48" id="yVg-UD-Wxh"/>
                                             <constraint firstAttribute="trailing" secondItem="fvr-HI-raS" secondAttribute="trailing" id="ymL-AW-Wd0"/>
                                             <constraint firstItem="8Pa-Mg-cYa" firstAttribute="leading" secondItem="9bi-CP-NZw" secondAttribute="leading" id="yvh-aX-qLy"/>
@@ -2164,6 +2147,20 @@
                                             <action selector="incresecount:" destination="BAc-ij-7Md" eventType="touchUpInside" id="n9Q-bW-nbd"/>
                                         </connections>
                                     </button>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="r5w-K5-8kL">
+                                        <rect key="frame" x="10" y="1285" width="355" height="175"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="175" id="PHj-23-YCv"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9Dc-4n-qnz">
+                                            <size key="itemSize" width="50" height="50"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells/>
+                                    </collectionView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="spg-t7-NJu">
                                         <rect key="frame" x="20" y="975" width="15" height="20"/>
                                         <constraints>
@@ -2187,10 +2184,12 @@
                                     </imageView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="r5w-K5-8kL" secondAttribute="trailing" constant="10" id="17L-CC-1df"/>
                                     <constraint firstAttribute="trailing" secondItem="yhj-YG-tvx" secondAttribute="trailing" id="2k6-mU-zEA"/>
                                     <constraint firstItem="izb-k5-Gw4" firstAttribute="leading" secondItem="spg-t7-NJu" secondAttribute="trailing" constant="50" id="3uW-Fk-8BN"/>
                                     <constraint firstItem="IHG-AJ-Dbe" firstAttribute="leading" secondItem="kh4-xu-Idl" secondAttribute="leading" constant="110" id="Blh-vY-bXI"/>
                                     <constraint firstItem="spg-t7-NJu" firstAttribute="leading" secondItem="KhP-qc-gwH" secondAttribute="leading" id="Dvg-uG-3as"/>
+                                    <constraint firstItem="r5w-K5-8kL" firstAttribute="leading" secondItem="kh4-xu-Idl" secondAttribute="leading" constant="10" id="McI-Fe-Hep"/>
                                     <constraint firstItem="yhj-YG-tvx" firstAttribute="centerX" secondItem="kh4-xu-Idl" secondAttribute="centerX" id="MdZ-lb-qqM"/>
                                     <constraint firstItem="IHG-AJ-Dbe" firstAttribute="top" secondItem="wkH-yQ-839" secondAttribute="top" id="OVn-mA-xTD"/>
                                     <constraint firstItem="yhj-YG-tvx" firstAttribute="top" secondItem="kh4-xu-Idl" secondAttribute="top" id="VKS-Mf-I64"/>
@@ -2202,6 +2201,7 @@
                                     <constraint firstAttribute="trailing" secondItem="CJ2-VU-Etd" secondAttribute="trailing" constant="30" id="glt-GE-fY2"/>
                                     <constraint firstItem="CJ2-VU-Etd" firstAttribute="centerY" secondItem="IHG-AJ-Dbe" secondAttribute="centerY" id="jfw-6g-o74"/>
                                     <constraint firstAttribute="bottom" secondItem="yhj-YG-tvx" secondAttribute="bottom" id="oaR-mH-RZE"/>
+                                    <constraint firstItem="r5w-K5-8kL" firstAttribute="top" secondItem="IHG-AJ-Dbe" secondAttribute="bottom" constant="278" id="rzR-mF-a4q"/>
                                     <constraint firstItem="spg-t7-NJu" firstAttribute="top" secondItem="kh4-xu-Idl" secondAttribute="top" constant="975" id="shm-Aj-US1"/>
                                 </constraints>
                                 <connections>
@@ -4014,7 +4014,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_profile_icon" translatesAutoresizingMaskIntoConstraints="NO" id="gRn-ZD-sLe">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gRn-ZD-sLe">
                                         <rect key="frame" x="137" y="55" width="140" height="100"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XE0-5Q-S2K">
@@ -4029,7 +4029,7 @@
                                         </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YMr-Lx-TWz" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                        <rect key="frame" x="15" y="214" width="385" height="34"/>
+                                        <rect key="frame" x="15" y="214" width="385" height="39.333333333333343"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -4050,7 +4050,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rfi-pi-ZP4" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                        <rect key="frame" x="15" y="263.66666666666669" width="385" height="34"/>
+                                        <rect key="frame" x="15" y="269" width="385" height="39"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -4068,7 +4068,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Jz-sW-YXg" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                        <rect key="frame" x="15" y="313.33333333333331" width="385" height="44"/>
+                                        <rect key="frame" x="15" y="323.66666666666669" width="385" height="44"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="rnA-iC-7oh"/>
@@ -4089,7 +4089,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J6q-1b-vcC" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                        <rect key="frame" x="15" y="372.33333333333331" width="385" height="39.333333333333314"/>
+                                        <rect key="frame" x="15" y="382.66666666666669" width="385" height="39.333333333333314"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="39.329999999999998" id="zXz-ZQ-SG5"/>

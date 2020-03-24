@@ -17,8 +17,8 @@ class SliderMenuVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     var navigationView = UIView()
     let arrImages = ["orders_icon", "addr_icon", "saved_cards_icon", "notification_icon", "wishlist_icon_gray copy"]
     let arrCategories = [NSLocalizedString("Summer", comment: ""), NSLocalizedString("Winter", comment: "")]
-    let arrAccount = ["Country", "Language"]
-    let arrImgAccount = ["flag_icon", "lang_icon"]
+    let arrAccount = ["Language"]
+    let arrImgAccount = ["lang_icon"]
     let arrSupport = ["FAQs", "Customer Care","About"]
     let arrImgSupport = ["faq_icon", "customer_care_icon", "blocks_sidebar_icon"]
     
@@ -71,11 +71,8 @@ class SliderMenuVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
             }
 
             cell.nameLabel.text = NSLocalizedString(arrAccount[indexPath.row], comment: "")
-             cell.imgIcon.image = UIImage(named: arrImgAccount[indexPath.row])
-            if indexPath.row  == 0 {
-                
-                cell.flagImage.isHidden = false
-            }
+            cell.imgIcon.image = UIImage(named: arrImgAccount[indexPath.row])
+
             return cell
         }
             
@@ -173,7 +170,7 @@ class SliderMenuVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
             
         } else if indexPath.section == 1 {
             
-            if indexPath.row == 1 {
+            if indexPath.row == 0 {
                 
                                let LanguageViewController = self.storyboard!.instantiateViewController(withIdentifier: "LanguageViewController") as! LanguageVC
                 

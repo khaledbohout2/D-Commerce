@@ -167,6 +167,9 @@ extension SearchVC {
         
 
         let closeButton = UIBarButtonItem(image: #imageLiteral(resourceName: "close_icon"), style: .plain, target: self, action: #selector(closeButtonfunc))
+        let menuButtonItem = UIBarButtonItem(image: UIImage(named: NSLocalizedString("back_arrow", comment: "")), style: .plain, target: self, action: #selector(backAction))
+        
+        navigationItem.leftBarButtonItem = menuButtonItem
         self.navigationController?.navigationBar.tintColor = UIColor.black
 
         navigationItem.rightBarButtonItem = closeButton
@@ -186,7 +189,15 @@ extension SearchVC {
         self.dismiss(animated: true, completion: nil)
     }
     
+    @objc func backAction()
+    {
+        
+      navigationController?.popViewController(animated: true)
+
+    }
+    
 
     
 }
+
 

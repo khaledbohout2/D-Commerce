@@ -25,7 +25,9 @@ class FilterVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setUpNavigation()
         backBySwipe()
+        
         
         highToLowOutlet.isUserInteractionEnabled = false
         lowToHighOutlet.isUserInteractionEnabled = false
@@ -152,6 +154,47 @@ class FilterVC: UIViewController {
     }
 
 
+}
+
+// MARK:- Navigation
+extension FilterVC {
+    
+    func setUpNavigation() {
+        
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.view.backgroundColor = UIColor.lightGray
+        self.navigationController?.navigationBar.tintColor = UIColor.black
+
+        
+
+
+        let menuButtonItem = UIBarButtonItem(image: UIImage(named: NSLocalizedString("back_arrow", comment: "")), style: .plain, target: self, action: #selector(backAction))
+        
+        navigationItem.leftBarButtonItem = menuButtonItem
+        self.navigationController?.navigationBar.tintColor = UIColor.black
+        
+        self.title = NSLocalizedString("Search", comment: "")
+        
+       // navigationController?.navigationBar.prefersLargeTitles = true
+        
+        navigationController?.navigationBar.backgroundColor = UIColor.white
+        
+        navigationController?.navigationBar.setNeedsLayout()
+        
+    }
+    
+    @objc func backAction()
+    {
+        
+      navigationController?.popViewController(animated: true)
+
+    }
+    
+
+    
 }
 
 

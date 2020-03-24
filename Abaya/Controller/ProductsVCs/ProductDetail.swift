@@ -106,10 +106,7 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
         sizesCollectionView.showsVerticalScrollIndicator = false
         sizesCollectionView.backgroundColor = UIColor.white
         
-
-
-
-    
+        
         recommendedCollectionView.collectionViewLayout = Rlayout
         recommendedCollectionView.dataSource = self
         recommendedCollectionView.delegate = self
@@ -126,7 +123,14 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
         
         if signed {
             
+            if SKu == "" {
+                
+                Alert.Show(title: NSLocalizedString("Error", comment: ""), mesage: NSLocalizedString("please select size", comment: ""), viewcontroller: self)
+                return
+            } else {
+            
             self.addToCart()
+            }
             
         } else {
             
@@ -408,22 +412,10 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
         
         let producttype = mydic.value(forKey: "product_type") as! String
         
-        if producttype == "Configurable Product" {
-            
-            let attribute_group = mydic.value(forKey: "attribute_group") as! NSDictionary
-            let attributes = attribute_group.value(forKey: "attributes") as! NSArray
-            let attribute_options = attributes.value(forKey: "attribute_options") as! NSArray
-            let arr = attribute_options[0] as! NSArray
-            let first = arr[0] as! NSDictionary
-            let SKUS = first.value(forKey: "sku") as! NSArray
-            let firstsku = SKUS[0] as! Int
-            SKu = String(firstsku)
-            
-        }
-            
-        else {
-            
+        if producttype != "Configurable Product" {
+
             SKu = priduct_id
+            
         }
         
         let quantity = lblProductCount.text!
