@@ -34,18 +34,11 @@ class CategoryVC: UIViewController {
         super.viewDidLoad()
         
         backBySwipe()
-        
-        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true;
-        self.navigationController?.interactivePopGestureRecognizer?.delegate = nil;
-                
-        
         tableView.delegate = self
         tableView.dataSource = self
         
         tableView.register(UINib(nibName: "storeCell", bundle: nil), forCellReuseIdentifier: "storeCell")
-        
-
-        
+    
         setupNavButtons()
         
         loadProducts()
@@ -59,22 +52,23 @@ class CategoryVC: UIViewController {
         hud.textLabel.text = NSLocalizedString("loading", comment: "")
         
         hud.show(in: self.view)
-        
-        
+            
         arrSubCategories = categoryDic .value(forKey: "children") as! NSArray
 
-        
         self.title = (categoryDic.value(forKey: NSLocalizedString("category_name", comment: "")) as! String)
-        
-        let imgStrUrl = .imagebaseURL + "category/" + (categoryDic.value(forKey: "category_image") as! String)
-        
-        
+                
         hud.dismiss()
     }
     
     func backBySwipe() {
         
         let gesture = UISwipeGestureRecognizer(target: self, action: #selector(dismiss(fromGesture:)))
+        let lang = Locale.preferredLanguages[0]
+        if lang == "en" {
+        gesture.direction = .right
+        } else if lang == "ar" {
+            gesture.direction = .left
+        }
         tableView.addGestureRecognizer(gesture)
     }
     

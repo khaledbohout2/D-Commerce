@@ -22,7 +22,7 @@ class ProductListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        backBySwipe()
+      //  backBySwipe()
 
        setupNavButtons()
         
@@ -38,6 +38,13 @@ class ProductListVC: UIViewController {
     func backBySwipe() {
         
         let gesture = UISwipeGestureRecognizer(target: self, action: #selector(dismiss(fromGesture:)))
+        let lang = Locale.preferredLanguages[0]
+        if lang == "en" {
+        gesture.direction = .right
+        } else if lang == "ar" {
+            gesture.direction = .left
+        }
+
         ProductsCollectionView.addGestureRecognizer(gesture)
     }
     

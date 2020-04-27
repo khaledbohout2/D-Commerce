@@ -67,6 +67,13 @@ class ProfileVC: UIViewController {
     func backBySwipe() {
         
         let gesture = UISwipeGestureRecognizer(target: self, action: #selector(dismiss(fromGesture:)))
+        let lang = Locale.preferredLanguages[0]
+        if lang == "en" {
+        gesture.direction = .right
+        } else if lang == "ar" {
+            gesture.direction = .left
+        }
+
         self.tblProfile.addGestureRecognizer(gesture)
         self.view.addGestureRecognizer(gesture)
     }

@@ -1,62 +1,144 @@
-class InteractivePopNavigationController: UINavigationController {
-    
-    var isPushingViewController = false
-    weak var externalDelegate: UINavigationControllerDelegate?
-    
+import Foundation
+import UIKit
+
+final class TransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     // 1
-    override var delegate: UINavigationControllerDelegate? {
-        didSet {
-            if !(delegate is InteractivePopNavigationController) {
-                externalDelegate = delegate
-                super.delegate = oldValue
+    let presenting: Bool
+
+    // 2
+    init(presenting: Bool) {
+        self.presenting = presenting
+    }
+
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+        // 3
+        return TimeInterval(UINavigationController.hideShowBarDuration)
+    }
+
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        // 4
+        guard let fromView = transitionContext.view(forKey: .from) else { return }
+        guard let toView = transitionContext.view(forKey: .to) else { return }
+
+        // 5
+        let duration = transitionDuration(using: transitionContext)
+
+        // 6
+        let container = transitionContext.containerView
+        if presenting {
+            container.addSubview(toView)
+        } else {
+            container.insertSubview(toView, belowSubview: fromView)
+        }
+
+        // 7
+        let toViewFrame = toView.frame
+        toView.frame = CGRect(x: presenting ? toView.frame.width : -toView.frame.width, y: toView.frame.origin.y, width: toView.frame.width, height: toView.frame.height)
+
+        let animations = {
+            UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.5) {
+                toView.alpha = 1
+                if self.presenting {
+                    fromView.alpha = 0
+                }
             }
+
+            UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 1) {
+                toView.frame = toViewFrame
+                fromView.frame = CGRect(x: self.presenting ? -fromView.frame.width : fromView.frame.width, y: fromView.frame.origin.y, width: fromView.frame.width, height: fromView.frame.height)
+                if !self.presenting {
+                    fromView.alpha = 0
+                }
+            }
+
+        }
+
+        UIView.animateKeyframes(withDuration: duration,
+                                delay: 0,
+                                options: .calculationModeCubic,
+                                animations: animations,
+                                completion: { finished in
+                                    // 8
+                                    container.addSubview(toView)
+                                    transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+        })
+    }
+}
+
+final class TransitionCoordinator: NSObject, UINavigationControllerDelegate {
+    // 1
+    var interactionController: UIPercentDrivenInteractiveTransition?
+
+    // 2
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        switch operation {
+        case .push:
+            return TransitionAnimator(presenting: true)
+        case .pop:
+            return TransitionAnimator(presenting: false)
+        default:
+            return nil
         }
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        delegate = self
-        interactivePopGestureRecognizer?.delegate = self
-    }
-    
-    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
-        
-        isPushingViewController = true
-        super.pushViewController(viewController, animated: animated)
-    }
-}
- 
-extension InteractivePopNavigationController: UIGestureRecognizerDelegate {
-    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-        guard gestureRecognizer is UIScreenEdgePanGestureRecognizer else { return true }
-        return viewControllers.count > 1 && isPushingViewController
-    }
-}
- 
-// 2
-extension InteractivePopNavigationController: UINavigationControllerDelegate {
-    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
-        isPushingViewController = false
-        externalDelegate?.navigationController?(navigationController, didShow: viewController, animated: animated)
-    }
-    
-    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
-        externalDelegate?.navigationController?(navigationController, willShow: viewController, animated: animated)
-    }
-    
-    func navigationControllerSupportedInterfaceOrientations(_ navigationController: UINavigationController) -> UIInterfaceOrientationMask {
-        return externalDelegate?.navigationControllerSupportedInterfaceOrientations?(navigationController) ?? visibleViewController?.supportedInterfaceOrientations ?? .all
-    }
-    
-    func navigationControllerPreferredInterfaceOrientationForPresentation(_ navigationController: UINavigationController) -> UIInterfaceOrientation {
-        return externalDelegate?.navigationControllerPreferredInterfaceOrientationForPresentation?(navigationController) ?? self.preferredInterfaceOrientationForPresentation
-    }
-    
-    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return externalDelegate?.navigationController?(navigationController, animationControllerFor: operation, from: fromVC, to:toVC)
-    }
-    
+
+    // 3
     func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-        return externalDelegate?.navigationController?(navigationController, interactionControllerFor: animationController)
+        return interactionController
+    }
+}
+
+extension UINavigationController {
+    // 1
+    static private var coordinatorHelperKey = "UINavigationController.TransitionCoordinatorHelper"
+
+    // 2
+    var transitionCoordinatorHelper: TransitionCoordinator? {
+        return objc_getAssociatedObject(self, &UINavigationController.coordinatorHelperKey) as? TransitionCoordinator
+    }
+
+    func addCustomTransitioning() {
+        // 3
+        var object = objc_getAssociatedObject(self, &UINavigationController.coordinatorHelperKey)
+
+        guard object == nil else {
+            return
+        }
+
+        object = TransitionCoordinator()
+        let nonatomic = objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC
+        objc_setAssociatedObject(self, &UINavigationController.coordinatorHelperKey, object, nonatomic)
+
+        // 4
+        delegate = object as? TransitionCoordinator
+
+
+        // 5
+        let edgeSwipeGestureRecognizer = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(handleSwipe(_:)))
+        edgeSwipeGestureRecognizer.edges = .left
+        view.addGestureRecognizer(edgeSwipeGestureRecognizer)
+    }
+
+    // 6
+    @objc func handleSwipe(_ gestureRecognizer: UIScreenEdgePanGestureRecognizer) {
+        guard let gestureRecognizerView = gestureRecognizer.view else {
+            transitionCoordinatorHelper?.interactionController = nil
+            return
+        }
+
+        let percent = gestureRecognizer.translation(in: gestureRecognizerView).x / gestureRecognizerView.bounds.size.width
+
+        if gestureRecognizer.state == .began {
+            transitionCoordinatorHelper?.interactionController = UIPercentDrivenInteractiveTransition()
+            popViewController(animated: true)
+        } else if gestureRecognizer.state == .changed {
+            transitionCoordinatorHelper?.interactionController?.update(percent)
+        } else if gestureRecognizer.state == .ended {
+            if percent > 0.5 && gestureRecognizer.state != .cancelled {
+                transitionCoordinatorHelper?.interactionController?.finish()
+            } else {
+                transitionCoordinatorHelper?.interactionController?.cancel()
+            }
+            transitionCoordinatorHelper?.interactionController = nil
+        }
     }
 }
