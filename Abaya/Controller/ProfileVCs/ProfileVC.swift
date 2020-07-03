@@ -26,8 +26,8 @@ class ProfileVC: UIViewController {
 
     
     
-    let arrImages = ["orders_icon", "addr_icon", "saved_cards_icon", "notification_icon", "wishlist_icon_gray copy"]
-    let arrList = ["My Order", "Addresses", "Saved Cards", "Notifications", "Wishlist"]
+    let arrImages = ["orders_icon", "addr_icon", "wishlist_icon_gray copy"]
+    let arrList = ["My Order", "Addresses", "Wishlist"]
     
     var arryList = NSArray()
     
@@ -164,7 +164,7 @@ func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) ->
             return 54
         }
 func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return 5
+            return 3
         }
     
 func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

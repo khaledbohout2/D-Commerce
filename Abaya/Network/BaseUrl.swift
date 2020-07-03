@@ -70,6 +70,7 @@ class BaseUrl {
     static let addWishList = "addToWishlist"
     static let resetpassword = "resetPassword"
     static let cancelorder = "cancelOrder"
+    private static let getfAQ = "getfaqs"
     
     public static func addNewCard() ->String
     {
@@ -111,7 +112,7 @@ class BaseUrl {
     
     public static func getStateList() ->String
     {
-        return baseUrl + statelist + (strCountryID as String)
+        return baseUrl + statelist + ("117")
         
     }
     
@@ -250,7 +251,11 @@ class BaseUrl {
         return baseUrl + cancelorder
     }
     
-    
+    public static func getFAQ() ->String
+        
+    {
+        return baseUrl + getfAQ
+    }
   
 
     

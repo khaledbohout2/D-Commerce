@@ -23,6 +23,7 @@ protocol SetState {
 }
 
 class CountryStateVC: UIViewController {
+    
     @IBOutlet weak var tblCountry: UITableView!
     
     var arrCountry = NSArray()

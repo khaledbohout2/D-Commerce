@@ -16,10 +16,7 @@ class TrackOrderVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     var itemsCount = NSInteger()
     
     @IBOutlet weak var itemsTableView: UITableView!
-    
-    
-    
-    
+
     @IBOutlet weak var orederDateLbl: UILabel!
     
     @IBOutlet weak var orderStateLbl: UILabel!
@@ -35,7 +32,6 @@ class TrackOrderVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     @IBOutlet weak var onTransitLbl: UILabel!
     
     @IBOutlet weak var expectedDeliveryLbl: UILabel!
-    
     
     @IBOutlet weak var tblheight: NSLayoutConstraint!
     

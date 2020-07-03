@@ -19,8 +19,8 @@ class SliderMenuVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     let arrCategories = [NSLocalizedString("Summer", comment: ""), NSLocalizedString("Winter", comment: "")]
     let arrAccount = ["Language"]
     let arrImgAccount = ["lang_icon"]
-    let arrSupport = ["FAQs", "Customer Care","About"]
-    let arrImgSupport = ["faq_icon", "customer_care_icon", "blocks_sidebar_icon"]
+    let arrSupport = ["FAQs","About"]
+    let arrImgSupport = ["faq_icon" , "blocks_sidebar_icon"]
     
 
     override func viewDidLoad() {
@@ -178,6 +178,17 @@ class SliderMenuVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
             }
             
         } else {
+            
+            if indexPath.row == 0 {
+                
+                let LanguageViewController = self.storyboard!.instantiateViewController(withIdentifier: "FreAskedVC") as! FreAskedVC
+                
+                self.navigationController?.pushViewController(LanguageViewController, animated: true)
+
+            } else if indexPath.row == 1 {
+                
+            }
+
             
         }
         

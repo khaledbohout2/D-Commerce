@@ -63,10 +63,10 @@
 "6id-MX-eUv.text" = "John Holiday";
 
 /* Class = "UILabel"; text = "City"; ObjectID = "6ye-lY-6sf"; */
-"6ye-lY-6sf.text" = "المدينة";
+"6ye-lY-6sf.text" = "الشارع";
 
 /* Class = "UITextField"; placeholder = "Phone"; ObjectID = "7dc-2K-Zms"; */
-"7dc-2K-Zms.placeholder" = "رقم الجوال";
+"7dc-2K-Zms.placeholder" = "رقم المنزل";
 
 /* Class = "UITextField"; placeholder = "Password"; ObjectID = "7iJ-gv-S1i"; */
 "7iJ-gv-S1i.placeholder" = "كلمة السر";
@@ -81,7 +81,7 @@
 "8et-wT-jpd.text" = "جاري النقل";
 
 /* Class = "UITextField"; placeholder = "City"; ObjectID = "8nG-a5-Bt8"; */
-"8nG-a5-Bt8.placeholder" = "المدينة";
+"8nG-a5-Bt8.placeholder" = "الشارع";
 
 /* Class = "UILabel"; text = "Filter"; ObjectID = "8tH-BH-Nre"; */
 "8tH-BH-Nre.text" = "بحث";
@@ -90,7 +90,7 @@
 "9V0-Ec-xSd.text" = "الوزن";
 
 /* Class = "UITextField"; placeholder = "State"; ObjectID = "9W8-Rr-I0q"; */
-"9W8-Rr-I0q.placeholder" = "الولاية";
+"9W8-Rr-I0q.placeholder" = "المحافظة";
 
 /* Class = "UILabel"; text = "Sort by"; ObjectID = "9Zq-OA-EEQ"; */
 "9Zq-OA-EEQ.text" = "ترتيب حسب";
@@ -177,10 +177,10 @@
 "Ilf-g5-jDa.text" = "إنشاء حساب";
 
 /* Class = "UITextField"; placeholder = "Address1"; ObjectID = "J2Y-0k-1gG"; */
-"J2Y-0k-1gG.placeholder" = "عنوان ١";
+"J2Y-0k-1gG.placeholder" = "المنطقة";
 
 /* Class = "UITextField"; placeholder = "Phone"; ObjectID = "J6q-1b-vcC"; */
-"J6q-1b-vcC.placeholder" = "رقم الجوال";
+"J6q-1b-vcC.placeholder" = "رقم المنزل";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "JTm-gt-0s3"; */
 "JTm-gt-0s3.text" = "Label";
@@ -195,13 +195,13 @@
 "KhP-qc-gwH.text" = "الشحن والاسترجاع";
 
 /* Class = "UITextField"; placeholder = "Postcode"; ObjectID = "Khq-k9-cKZ"; */
-"Khq-k9-cKZ.placeholder" = "الرقم البريدي";
+"Khq-k9-cKZ.placeholder" = "رقم التليفون";
 
 /* Class = "UILabel"; text = "Credit Card"; ObjectID = "L5f-1u-GB8"; */
 "L5f-1u-GB8.text" = "بطاقة ائتمان";
 
 /* Class = "UILabel"; text = "Phone"; ObjectID = "LBQ-vP-ulh"; */
-"LBQ-vP-ulh.text" = "رقم الجوال";
+"LBQ-vP-ulh.text" = "رقم المنزل";
 
 /* Class = "UIViewController"; title = "CardsVC"; ObjectID = "LhE-UZ-dIc"; */
 "LhE-UZ-dIc.title" = "الطلبات";
@@ -291,7 +291,7 @@
 "UZc-t8-Dbt.text" = "63% Cotton";
 
 /* Class = "UILabel"; text = "City"; ObjectID = "Ud4-ye-Xei"; */
-"Ud4-ye-Xei.text" = "المدينة";
+"Ud4-ye-Xei.text" = "الشارع";
 
 /* Class = "UILabel"; text = "Medium"; ObjectID = "Uwd-M1-PWV"; */
 "Uwd-M1-PWV.text" = "وسط";
@@ -309,7 +309,7 @@
 "W8c-bd-utN.text" = "Navy Blue";
 
 /* Class = "UILabel"; text = "State"; ObjectID = "WHp-Ks-BeY"; */
-"WHp-Ks-BeY.text" = "الولاية";
+"WHp-Ks-BeY.text" = "المحافظة";
 
 /* Class = "UILabel"; text = "/"; ObjectID = "WSx-gv-a3q"; */
 "WSx-gv-a3q.text" = "/";
@@ -336,7 +336,7 @@
 "Xod-Gg-cg1.title" = "تعديل العنوان";
 
 /* Class = "UILabel"; text = "Postcode"; ObjectID = "XqP-Wz-yJ0"; */
-"XqP-Wz-yJ0.text" = "الرقم البريدي";
+"XqP-Wz-yJ0.text" = "رقم التليفون";
 
 /* Class = "UILabel"; text = "Country"; ObjectID = "YGB-uj-uiY"; */
 "YGB-uj-uiY.text" = "الدولة";
@@ -369,7 +369,7 @@
 "aqe-f7-uBc.placeholder" = "إسم العائلة";
 
 /* Class = "UITextField"; placeholder = "Postcode"; ObjectID = "b5z-mr-uxb"; */
-"b5z-mr-uxb.placeholder" = "الرقم البريدي";
+"b5z-mr-uxb.placeholder" = "رقم التليفون";
 
 /* Class = "UILabel"; text = "SHOP"; ObjectID = "bAu-Lh-2aH"; */
 "bAu-Lh-2aH.text" = "المحل";
@@ -384,7 +384,7 @@
 "c0I-Ar-XlL.normalTitle" = "XL";
 
 /* Class = "UITextField"; placeholder = "Address2"; ObjectID = "cMB-bQ-Is0"; */
-"cMB-bQ-Is0.placeholder" = "عنوان ٢";
+"cMB-bQ-Is0.placeholder" = "القطعة";
 
 /* Class = "UITextField"; placeholder = "County"; ObjectID = "crm-Gn-ZTu"; */
 "crm-Gn-ZTu.placeholder" = "الدولة";
@@ -462,7 +462,7 @@
 "jsU-jz-SOG.normalTitle" = "XS";
 
 /* Class = "UITextField"; placeholder = "Phone"; ObjectID = "kHy-Jj-LWl"; */
-"kHy-Jj-LWl.placeholder" = "رقم الجوال";
+"kHy-Jj-LWl.placeholder" = "رقم المنزل";
 
 /* Class = "UIViewController"; title = "AddressesViewcontroller"; ObjectID = "kK1-Dv-gkn"; */
 "kK1-Dv-gkn.title" = "عنوان البريد الالكتروني";
@@ -510,7 +510,7 @@
 "nbH-b4-MOm.placeholder" = "كلمة الكرور";
 
 /* Class = "UITextField"; placeholder = "Address1"; ObjectID = "ndE-2o-4BH"; */
-"ndE-2o-4BH.placeholder" = "عنوان ١";
+"ndE-2o-4BH.placeholder" = "المنطقة";
 
 /* Class = "UIViewController"; title = "ProductListVC"; ObjectID = "oCd-VL-KtC"; */
 "oCd-VL-KtC.title" = "قائة المنتجات";
@@ -543,7 +543,7 @@
 "qh7-hT-70b.text" = "الجودة";
 
 /* Class = "UITextField"; placeholder = "Address2"; ObjectID = "qhg-wC-s57"; */
-"qhg-wC-s57.placeholder" = "عنوان ٢";
+"qhg-wC-s57.placeholder" = "القطعة";
 
 /* Class = "UILabel"; text = "EXPECTED DELIVERY"; ObjectID = "qvB-Ve-pz6"; */
 "qvB-Ve-pz6.text" = "موعد الوصول المتوقع";
@@ -567,13 +567,13 @@
 "vKb-w2-WFT.text" = "السعر";
 
 /* Class = "UITextField"; placeholder = "State"; ObjectID = "vXq-BI-uBf"; */
-"vXq-BI-uBf.placeholder" = "الولاية";
+"vXq-BI-uBf.placeholder" = "المحافظة";
 
 /* Class = "UIButton"; normalTitle = "Newst First"; ObjectID = "vnn-h2-ELg"; */
 "vnn-h2-ELg.normalTitle" = "الأحدث أولا";
 
 /* Class = "UILabel"; text = "Phone"; ObjectID = "w8y-Vc-jeO"; */
-"w8y-Vc-jeO.text" = "رقم الجوال";
+"w8y-Vc-jeO.text" = "رقم المنزل";
 
 /* Class = "UILabel"; text = "1"; ObjectID = "wkH-yQ-839"; */
 "wkH-yQ-839.text" = "1";
@@ -582,10 +582,10 @@
 "x17-yl-Rhf.text" = "الدفع";
 
 /* Class = "UIViewController"; title = "CountryStateVC"; ObjectID = "xHQ-Tz-fyi"; */
-"xHQ-Tz-fyi.title" = "الولاية";
+"xHQ-Tz-fyi.title" = "المحافظة";
 
 /* Class = "UILabel"; text = "Postcode"; ObjectID = "xIK-hG-dIb"; */
-"xIK-hG-dIb.text" = "لرقم البريدي";
+"xIK-hG-dIb.text" = "رقم التليفون";
 
 /* Class = "UILabel"; text = "AHMED KAKOULI"; ObjectID = "xNh-ne-o5i"; */
 "xNh-ne-o5i.text" = "AHMED KAKOULI";
@@ -594,7 +594,7 @@
 "xO5-EK-TYF.text" = "الدولة";
 
 /* Class = "UITextField"; placeholder = "City"; ObjectID = "xP5-fZ-2pZ"; */
-"xP5-fZ-2pZ.placeholder" = "المدينة";
+"xP5-fZ-2pZ.placeholder" = "الشارع";
 
 /* Class = "UILabel"; text = "6th December, 2019"; ObjectID = "xqY-JD-xhU"; */
 "xqY-JD-xhU.text" = "6th December, 2019";

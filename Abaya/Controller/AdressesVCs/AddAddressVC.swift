@@ -19,7 +19,7 @@ class AddAddressVC: UIViewController,UIScrollViewDelegate,SetState {
     @IBOutlet var tftAddress1: UITextField!
     @IBOutlet var tftAddress2: UITextField!
     @IBOutlet var tftPostcode: UITextField!
-    @IBOutlet var tftCountry: UITextField!
+  //  @IBOutlet var tftCountry: UITextField!
     @IBOutlet var tftState: UITextField!
     @IBOutlet var tftcity: UITextField!
     @IBOutlet weak var scroll: UIScrollView!
@@ -37,7 +37,7 @@ class AddAddressVC: UIViewController,UIScrollViewDelegate,SetState {
         
         backBySwipe()
         
-        tftCountry.isUserInteractionEnabled = false
+       // tftCountry.isUserInteractionEnabled = false
         tftState.isUserInteractionEnabled = false
         strCountryID = ""
         strStateID = ""
@@ -92,19 +92,13 @@ class AddAddressVC: UIViewController,UIScrollViewDelegate,SetState {
         
         isCountry = false
         
-        if strCountryID .isEqual(to: "") {
-            
-            Alert.Show(title:"", mesage: NSLocalizedString("Please select country.", comment: "") , viewcontroller:self)
-            
-        }
-            
-        else{
+
         
         let obj = self.storyboard!.instantiateViewController(withIdentifier: "CountryStateVC") as! CountryStateVC
             obj.delegate = self
         self.navigationController?.pushViewController(obj, animated: true)
             
-        }
+        
     }
     
     
@@ -125,8 +119,17 @@ class AddAddressVC: UIViewController,UIScrollViewDelegate,SetState {
         let strPincode:String = tftPostcode.text!
         let strCity:String = tftcity.text!
         
-        DicParameters = ["first_name":strFirstName, "last_name":strLastName, "email":strEmail, "mobile":strPhone,"address1"
-            :strAdd1,"address2":strAdd2,"postcode":strPincode,"country_id":strCountryID,"state_id":strStateID,"city":strCity] as [String : Any] as! [String : String]
+        DicParameters = ["first_name":strFirstName,
+                         "last_name":strLastName,
+                         "email":strEmail,
+                         "mobile":strPhone,
+                         "address1":strAdd1,
+                         "address2":strAdd2,
+                         "postcode":strPincode,
+                         "country_id":"117",
+                         "state_id":strStateID,
+                         "city":strCity]
+            as [String : Any] as! [String : String]
         
         ApiBaseClass.apiCallingMethode(url:ApiBaseClass.addNewAddress(), parameter:DicParameters , completion: { [weak self] response in
             let errorCheck = response["success"] as! Bool
@@ -170,7 +173,7 @@ class AddAddressVC: UIViewController,UIScrollViewDelegate,SetState {
     func didSetState() {
         
         if !strCountryID .isEqual(to: "") {
-            tftCountry.text = strCountryName as String
+           // tftCountry.text = strCountryName as String
         }
         
         if !strStateID .isEqual(to: "") {
@@ -230,9 +233,9 @@ extension AddAddressVC {
         else if (tftPostcode.text?.isEmpty )! {
             Alert.Show(title:"", mesage:.enter_postelcode , viewcontroller:self)
         }
-        else if (tftCountry.text?.isEmpty )! {
-            Alert.Show(title:"", mesage:.enter_country , viewcontroller:self)
-        }
+//        else if (tftCountry.text?.isEmpty )! {
+//            Alert.Show(title:"", mesage:.enter_country , viewcontroller:self)
+//        }
         else if (tftState.text?.isEmpty )! {
             Alert.Show(title:"", mesage:.enter_state , viewcontroller:self)
         }

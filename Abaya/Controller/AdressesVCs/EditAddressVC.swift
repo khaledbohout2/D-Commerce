@@ -21,7 +21,7 @@ class EditAddressVC: UIViewController ,UIScrollViewDelegate {
     
     @IBOutlet weak var tftFirstName: SkyFloatingLabelTextField!
     
-    @IBOutlet weak var tftCountry: SkyFloatingLabelTextField!
+   // @IBOutlet weak var tftCountry: SkyFloatingLabelTextField!
     
     @IBOutlet weak var tftPhone: SkyFloatingLabelTextField!
     
@@ -52,7 +52,7 @@ class EditAddressVC: UIViewController ,UIScrollViewDelegate {
         GetCountryList()
         
         
-        tftCountry.isUserInteractionEnabled = false
+        //tftCountry.isUserInteractionEnabled = false
         tftState.isUserInteractionEnabled = false
         strCountryID = ""
         strStateID = ""
@@ -65,9 +65,7 @@ class EditAddressVC: UIViewController ,UIScrollViewDelegate {
      {
     
 
-         if !strCountryID .isEqual(to: "") {
-             tftCountry.text = strCountryName as String
-         }
+
          
          if !strStateID .isEqual(to: "") {
              tftState.text = strStateName as String
@@ -103,7 +101,7 @@ class EditAddressVC: UIViewController ,UIScrollViewDelegate {
         tftLastName.text = addressDic .value(forKey: "last_name") as? String
         tftAddress2.text = addressDic .value(forKey: "address2") as? String
         tftPostCode.text = addressDic .value(forKey: "postcode") as? String
-        tftCountry.text = strCountryName as String
+       // tftCountry.text = strCountryName as String
         tftState.text = strStateName as String
  
     }
@@ -124,16 +122,12 @@ class EditAddressVC: UIViewController ,UIScrollViewDelegate {
     }
     @IBAction func btnStateClicked(_ sender: Any) {
         isCountry = false
-        if strCountryID .isEqual(to: "") {
-            
-            Alert.Show(title:"", mesage: NSLocalizedString("Please select country.", comment: "") , viewcontroller:self)
-            
-        }
-        else{
+
+
         
         let obj = self.storyboard!.instantiateViewController(withIdentifier: "CountryStateVC") as! CountryStateVC
         self.navigationController?.pushViewController(obj, animated: true)
-        }
+        
     }
     
     override func viewDidLayoutSubviews(){
@@ -202,9 +196,6 @@ extension EditAddressVC {
         }
         else if (tftPostCode.text?.isEmpty )! {
             Alert.Show(title:"", mesage:.enter_postelcode , viewcontroller:self)
-        }
-        else if (tftCountry.text?.isEmpty )! {
-            Alert.Show(title:"", mesage:.enter_country , viewcontroller:self)
         }
         else if (tftState.text?.isEmpty )! {
             Alert.Show(title:"", mesage:.enter_state , viewcontroller:self)

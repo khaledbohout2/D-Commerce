@@ -70,12 +70,12 @@
 "Enter password" = "Enter password";
 "Enter confirm password" = "Enter confirm password";
 "New password and Confirm Password should be same" = "New password and Confirm Password should be same";
-"Enter address1" = "Enter address1";
-"Enter address2" = "Enter address2";
+"Enter address1" = "Enter Region";
+"Enter address2" = "Enter Block";
 "Enter postelcode" = "Enter postelcode";
 "Select country" = "Select country";
 "Select State" = "Select State";
-"Enter city" = "Enter city";
+"Enter city" = "Enter Street";
 "Enter a valid email" = "Enter a valid email";
 "Enter mobile number" = "Enter mobile number";
 "Enter first name" = "Enter first name";
@@ -132,3 +132,24 @@
 "Product Image" = "Product Image";
 "M" = " M";
 "please select size" = "please select size";
+"7 KD / Metre" = "7 KD / Metre";
+"Brand Name" = "Brand Name";
+"Country" = "Country of Origin";
+"Weight" = "Weight";
+"description" = "Fabric Specifications";
+"Shipping & Returns" = "Shipping & Returns";
+"Color" = "Color";
+"SIZE" = "SIZE";
+"FAST SHIPPING" = "FAST SHIPPING";
+"Quick shipping and on-time, guaranteed deliveries" = "Quick shipping and on-time, guaranteed deliveries";
+"AUTHENTIC PRODUCTS" = "AUTHENTIC PRODUCTS";
+"100% original products, shop with confidence" = "100% original products, shop with confidence";
+"EASY RETURNS" = "EASY RETURNS";
+"14 days return policy, returns are so simple" = "14 days return policy, returns are so simple";
+"Related Products" = "Related Products";
+"Add To Bag" = "Add To Bag";
+"Item Description: " = "Item Description";
+
+
+
+

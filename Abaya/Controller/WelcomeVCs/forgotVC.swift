@@ -28,7 +28,7 @@ class forgotVC: UIViewController {
         guard mailTextField.text != "" else {
             return
         }
-        guard !isValidEmail(testStr: mailTextField.text!) else {
+        guard isValidEmail(testStr: mailTextField.text!) else {
             
             let alert = UIAlertController(title: "", message: .inValid_email, preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: ""), style: UIAlertAction.Style.default, handler: nil))

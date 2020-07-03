@@ -14,23 +14,39 @@ import Toast_Swift
 
 class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout ,UIScrollViewDelegate {
 
-    @IBOutlet weak var scroll: UIScrollView!
     @IBOutlet var pageControl: UIPageControl!
     @IBOutlet var imagesCollectionView: UICollectionView!
     @IBOutlet weak var lblProductName: UILabel!
     @IBOutlet weak var lblProductPrice: UILabel!
-    @IBOutlet weak var lblDescription: UILabel!
     @IBOutlet weak var lblBrandName: UILabel!
-    @IBOutlet weak var lblQuality: UILabel!
     @IBOutlet weak var lblWeight: UILabel!
     @IBOutlet weak var lblMaterial: UILabel!
     @IBOutlet weak var lblMenufacturedIn: UILabel!
     @IBOutlet weak var lblProductCount: UILabel!
     @IBOutlet weak var favButton: UIButton!
-    @IBOutlet weak var widthLbl: UILabel!
     @IBOutlet weak var widthValueLbl: UILabel!
     @IBOutlet weak var recommendedCollectionView: UICollectionView!
     @IBOutlet weak var sizesCollectionView: UICollectionView!
+    
+    @IBOutlet weak var widthLbl: UILabel!
+    @IBOutlet weak var countryLbl: UILabel!
+    @IBOutlet weak var weightLbl: UILabel!
+    @IBOutlet weak var decriptionLbl: UILabel!
+    @IBOutlet weak var shippingReturnsLbl: UILabel!
+    @IBOutlet weak var priceLbl: UILabel!
+    @IBOutlet weak var fastShipingLbl: UILabel!
+    @IBOutlet weak var quickShippingLbl: UILabel!
+    @IBOutlet weak var AuthenticLbl: UILabel!
+    @IBOutlet weak var originalProductLbl: UILabel!
+    @IBOutlet weak var easyReturns: UILabel!
+    @IBOutlet weak var daysRetyrn: UILabel!
+    @IBOutlet weak var relatedProductsLbl: UILabel!
+    @IBOutlet weak var brandNameLbl: UILabel!
+    @IBOutlet weak var addToBagButton: UIButton!
+    @IBOutlet weak var itemDescriptionLbl: UILabel!
+    @IBOutlet weak var colorLbl: UILabel!
+    @IBOutlet weak var sizeLbl: UILabel!
+    
     
     var count = 1
     var arrSlider = NSArray()
@@ -46,12 +62,10 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(strProductId)
+        //print(strProductId)
+        localize()
         
         backBySwipe()
-        
-        self.widthLbl.text = NSLocalizedString("width", comment: "")
-        self.widthValueLbl.text = NSLocalizedString("double width", comment: "")
 
         self.view.frame =  CGRect(0, 0, self.view.frame.size.width, self.view.frame.size.height+800)
         
@@ -145,14 +159,14 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
         }
     }
     
-    override func viewDidLayoutSubviews()
-        
-    {
-        
-        scroll.contentSize = CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height+800)
-
-        
-    }
+//    override func viewDidLayoutSubviews()
+//
+//    {
+//
+//        scroll.contentSize = CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height+800)
+//
+//
+//    }
             
     func GetWishList()
     {
@@ -473,9 +487,9 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
             self?.pageControl.numberOfPages = (self?.arrSlider.count)!
             //self!.startTimer()
             self?.lblProductName.text = dic.object(forKey: "product_name") as? String
-            let strPrice = String(format: "%@%@","KD ", dic.value(forKey: "product_current_price") as! CVarArg)
-            self?.lblProductPrice.text = strPrice as String
-            self?.lblDescription.text = dic.object(forKey: "product_description") as? String
+            //let strPrice = String(format: "%@%@","7", NSLocalizedString("KD/Metre ", comment: "") as CVarArg)
+           // self?.lblProductPrice.text = strPrice as String
+          //  self?.lblDescription.text = dic.object(forKey: "product_description") as? String
             self?.lblBrandName.text = dic.object(forKey: "brand") as? String
             self?.lblMenufacturedIn.text = dic.object(forKey: "made_in_country") as? String
             self?.lblWeight.text = dic.object(forKey: "weight") as? String
@@ -619,7 +633,30 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
           })
     }
     
-    @objc func buttonSize(sender: UIButton){
+    func localize() {
+        
+        self.widthLbl.text = NSLocalizedString("width", comment: "")
+        self.widthValueLbl.text = NSLocalizedString("double width", comment: "")
+        countryLbl.text =  NSLocalizedString("Country",  comment: "")
+        weightLbl.text =  NSLocalizedString("Weight",  comment: "")
+        decriptionLbl.text =  NSLocalizedString("description",  comment: "")
+        shippingReturnsLbl.text =  NSLocalizedString("Shipping & Returns",  comment: "")
+        priceLbl.text =  NSLocalizedString("7 KD / Metre",  comment: "")
+        fastShipingLbl.text =  NSLocalizedString("FAST SHIPPING",  comment: "")
+        quickShippingLbl.text =  NSLocalizedString("Quick shipping and on-time, guaranteed deliveries",  comment: "")
+        AuthenticLbl.text =  NSLocalizedString("AUTHENTIC PRODUCTS",  comment: "")
+        originalProductLbl.text =  NSLocalizedString("100% original products, shop with confidence",  comment: "")
+        easyReturns.text =  NSLocalizedString("EASY RETURNS",  comment: "")
+        daysRetyrn.text =  NSLocalizedString("14 days return policy, returns are so simple",  comment: "")
+        relatedProductsLbl.text =  NSLocalizedString("Related Products",  comment: "")
+        brandNameLbl.text =  NSLocalizedString("Brand Name",  comment: "")
+        addToBagButton.setTitle(NSLocalizedString("Add To Bag",  comment: ""), for: .normal)
+        itemDescriptionLbl.text =  NSLocalizedString("Item Description",  comment: "")
+        colorLbl.text =  NSLocalizedString("Color",  comment: "")
+        sizeLbl.text =  NSLocalizedString("SIZE",  comment: "")
+    }
+    
+    @objc func buttonSize(sender: UIButton) {
         
         let buttonPosition:CGPoint = sender.convert(CGPoint.zero, to: self.sizesCollectionView)
         let indexPath = self.sizesCollectionView.indexPathForItem(at: buttonPosition)
@@ -627,12 +664,20 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
         let skuArr = sizeDic .value(forKey:  "sku") as! NSArray
         let sku = skuArr[0] as! Int
         SKu = String(sku)
-        sizesCollectionView.reloadData()
-        
+        let sizeButtons = sizesCollectionView.visibleCells as! [ProductSizeCell]
+        for cell in sizeButtons {
+            cell.sizeBtn.backgroundColor = UIColor.white
+            cell.sizeBtn.setTitleColor(UIColor.black, for: .normal)
+            
+            if sku == Int(SKu) {
+               let cell = sizesCollectionView.cellForItem(at: indexPath!) as! ProductSizeCell
+               cell.sizeBtn.backgroundColor = UIColor.black
+               cell.sizeBtn.setTitleColor(UIColor.white, for: .normal)
+            }
+        }
     }
     
     @IBAction func incresecount(_ sender: Any) {
-        
         
         count += 1
 
@@ -641,7 +686,9 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
     
     @IBAction func decreeseCount(_ sender: Any) {
         
+        if count > 1 {
         count -= 1
+        }
 
         lblProductCount.text = String(count)
     }
