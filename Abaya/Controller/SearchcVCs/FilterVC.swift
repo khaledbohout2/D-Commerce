@@ -26,7 +26,7 @@ class FilterVC: UIViewController {
         super.viewDidLoad()
         
         setUpNavigation()
-        backBySwipe()
+      //  backBySwipe()
         
         
         highToLowOutlet.isUserInteractionEnabled = false
@@ -37,7 +37,7 @@ class FilterVC: UIViewController {
     }
     
     func backBySwipe() {
-        
+
         let gesture = UISwipeGestureRecognizer(target: self, action: #selector(dismiss(fromGesture:)))
         let lang = Locale.preferredLanguages[0]
         if lang == "en" {
@@ -159,7 +159,6 @@ class FilterVC: UIViewController {
 
         
     }
-
 
 }
 

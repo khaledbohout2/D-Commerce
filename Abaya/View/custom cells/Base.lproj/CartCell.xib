@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -50,7 +50,10 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KD 240.000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RAt-87-Rn2">
-                        <rect key="frame" x="280" y="90.5" width="90" height="19"/>
+                        <rect key="frame" x="275" y="90.5" width="90" height="19"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="90" id="JnR-BG-S4p"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat SemiBold" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -120,7 +123,7 @@
                     <constraint firstItem="zBX-Jd-xhH" firstAttribute="leading" secondItem="gPJ-Y7-tK6" secondAttribute="trailing" constant="8" id="V6a-Uf-6xN"/>
                     <constraint firstItem="zBX-Jd-xhH" firstAttribute="top" secondItem="2Ci-2F-6IC" secondAttribute="bottom" constant="2" id="eAG-PI-ogg"/>
                     <constraint firstAttribute="bottom" secondItem="RAt-87-Rn2" secondAttribute="bottom" constant="10.5" id="oWK-HX-Gmp"/>
-                    <constraint firstAttribute="trailing" secondItem="RAt-87-Rn2" secondAttribute="trailing" constant="5" id="peB-Mg-rlu"/>
+                    <constraint firstAttribute="trailing" secondItem="RAt-87-Rn2" secondAttribute="trailing" constant="10" id="peB-Mg-rlu"/>
                     <constraint firstItem="p0Z-zT-r1G" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="tNW-qM-f9T"/>
                     <constraint firstAttribute="bottom" secondItem="gPJ-Y7-tK6" secondAttribute="bottom" constant="10" id="tiI-7B-22p"/>
                     <constraint firstItem="4Hk-jt-Cqy" firstAttribute="top" secondItem="zBX-Jd-xhH" secondAttribute="bottom" constant="5" id="veP-bB-mPy"/>

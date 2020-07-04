@@ -26,21 +26,23 @@ class RightAlignedIconButton: UIButton {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        if language == "ar" {
+        if language == "en" {
             
-            semanticContentAttribute = .forceLeftToRight
-            contentHorizontalAlignment = .left
+            //semanticContentAttribute = .forceLeftToRight
+            contentHorizontalAlignment = .center
        //     let availableSpace = bounds.inset(by: contentEdgeInsets)
 //            let availableWidth = availableSpace.width - imageEdgeInsets.right - (imageView?.frame.width ?? 0) - (titleLabel?.frame.width ?? 0)
-            titleEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
+            titleEdgeInsets = UIEdgeInsets(top: 0, left: -100, bottom: 0, right: 0)
+            imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: -230)
             
         } else {
         
-        semanticContentAttribute = .forceRightToLeft
-        contentHorizontalAlignment = .right
+        //semanticContentAttribute = .forceRightToLeft
+        contentHorizontalAlignment = .center
        // let availableSpace = bounds.inset(by: contentEdgeInsets)
        // let availableWidth = availableSpace.width - imageEdgeInsets.left - (imageView?.frame.width ?? 0) - (titleLabel?.frame.width ?? 0)
-        titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 10)
+        titleEdgeInsets = UIEdgeInsets(top: 0, left: -100, bottom: 0, right: 0)
+        imageEdgeInsets = UIEdgeInsets(top: 0, left: 50, bottom: 0, right: 0)
         }
     }
 }

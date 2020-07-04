@@ -17,29 +17,17 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YqZ-xk-Iix">
-                        <rect key="frame" x="0.0" y="0.0" width="130" height="77"/>
+                        <rect key="frame" x="4" y="4" width="122" height="69"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                <real key="value" value="5"/>
+                                <real key="value" value="2"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                <real key="value" value="15"/>
+                                <real key="value" value="5"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                 <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                <real key="value" value="4"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                <real key="value" value="1"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                <size key="value" width="0.0" height="2"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                <color key="value" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
@@ -47,13 +35,27 @@
             </view>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="YqZ-xk-Iix" secondAttribute="trailing" id="0bo-9p-DYI"/>
-                <constraint firstItem="YqZ-xk-Iix" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Lz0-qh-wvr"/>
-                <constraint firstItem="YqZ-xk-Iix" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="RBx-4E-qkh"/>
-                <constraint firstAttribute="bottom" secondItem="YqZ-xk-Iix" secondAttribute="bottom" id="nrj-0G-NSm"/>
+                <constraint firstAttribute="trailing" secondItem="YqZ-xk-Iix" secondAttribute="trailing" constant="4" id="0bo-9p-DYI"/>
+                <constraint firstItem="YqZ-xk-Iix" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="Lz0-qh-wvr"/>
+                <constraint firstItem="YqZ-xk-Iix" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="4" id="RBx-4E-qkh"/>
+                <constraint firstAttribute="bottom" secondItem="YqZ-xk-Iix" secondAttribute="bottom" constant="4" id="nrj-0G-NSm"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="130" height="77"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                    <real key="value" value="4"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                    <real key="value" value="1"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                    <size key="value" width="0.0" height="2"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                    <color key="value" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="colorView" destination="YqZ-xk-Iix" id="IOf-oc-zia"/>
             </connections>
