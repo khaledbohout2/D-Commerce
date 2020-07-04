@@ -51,6 +51,60 @@ extension UIView {
     }
 }
 
+
+
+
+extension UIView {
+    
+    @IBInspectable
+    var shadowRadius: CGFloat {
+        get {
+            return layer.shadowRadius
+        }
+        set {
+            layer.shadowRadius = newValue
+        }
+    }
+    @IBInspectable
+    var shadowOpacity: Float {
+        get {
+            return layer.shadowOpacity
+        }
+        set {
+            layer.shadowOpacity = newValue
+        }
+    }
+    @IBInspectable
+    var shadowOffset: CGSize {
+        get {
+            return layer.shadowOffset
+        }
+        set {
+            layer.shadowOffset = newValue
+        }
+    }
+    @IBInspectable
+    var shadowColor: UIColor? {
+        get {
+            if let color = layer.shadowColor {
+                return UIColor(cgColor: color)
+            }
+            return nil
+        }
+        set {
+            if let color = newValue {
+                layer.shadowColor = color.cgColor
+            } else {
+                layer.shadowColor = nil
+            }
+        }
+    }
+}
+
+
+
+
+
 extension UIApplication {
     
     /// Returns the status bar UIView
@@ -471,25 +525,6 @@ extension Error {
     var code: Int { return (self as NSError).code }
     var domain: String { return (self as NSError).domain }
 }
-@IBDesignable
-class CardView: UIView {
-    
-    // @IBInspectable var cornerRadius: CGFloat = 2
-    
-    @IBInspectable var shadowOffsetWidth: Int = 1
-    @IBInspectable var shadowOffsetHeight: Int = 3
-    @IBInspectable var shadowColor: UIColor? = UIColor.gray
-    @IBInspectable var shadowOpacity: Float = 0.1
-    
-    override func layoutSubviews() {
-        layer.cornerRadius = cornerRadius
-        let shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius)
-        
-        layer.masksToBounds = false
-        // layer.shadowColor = shadowColor?.cgColor
-        layer.shadowOffset = CGSize(width: shadowOffsetWidth, height: shadowOffsetHeight);
-        layer.shadowOpacity = shadowOpacity
-        layer.shadowPath = shadowPath.cgPath
-    }
-    
-}
+
+
+

@@ -27,7 +27,7 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
     @IBOutlet weak var widthValueLbl: UILabel!
     @IBOutlet weak var recommendedCollectionView: UICollectionView!
     @IBOutlet weak var sizesCollectionView: UICollectionView!
-    
+    @IBOutlet weak var colorsCollectionView: UICollectionView!
     @IBOutlet weak var widthLbl: UILabel!
     @IBOutlet weak var countryLbl: UILabel!
     @IBOutlet weak var weightLbl: UILabel!
@@ -58,7 +58,9 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
     var hud = JGProgressHUD(style: .extraLight)
     var pageMenu : CAPSPageMenu?
     var sizesArr = NSArray()
+    var colorsArr = NSArray()
     var SKu = String()
+    var colorsSKU = [Int]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -126,6 +128,14 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
         
         sizesCollectionView.showsVerticalScrollIndicator = false
         sizesCollectionView.backgroundColor = UIColor.white
+        
+        colorsCollectionView.dataSource = self
+        colorsCollectionView.delegate = self
+        colorsCollectionView.isPagingEnabled = true
+        colorsCollectionView.register(UINib.init(nibName: "ProductColorCell", bundle: nil), forCellWithReuseIdentifier: "ProductColorCell")
+        
+        colorsCollectionView.showsVerticalScrollIndicator = false
+        colorsCollectionView.backgroundColor = UIColor.white
         
         
         recommendedCollectionView.collectionViewLayout = Rlayout
@@ -228,6 +238,9 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
         } else if collectionView == sizesCollectionView {
             
             count = sizesArr.count
+        } else if collectionView == colorsCollectionView {
+            
+            count = colorsArr.count
         }
         
         return count!
@@ -251,6 +264,8 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
             
             size = CGSize(width: 60.0, height: 45.0)
             
+        } else if collectionView == colorsCollectionView {
+            size = CGSize(width: 60.0, height: 45.0)
         }
         return size!
     }
@@ -313,6 +328,16 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
                 cell.sizeBtn.setTitleColor(UIColor.black, for: .normal)
             }
             myCell =  cell
+        } else if collectionView == colorsCollectionView {
+            
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductColorCell", for: indexPath) as! ProductColorCell
+            print(colorsArr)
+            let color = colorsArr[indexPath.row] as! NSDictionary
+            let colorhex = (color .value(forKey: "attribute_option") as? String)!
+            let cellColor = UIColor(hexString: colorhex)
+            cell.colorView.backgroundColor = cellColor
+            myCell = cell
+            
         }
         
         return myCell!
@@ -360,6 +385,20 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
         }  else if collectionView == sizesCollectionView {
             
             print("selected")
+        } else if collectionView == colorsCollectionView {
+            SKu = String()
+            let sizeButtons = sizesCollectionView.visibleCells as! [ProductSizeCell]
+            for cell in sizeButtons {
+                cell.sizeBtn.backgroundColor = UIColor.white
+                cell.sizeBtn.setTitleColor(UIColor.black, for: .normal)
+            }
+            let colorCells = colorsCollectionView.visibleCells as! [ProductColorCell]
+            for cell in colorCells {
+                cell.colorView.borderColor = UIColor.clear
+            }
+            let cell = colorsCollectionView.cellForItem(at: indexPath) as! ProductColorCell
+            cell.colorView.borderColor = UIColor.black
+            self.colorsSKU = (colorsArr[indexPath.row] as! NSDictionary) .value(forKey: "sku") as! [Int]
         }
     }
     
@@ -478,23 +517,23 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
             let attribute_group = dic.value(forKey: "attribute_group") as! NSDictionary
             let attributes = attribute_group.value(forKey: "attributes") as! NSArray
             let attribute_options = attributes.value(forKey: "attribute_options") as! NSArray
-            let sizesByMetre = attribute_options[0] as! NSArray
+            let sizesByMetre = attribute_options[1] as! NSArray
             self?.sizesArr = sizesByMetre
+            let colorsArr = attribute_options[0] as! NSArray
+            self?.colorsArr = colorsArr
+            print(colorsArr)
             self?.sizesCollectionView.reloadData()
+            self?.colorsCollectionView.reloadData()
             self?.arrSlider = dic["products_images"] as! NSArray
             print(self!.arrSlider.count)
             self?.imagesCollectionView.reloadData()
             self?.pageControl.numberOfPages = (self?.arrSlider.count)!
-            //self!.startTimer()
             self?.lblProductName.text = dic.object(forKey: "product_name") as? String
-            //let strPrice = String(format: "%@%@","7", NSLocalizedString("KD/Metre ", comment: "") as CVarArg)
-           // self?.lblProductPrice.text = strPrice as String
-          //  self?.lblDescription.text = dic.object(forKey: "product_description") as? String
+
             self?.lblBrandName.text = dic.object(forKey: "brand") as? String
             self?.lblMenufacturedIn.text = dic.object(forKey: "made_in_country") as? String
             self?.lblWeight.text = dic.object(forKey: "weight") as? String
             self?.lblMaterial.text = dic.object(forKey: "material") as? String
-            //self?.widthValueLbl.text = "\((dic.object(forKey: "width") as! Int) * 2 )"
             strProductId = String(dic .value(forKey: "id") as! Int)
             
             self!.GetWishList()
@@ -658,22 +697,36 @@ class ProductDetail: UIViewController, UICollectionViewDelegate, UICollectionVie
     
     @objc func buttonSize(sender: UIButton) {
         
+        if self.colorsSKU.isEmpty {
+            
+            Alert.Show(title: NSLocalizedString("error", comment: "") , mesage: NSLocalizedString("Please Select Color", comment: "") , viewcontroller:self)
+            
+        } else {
+        
         let buttonPosition:CGPoint = sender.convert(CGPoint.zero, to: self.sizesCollectionView)
         let indexPath = self.sizesCollectionView.indexPathForItem(at: buttonPosition)
         let sizeDic = self.sizesArr[(indexPath?.row)!] as! NSDictionary
-        let skuArr = sizeDic .value(forKey:  "sku") as! NSArray
-        let sku = skuArr[0] as! Int
-        SKu = String(sku)
+        let skuArr = sizeDic .value(forKey:  "sku") as! [Int]
+        for sizeSKU in skuArr {
+            for colorSKU in self.colorsSKU {
+                if sizeSKU  == colorSKU {
+                    SKu = String(sizeSKU)
+                    print(SKu)
+                }
+            }
+        }
         let sizeButtons = sizesCollectionView.visibleCells as! [ProductSizeCell]
         for cell in sizeButtons {
             cell.sizeBtn.backgroundColor = UIColor.white
             cell.sizeBtn.setTitleColor(UIColor.black, for: .normal)
-            
-            if sku == Int(SKu) {
-               let cell = sizesCollectionView.cellForItem(at: indexPath!) as! ProductSizeCell
-               cell.sizeBtn.backgroundColor = UIColor.black
-               cell.sizeBtn.setTitleColor(UIColor.white, for: .normal)
+            for sku in skuArr {
+                if sku == Int(SKu) {
+                   let cell = sizesCollectionView.cellForItem(at: indexPath!) as! ProductSizeCell
+                   cell.sizeBtn.backgroundColor = UIColor.black
+                   cell.sizeBtn.setTitleColor(UIColor.white, for: .normal)
+                }
             }
+        }
         }
     }
     
@@ -745,4 +798,6 @@ extension ProductDetail {
     }
     
 }
+
+
 
